@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-GITHUB_URL=https://github.com/goliatone/wee-things/master/tarball.zip
+GITHUB_URL=https://github.com/goliatone/wee-things-workshop/archive/master.zip
 
 # https://apt.adafruit.com/install/
 # https://apt.adafruit.com/bootstrap/

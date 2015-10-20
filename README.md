@@ -54,7 +54,7 @@ To make things easier all dependencies are bundled in the [bin][bin-directory] d
 To make things easier, there is a `bash` script to bootstrap via CLI:
 
 ```
- curl -SLs https://github.com/goliatone/esp8266-intro/blob/bin/bootstrap | bash
+$ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
 ```
 What follows is a step by step guide on what the script automates for you.
 

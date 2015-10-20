@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+GITHUB_URL=https://github.com/goliatone/wee-things/master/tarball.zip
+
+# https://apt.adafruit.com/install/
+# https://apt.adafruit.com/bootstrap/
+
+# Command line options:  See usage below
+function usage
+{
+  cat <<-EOF
+  $(basename $0): a simple CLI utility to get started with the wee-things ESP8266 introductory tutorials.
+
+  Options:
+
+  -h
+    get some simple help (this message)
+
+EOF
+
+exit
+
+}
+
+function download_zip()
+{
+    echo "Downloading zip archive from github:"
+    echo "  - $GITHUB_URL"
+}
+
+function uncompress_zip()
+{
+    echo "Uncompressing zip archive"
+}
+
+function install_esptool
+{
+    echo "Installing esptool"
+}
+
+function install_esplorer
+{
+    echo "Installing ESPLorer"
+}
+
+function install_drivers
+{
+    echo "Installing drivers"
+}
+
+function done()
+{
+    echo "Done!"
+}
+
+download_zip

@@ -19,24 +19,26 @@ A tutorial of little connected things.
 
 ---
 ### Introduction
-This is intended as a brief introduction to micro-controllers using the [esp8266]. The goal is to get started and gain insight on what we can do with a cheap board and some basic coding.
+This is intended as a brief introduction to microcontrollers using the [esp8266][esp8266-wiki]. The goal is to get started and gain insight on what we can do with a cheap board and some basic coding.
 
-The greatest advantage of the ESP8266 over micro-controllers like the Arduino is the built in WiFi support.
+The greatest advantage of the ESP8266 over micro-controllers like the Arduino is that the former has built in WiFi support.
 
 The ESP8266 is a $4 WiFi module with an ARM processor. NodeMCU is firmware and a development kit that makes it palatable to program ESP8266 modules using the [Lua][lua] programming language.
 
-You need some basic programming knowledge, how to open a terminal and execute a script or type in a command, and find your way around github.
+You need some basic programming knowledge, know how to open a terminal and execute a script or type in a command, and find your way around github.
+
 
 _NOTE_:
-The tutorial has been tested with a NodeMCU dev board and using a Mac OS. It is possible to follow up using a Windows computer but there might be differences on how to flash the board or on how to use some of the tools.
+
+The tutorial has been tested with a NodeMCU dev board and using a Mac OS. It is possible to follow up using a Windows computer but there might be differences- i.e.  how to flash the board or how to use some of the tools.
 
 
 ### Materials
 The list of materials is intentionally short. We can get up and running pretty fast.
 
 Hardware:
-* [NodeMCU dev board][ebay-esp]
-* [Micro USB cable][ebay-usb]
+* [NodeMCU dev board][amazon-esp]
+* [Micro USB cable][amazon-usb]
 
 Software:
 * [esptool][esptool] Used to flash NodeMCU devkit
@@ -182,13 +184,18 @@ brew install luajit --with-52compat
 [nodemcu-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki
 [nodemcu-wiki-api]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
 
-[ebay-usb]: http://something
-[ebay-esp]: http://something
+[amazon-usb]: http://www.amazon.com/AmazonBasics-Micro-USB-USB-Cable-Meters/dp/B00NH124VM/
+[amazon-esp]: http://www.amazon.com/Eleduino-Version-Internet-ESP8266-Development/dp/B010O1G1ES/
+
 [esplorer]: http://esp8266.ru/esplorer/#download
 [esptool]: https://github.com/themadinventor/esptool
 [esptool-install]: https://github.com/themadinventor/esptool#installation--dependencies
+
+
 [esp-binaries]: https://github.com/nodemcu/nodemcu-firmware/releases
 [esp8266-forum]: http://www.esp8266.com
+[esp8266-wiki]: https://en.wikipedia.org/wiki/ESP8266
+
 
 [nodemcu-faq]: http://www.esp8266.com/wiki/doku.php?id=nodemcu-unofficial-faq
 [silabs-drivers]: https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx

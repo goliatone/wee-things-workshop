@@ -53,15 +53,17 @@ Binaries:
 To make things easier all dependencies are bundled in the [bin][bin-directory] directory. We will go over how to install all the different tools.
 
 
-To make things easier, there is a `bash` script to bootstrap via CLI:
+There is also a `bash` script to bootstrap via CLI:
 
 ```
 $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
 ```
+
 What follows is a step by step guide on what the script automates for you.
 
 #### espytool
-We will first install **esptool** in order to flash our boards. It's a `python` script. The Mac default `python` will work. Open terminal and cd to the directory **esptool** directory and run the following command:
+We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the directory **esptool** directory and run the following command:
+
 ```
 python setup.py install
 ```
@@ -78,7 +80,9 @@ In order for your computer to communicate with the devkit you need to have insta
 
 The ESP8266 runs a Lua interpreter and you can send in commands and read out results over serial.
 
-_NOTE:_ This might require your computer to restart.
+_NOTE:_
+
+This requires your computer to restart, save your work.
 
 
 #### NodeMCU firmware
@@ -125,7 +129,17 @@ This command wil open up the IDE, it should look something similar to this:
 
 ![ESPlorer](./images/esplorer-001.png)
 
-*NOTE:* Some online resources advice you `sudo` the command to run the **ESPlorer** IDE. Most _likely_ you will not need sudo.
+*NOTE:*
+Some online resources advice you `sudo` the command to run the **ESPlorer** IDE. Most _likely_ you will not need sudo.
+
+
+<!--
+### More on ESP8266
+
+The [ESP8266][espressif] is a microcontroller with 2.4 GHz WiFi capabilities supporting the WPA/WPA2 [protocols][wpa-protocols], general-purpose input/output (GPIO), Inter-Integrated Circuit (I2C), analog-to-digital conversion (ADC), Serial Peripheral Interface (SPI), and pulse-width modulation (PWM). The chip operates at 80Mhz, has a 64KB boot ROM, 64KB instruction RAM, and 96KB data RAM.
+-->
+
+[wpa-protocols]: https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access
 
 ### Colofon
 And with this we conclude the boring setup process. We are ready to start coding and making things. We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board. Next we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
@@ -180,6 +194,8 @@ brew install luajit --with-52compat
 ```
 
 <!-- LINKS -->
+[espressif]: http://espressif.com/en/products/esp8266/
+
 [firmware]: https://github.com/nodemcu/nodemcu-firmware/releases
 [nodemcu-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki
 [nodemcu-wiki-api]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en

@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
 GITHUB_URL=https://github.com/goliatone/wee-things-workshop/archive/master.zip
+ZIP_FILE=master.zip
+
+RENAME_FROM=wee-things-workshop-master
+RENAME_TO=wee-things-workshop
+
+BIN=$RENAME_TO/bin/
+
+ESPLorer=ESPLorer.zip
+ESPTOOL=esptool.zip
+DRIVERS=Mac_OSX_VCP_Driver.zip
 
 # https://apt.adafruit.com/install/
 # https://apt.adafruit.com/bootstrap/
@@ -26,26 +36,60 @@ function download_zip()
 {
     echo "Downloading zip archive from github:"
     echo "  - $GITHUB_URL"
+    curl -sL $GITHUB_URL > $ZIP_FILE
 }
 
 function uncompress_zip()
 {
     echo "Uncompressing zip archive"
+    unzip $ZIP_FILE
+    rm $ZIP_FILE
+}
+
+function rename_dir
+{
+    echo "Renaming from $RENAME_FROM to $RENAME_TO"
+    mv $RENAME_FROM $RENAME_TO
 }
 
 function install_esptool
 {
     echo "Installing esptool"
+    pushd $BIN
+    unzip $ESPTOOL
+    pushd esptool
+    python setup.py install
+    popd
+    popd
 }
 
 function install_esplorer
 {
     echo "Installing ESPLorer"
+    pushd $BIN
+    unzip $ESPLorer
+    popd
 }
 
 function install_drivers
 {
     echo "Installing drivers"
+    pushd $BIN
+    mkdir drivers
+    mv $DRIVERS drivers
+    pushd drivers
+    unzip $DRIVERS
+    popd
+    popd
+}
+
+function clean_up()
+{
+    pushd $BIN
+    mv $ESPLorer ESPlorer
+    mv $ESPTOOL esptool
+    rm -r __MACOSX
+    popd
 }
 
 function done()
@@ -53,4 +97,15 @@ function done()
     echo "Done!"
 }
 
-download_zip
+function boot()
+{
+    download_zip
+    uncompress_zip
+    rename_dir
+    install_esplorer
+    install_esptool
+    install_drivers
+    clean_up
+}
+
+boot

@@ -82,7 +82,7 @@ http://blog.nicolasc.eu/esp8266-premiere-partie-generalites/
 http://blog.nicolasc.eu/esp8266-seconde-partie-le-mode-standalone/
 
 [intro]: https://github.com/goliatone/esp8266-intro/blob/master
-[hello-world]: https://github.com/goliatone/esp8266-intro/blob/master/code/hello-world
+[hello-world]: https://github.com/goliatone/esp8266-intro/blob/master/tutorials/hello-world
 [watchdog]: https://en.wikipedia.org/wiki/Watchdog_timer
 
 <!-- LINKS

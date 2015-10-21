@@ -79,6 +79,18 @@ Once the file has been updloaded, we need to click the refresh button on the rig
 
 ### Executing a file
 
+From the ESPLorer IDE, there are different ways we can execute a file.
+
+If we right click on the `hello_world.lua` file, we get a context menu with different options:
+
+![ESPlorer](./images/esplorer-execute-file.png)
+
+If we click on *Run hello_world.lua*, you will never believe what happens next...
+
+![ESPlorer](./images/esplorer-hello-world-output.png)
+
+We get the string `Hello World!` printed in the IDE's console window.
+
 ### Features
 
 The ESPlorer IDE has a lot of different and useful features that you will discover as you use the program. Here we cover a small sample of those.

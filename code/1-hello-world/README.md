@@ -92,9 +92,17 @@ If we click on *Run hello_world.lua*, you will never believe what happens next..
 
 We get the string `Hello World!` printed in the IDE's console window.
 
+
 ### Features
 
 The ESPlorer IDE has a lot of different and useful features that you will discover as you use the program. Here we cover a small sample of those.
+
+We can send commands to the board from the IDE.
+
+Another way we have to execute a file, is to send a Lua command directly to the board. In this case, the [dofile][dofile] command. You can read more about the command [here][dofile-tutorial]. Basically the `dofile` commands opens the named file and executes its contents. This is actually really handy, since the ESP8266 have so little resources it enables us to only bring into memory chunks of code if and when needed.
+
+![ESPlorer](./images/esplorer-dofile.png)
+
 
 Show the current files uploaded in the board:
 
@@ -105,6 +113,9 @@ Snippets:
 
 [silabs-drivers]: https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
 [intro-tutorial]: https://github.com/goliatone/wee-things-workshop
+
+[dofile-tutorial]: http://luatut.com/dofile.html
+[dofile]: http://www.lua.org/pil/8.html
 
 <!--
 http://stackoverflow.com/questions/31304082/how-to-recover-nodemcu-infinite-loop

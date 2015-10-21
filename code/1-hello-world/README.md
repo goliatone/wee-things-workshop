@@ -19,7 +19,7 @@ Once we have completed this tutorial we should be able to write our own programs
 If you don't have the ESPLorer IDE running then open a terminal window, `cd` to the directory containing the **ESPLorer.jar** file and type the following command:
 
 ```
-sudo java -jar ESPLorer.jar
+java -jar ESPLorer.jar
 ```
 
 ### Connecting to the board
@@ -32,7 +32,8 @@ In the top right corner of the IDE:
 
 ![ESPlorer](./images/esplorer-connect.png)
 
-_NOTE:_ If the connection was successful the Open button should toggle to a Close state. If this is not working make sure that you have installed the [SiLabs drivers][silabs-drivers]. If you don't see the /dev/cu.SLAB_USBtoUART option in the dropdown menu also make sure that you installed the drivers and restarted your computer. More information on the [introductory tutorial][intro-tutorial].
+_NOTE:_
+If the connection was successful the Open button should toggle to a Close state. If this is not working make sure that you have installed the [SiLabs drivers][silabs-drivers]. If you don't see the /dev/cu.SLAB_USBtoUART option in the dropdown menu also make sure that you installed the drivers and restarted your computer. More information on the [introductory tutorial][intro-tutorial].
 
 ### Create a new file
 

@@ -12,6 +12,16 @@ Here is the code we will be running:
 print("Hello World!")
 ```
 
+The `print` statement takes a string parameter and will output it to the console, in this case the string "Hello World!".
+
+
+_NOTE_
+
+In Lua you use two dots to concatenate strings,
+```lua
+print("Hello ".."World!")
+```
+
 Once we have completed this tutorial we should be able to write our own programs and upload them to a NodeMCU board.
 
 ### Firing up the IDE

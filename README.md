@@ -147,9 +147,9 @@ The [ESP8266][espressif] is a microcontroller with 2.4 GHz WiFi capabilities sup
 [wpa-protocols]: https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access
 
 ### Colofon
-And with this we conclude the boring setup process. We are ready to start coding and making things. We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board. Next we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
+And with this we conclude the boring setup process. We are ready to start coding and making things. We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board. Next, we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
 
-If you are not familiar with the Lua programming language you can always follow a quick intro tutorial. Check out the Lua links in the Resources section.
+If you are not familiar with the Lua programming language you can always follow a quick intro tutorial. Check out the Lua links in the [Resources](#resources) section.
 
 You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers succinctly all the different modules and their methods.
 
@@ -176,7 +176,7 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
 * [Introductory tutorial][lua-tutorial]
 * [Tutorials directory][lua-tutorials-directory]
 
-If you are new to programming, there is an online tutorial following the Learn the hard way that uses Lua. [Here][learn-lua]
+If you are new to programming, there is an online tutorial following the *Learn the Hard Way* method that uses Lua. [Here][learn-lua]
 
 Lua has a package manager, [luarocks][luarocks].
 
@@ -237,7 +237,7 @@ brew install luajit --with-52compat
 [java-install]: http://crunchify.com/where-is-java-installed-on-my-mac-osx-system/
 [java-se]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-[hello-world]: https://github.com/goliatone/esp8266-intro/blob/master/code/1-hello-world
-[hello-blink]: https://github.com/goliatone/esp8266-intro/blob/master/code/2-hello-blink
+[hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/code/1-hello-world
+[hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/code/2-hello-blink
 
 [bin-directory]: https://github.com/goliatone/esp8266-intro

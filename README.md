@@ -171,7 +171,7 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
 
 #### Lua
 * [Cheatsheet][lua-cheatsheet]
-* [Offical site][lua]
+* [Official site][lua]
 * [Quick introduction][lua-intro]
 * [Introductory tutorial][lua-tutorial]
 * [Tutorials directory][lua-tutorials-directory]

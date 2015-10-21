@@ -178,7 +178,7 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
 
 If you are new to programming, there is an online tutorial following the *Learn the Hard Way* method that uses Lua. [Here][learn-lua]
 
-Lua has a package manager, [luarocks][luarocks].
+Lua has a package manager, [luarocks][luarocks]. A package manager is a set of tools that help you install, upgrade, configure, and manage software packages, or modules, and their dependencies.
 
 
 [learn-lua]: http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/

@@ -77,6 +77,8 @@ If you do not want a global install you can follow the [instructions][esptool-in
 
 #### SiLabs Drivers
 
+From the SiLabs driver [download page][silabs-drivers]:
+
 >The CP210x USB to UART Bridge Virtual COM Port (VCP) drivers are required for device operation as a Virtual COM Port to facilitate host communication with CP210x products.
 
 In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers].

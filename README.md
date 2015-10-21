@@ -238,7 +238,7 @@ brew install luajit --with-52compat
 [java-install]: http://crunchify.com/where-is-java-installed-on-my-mac-osx-system/
 [java-se]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-[hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/code/1-hello-world
-[hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/code/2-hello-blink
+[hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world
+[hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/2-hello-blink
 
 [bin-directory]: https://github.com/goliatone/esp8266-intro

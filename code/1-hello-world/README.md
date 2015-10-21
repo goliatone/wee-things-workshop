@@ -2,9 +2,9 @@
 
 In this tutorial we will learn how to load a simple **hello world** script into our NodeMCU devkit board using the ESPLorer IDE.
 
-You should follow the introductory tutorial to get your Mac environment ready.
+You should follow the [introductory tutorial][intro-tutorial] to get your Mac environment ready.
 
-The actual program we are going to write is rather simple. The main focus is the process to get code running and to do so following some best practices to ensure we do not brick our board.
+The actual program we are going to write is rather simple. The main focus is the process to get code running. We will also learn how to upload and execute a file from the ESPLorer IDE.
 
 Here is the code we will be running:
 
@@ -35,14 +35,13 @@ In the top right corner of the IDE:
 _NOTE:_ If the connection was successful the Open button should toggle to a Close state. If this is not working make sure that you have installed the [SiLabs drivers][silabs-drivers]. If you don't see the /dev/cu.SLAB_USBtoUART option in the dropdown menu also make sure that you installed the drivers and restarted your computer. More information on the [introductory tutorial][intro-tutorial].
 
 ### Create a new file
-We will create a new file, and name it `init.lua`. When the board boots it looks for a file named `init.lua` and it will automatically execute it on boot.
 
-Because of this, we need to be very careful to not upload a `init.lua` file with errors that will generate a **panic** that will reboot the board. Once booted it will enter a panic reboot infinite loop bricking the board.
+We will create a new file, name it `hello_world.lua` and upload it to the board using the ESPlorer IDE.
 
-It's recommended to keep `init.lua` files really simple and add a guard using a timer. We will cover that up later on.
-
+You can use the IDE to create and edit files as well as to manage the files in the board. Also, we use it to upload files.
 
 To create a new file:
+
 - Select NodeMCU tab
 - Select Script tab
 - Click the blank file icon
@@ -52,16 +51,33 @@ To create a new file:
 
 - Copy and paste the following code snippet:
     - `print("Hello World!")`
-- Click the floppy disk icon and name the file `init.lua`
+- Click the floppy disk icon and name the file `hello_world.lua`
 
 ![ESPlorer](./images/esplorer-code.png)
 
+Type the **hello world** code:
+
+```lua
+print("Hello World!")
+```
+
+![ESPlorer](./images/esplorer-type-hello-world.png)
+
+If we have the board connected to the ESPlorer, when we create a new, once we save it locally the file will also be uploaded to the board.
+
+![ESPlorer](./images/esplorer-create-hello-world.png)
 
 
 Next we will upload our file to the board!
 
 ![ESPlorer](./images/esplorer-upload.png)
 
+Once the file has been updloaded, we need to click the refresh button on the right most menu and it will show us all the files in the board:
+
+![ESPlorer](./images/esplorer-file-uploaded.png)
+
+
+### Executing a file
 
 ### Features
 
@@ -74,9 +90,8 @@ Send commands:
 Snippets:
 
 
-
 [silabs-drivers]: https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
-[intro-tutorial]: https://github.com/goliatone/esp8266-intro
+[intro-tutorial]: https://github.com/goliatone/wee-things-workshop
 
 <!--
 http://stackoverflow.com/questions/31304082/how-to-recover-nodemcu-infinite-loop

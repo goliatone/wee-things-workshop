@@ -124,7 +124,7 @@ _NOTE:_ ESPlorer requires [Java SE version 7][java-se] and above installed.
 
 First, we need to un-zip the **ESPlorer.zip** file.
 
-On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, an type this command in your terminal:
+On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, and type this command in your terminal:
 
 ```
 java –jar "ESPlorer.jar"
@@ -135,7 +135,7 @@ This command wil open up the IDE, it should look something similar to this:
 ![ESPlorer](./images/esplorer-001.png)
 
 *NOTE:*
-Some online resources advice you `sudo` the command to run the **ESPlorer** IDE. Most _likely_ you will not need sudo.
+Some online resources tell you to `sudo` the command in order to run the **ESPlorer** IDE. Most _likely_ you will be able to leave it out.
 
 
 <!--

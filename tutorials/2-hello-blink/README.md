@@ -51,7 +51,7 @@ gpio.write(pin, gpio.LOW)
 ```
 
 
-[hello-world]: https://github.com/goliatone/esp8266-intro/blog/master/code/hello-world/
+[hello-world]: https://github.com/goliatone/esp8266-intro/blog/master/tutorials/hello-world/
 
 <!-- LINKS
 http://www.ladyada.net/learn/arduino/lesson1.html

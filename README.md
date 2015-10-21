@@ -21,16 +21,18 @@ A tutorial of little connected things.
 ### Introduction
 This is intended as a brief introduction to microcontrollers using the [esp8266][esp8266-wiki]. The goal is to get started and gain insight on what we can do with a cheap board and some basic coding.
 
-The greatest advantage of the ESP8266 over micro-controllers like the Arduino is that the former has built in WiFi support.
+The greatest advantage of the ESP8266 over micro-controllers like the Arduino is that the former has built-in WiFi support.
+
+There are three components we will be using through this tutorial: hardware (ESP8266), firmware (NodeMCU), and software (Lua).
 
 The ESP8266 is a $4 WiFi module with an ARM processor. NodeMCU is firmware and a development kit that makes it palatable to program ESP8266 modules using the [Lua][lua] programming language.
 
-You need some basic programming knowledge, know how to open a terminal and execute a script or type in a command, and find your way around github.
+You need some basic programming knowledge, you need to know how to open a terminal and execute a script or type in a command, and find your way around Github.
 
 
 _NOTE_:
 
-The tutorial has been tested with a NodeMCU dev board and using a Mac OS. It is possible to follow up using a Windows computer but there might be differences- i.e.  how to flash the board or how to use some of the tools.
+The following tutorial has been tested with a NodeMCU dev board and using a Mac OS. It is possible to follow up using a Windows computer but there might be differences- i.e.  how to flash the board or how to use some of the tools.
 
 
 ### Materials
@@ -62,13 +64,14 @@ $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/mast
 What follows is a step by step guide on what the script automates for you.
 
 #### espytool
+
 We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the directory **esptool** directory and run the following command:
 
 ```
 python setup.py install
 ```
 
-This will install `esptool.py` system wide.
+This will install `esptool.py` system-wide.
 
 If you do not want a global install you can follow the [instructions][esptool-install] on the repo to use the tool locally. It's really easy.
 
@@ -76,7 +79,7 @@ If you do not want a global install you can follow the [instructions][esptool-in
 
 >The CP210x USB to UART Bridge Virtual COM Port (VCP) drivers are required for device operation as a Virtual COM Port to facilitate host communication with CP210x products.
 
-In order for your computer to communicate with the devkit you need to have installed especial drivers. You can find the download [link here][silabs-drivers].
+In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers].
 
 The ESP8266 runs a Lua interpreter and you can send in commands and read out results over serial.
 
@@ -91,13 +94,13 @@ You can find the latest NodeMCU firmware at their github repository, in the rele
 The ESP8266 chip comes loaded with an AT command set, and it's meant to be used by an external controller like an Arduino driving the chip over serial.
 
 #### Flashing the NodeMCU
-In this step we are going to flash our devkit with the NodeMCU binaries be downloaded before so we can start loading programs to the board. It sounds intimidating, but it's quite simple actually.
+In this step, we are going to flash our devkit with the NodeMCU binaries downloaded before so we can start loading programs to the board. It sounds intimidating, but it's quite simple actually.
 
 We already downloaded the NodeMCU [firmware][firmware], installed the SiLabs drivers, and have **esptool** installed.
 
 Connect the board to the computer using the USB cable.
 
-Open terminal and `cd` to the **bin** directory where the **nodemcu_float_0.9.6-dev_20150704.bin** file is located.
+From the project's main directory, open terminal and `cd` to the **bin** directory where the **nodemcu_float_0.9.6-dev_20150704.bin** file is located.
 
 We need to put the board in flash mode. To do so hold down the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
@@ -115,11 +118,11 @@ Congratulations, we now have a board properly flashed and we are ready to start 
 ### ESPlorer
 You can download the ESPlorer IDE from [here][esplorer]. However, we will be using the version bundled with this tutorial for convenience.
 
-_NOTE:_ ESPlorer requires SE version 7 and above installed.
+_NOTE:_ ESPlorer requires [Java SE version 7][java-se] and above installed.
 
 First, we need to un-zip the **ESPlorer.zip** file.
 
-On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal**, `cd` to the **ESPlorer** directory created after uncompressing the zip file, an type this command in your terminal:
+On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, an type this command in your terminal:
 
 ```
 java –jar "ESPlorer.jar"
@@ -230,7 +233,7 @@ brew install luajit --with-52compat
 [luarocks]: https://luarocks.org
 
 [java-install]: http://crunchify.com/where-is-java-installed-on-my-mac-osx-system/
-
+[java-se]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 [hello-world]: https://github.com/goliatone/esp8266-intro/blob/master/code/1-hello-world
 [hello-blink]: https://github.com/goliatone/esp8266-intro/blob/master/code/2-hello-blink

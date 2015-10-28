@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{{title}}</title>
+		<style>
+			{{{style}}}
+		</style>
+	</head>
+	<body>
+		<textarea id="source">
+{{{content}}}
+		</textarea>
+		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script>
+			var slideshow = remark.create();
+            $(document).ready(function(){
+				$('img').on('load',function(){
+				    var css;
+				    var ratio=$(this).width() / $(this).height();
+				    var pratio=$(this).parent().width() / $(this).parent().height();
+				    if (ratio<pratio) css={width:'auto', height:'100%'};
+				    else css={width:'100%', height:'auto'};
+				    $(this).css(css);
+				});
+			});
+		</script>
+		<script>{{{script}}}</script>
+	</body>
+</html>

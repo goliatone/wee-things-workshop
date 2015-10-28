@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./node_modules/.bin/markdown-to-slides -d index.md -o index.html --watch --template template/template.html"
   },
   "author": "goliatone <hello@goliatone.com> (http://goliatone.com/)",
   "license": "ISC"

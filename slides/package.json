@@ -1,0 +1,17 @@
+{
+  "name": "wee-things-slides",
+  "version": "0.0.1",
+  "description": "WeeThings workshop slides",
+  "main": "index.js",
+  "dependencies": {
+    "markdown-to-slides": "^1.0.2",
+    "markdown-to-slides-server": "~1.0.0",
+    "yargs": "~3.29.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "goliatone <hello@goliatone.com> (http://goliatone.com/)",
+  "license": "ISC"
+}

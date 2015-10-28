@@ -19,7 +19,7 @@ A tutorial of little connected things.
 
 ---
 ### Introduction
-This is intended as a brief introduction to microcontrollers using the [esp8266][esp8266-wiki]. The goal is to get started and gain insight on what we can do with a cheap board and some basic coding.
+This is intended as a brief introduction to microcontrollers using the [ESP8266][esp8266-wiki]. The goal is to get started and gain insight on what we can do with a cheap board and some basic coding.
 
 The greatest advantage of the ESP8266 over micro-controllers like the Arduino is that the former has built-in WiFi support.
 
@@ -63,7 +63,7 @@ $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/mast
 
 What follows is a step by step guide on what the script automates for you.
 
-#### espytool
+#### esptool
 
 We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the directory **esptool** directory and run the following command:
 
@@ -112,7 +112,7 @@ Type the following command in terminal and press enter:
 sudo python esptool.py --port /dev/ttyUSB0  write_flash 0x00000 nodemcu_float_0.9.6-dev_20150704.bin
 ```
 
-Now unplug the USB cable and plug it again.
+Now **unplug the USB cable** and **plug it** again.
 
 Congratulations, we now have a board properly flashed and we are ready to start uploading code. We will do so using an IDE.
 

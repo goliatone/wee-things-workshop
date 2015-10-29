@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "./node_modules/.bin/markdown-to-slides -d index.md -o index.html --watch --template template/template.html"
+    "start": "./node_modules/.bin/markdown-to-slides -d index.md -o index.html --watch --template template/template.html --style template/style.css"
   },
   "author": "goliatone <hello@goliatone.com> (http://goliatone.com/)",
   "license": "ISC"

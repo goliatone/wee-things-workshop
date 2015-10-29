@@ -142,12 +142,16 @@ $ curl -SLs https://goo.gl/3N7lDw | bash
 
 ## The Setup (software)
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.jpg)
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png)
 
 
 ## The Setup (software)
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-002.jpg)
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-002.png)
+
+## The Setup (software)
+
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
 
 # IDE
 <!--

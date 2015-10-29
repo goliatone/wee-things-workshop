@@ -42,7 +42,8 @@ https://github.com/goliatone/wee-things-workshop
 * The Basics
     * Hardware
     * Software
-* Best practices
+* Hello World
+
 
 ## WeeThings
 
@@ -50,7 +51,8 @@ https://github.com/goliatone/wee-things-workshop
 * The Basics
     * Hardware
     * Software
-* Best practices
+* Hello World
+* Hello Blink
 
 #### Requirements:
 
@@ -62,7 +64,8 @@ https://github.com/goliatone/wee-things-workshop
 * The Basics
     * Hardware
     * Software
-* Best practices
+* Hello World
+* Hello Blink
 
 #### Requirements:
 
@@ -78,14 +81,16 @@ _Wikipedia: [Microcontroller][microcontroller]_
 
 >A microcontroller is a small computer on a single integrated circuit containing a processor core, memory, and programmable input/output peripherals.
 
-
 [microcontroller]:https://en.wikipedia.org/wiki/Microcontroller
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
+## Introduction to microcontrollers
+_Arduino Uno image courtesy of Fritzing_
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/microcontroller-001.png)
+
 
 ## Introduction to microcontrollers
 
-* ESP8266
+<h4>ESP8266</h4>
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-001.png)
 
 # The basics

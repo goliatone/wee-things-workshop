@@ -24,6 +24,11 @@
 				    else css={width:'100%', height:'auto'};
 				    $(this).css(css);
 				});
+                hideLoadingLayer();
+    			function hideLoadingLayer(){
+    				document.getElementById('preloader').style.visibility = 'hidden';
+    				document.getElementById('source').style.visibility = 'normal';
+    			}
 			});
 		</script>
 		<script>{{{script}}}</script>

@@ -16,43 +16,87 @@ https://github.com/goliatone/wee-things-workshop
 
 ## WeeThings
 
+<h4>Outline</h4>
+
+## WeeThings
+
+<h4>Outline</h4>
 * Microcontrollers
 
 ## WeeThings
 
+<h4>Outline</h4>
 * Microcontrollers
-* The Basics
+* Setup
 
 ## WeeThings
 
+<h4>Outline</h4>
 * Microcontrollers
-* The Basics
+* Setup
     * Hardware
 
 ## WeeThings
 
+<h4>Outline</h4>
 * Microcontrollers
-* The Basics
-    * Hardware
-    * Software
-
-## WeeThings
-
-* Microcontrollers
-* The Basics
-    * Hardware
-    * Software
-* Hello World
-
-
-## WeeThings
-
-* Microcontrollers
-* The Basics
+* Setup
     * Hardware
     * Software
-* Hello World
-* Hello Blink
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+    * Hello World
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+    * Hello World
+    * Hello Blink
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+    * Hello World
+    * Hello Blink
+
+#### Requirements:
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+    * Hello World
+    * Hello Blink
 
 #### Requirements:
 
@@ -60,12 +104,14 @@ https://github.com/goliatone/wee-things-workshop
 
 ## WeeThings
 
+<h4>Outline</h4>
 * Microcontrollers
-* The Basics
+* Setup
     * Hardware
     * Software
-* Hello World
-* Hello Blink
+* Code
+    * Hello World
+    * Hello Blink
 
 #### Requirements:
 
@@ -93,7 +139,7 @@ _Arduino Uno image courtesy of Fritzing_
 <h4>ESP8266</h4>
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-001.png)
 
-# The basics
+# Setup
 
 ## NodeMCU
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
@@ -124,13 +170,11 @@ end)
 
 # Let's get started
 
-## The Setup (hardware)
+## Setup (hardware)
 * NodeMCU dev board
 * Micro USB cable
 
-
-
-## The Setup (software)
+## Setup (software)
 * Drivers
 * Firmware
 * esptool
@@ -145,16 +189,16 @@ Bootstrap script:
 $ curl -SLs https://goo.gl/3N7lDw | bash
 ```
 
-## The Setup (software)
+## Setup (software)
 
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png)
 
 
-## The Setup (software)
+## Setup (software)
 
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-002.png)
 
-## The Setup (software)
+## Setup (software)
 
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
 

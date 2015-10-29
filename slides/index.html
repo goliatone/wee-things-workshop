@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>WeeThings</title>
+		<style>
+			body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1, h2, h3 {
+	font-weight: 400;
+	margin-bottom: 0;
+}
+.remark-slide-content h1 { font-size: 3em; }
+.remark-slide-content h2 { font-size: 2em; }
+.remark-slide-content h3 { font-size: 1.6em; }
+.footnote {
+	position: absolute;
+	bottom: 3em;
+}
+li p { line-height: 1.25em; }
+.red { color: #fa0000; }
+.large { font-size: 2em; }
+a, a > code {
+	color: rgb(249, 38, 114);
+	text-decoration: none;
+}
+code {
+	background: none repeat scroll 0 0 #F8F8FF;
+  border: 1px solid #DEDEDE;
+  border-radius: 3px 	;
+  padding: 0 0.2em;
+}
+.remark-code, .remark-inline-code { font-family: "Bitstream Vera Sans Mono", "Courier", monospace; }
+.remark-code-line-highlighted     { background-color: #373832; }
+.pull-left {
+	float: left;
+	width: 47%;
+}
+.pull-right {
+	float: right;
+	width: 47%;
+}
+.pull-right ~ p {
+	clear: both;
+}
+#slideshow .slide .content code {
+	font-size: 0.8em;
+}
+#slideshow .slide .content pre code {
+	font-size: 0.9em;
+	padding: 15px;
+}
+.main-title, .title {
+	background: #272822;
+	color: #777872;
+	text-shadow: 0 0 20px #333;
+}
+.title h1, .title h2, .main-title h1, .main-title h2 {
+	color: #f3f3f3;
+	line-height: 0.8em;
+}
+/* Custom */
+.remark-code {
+	display: block;
+	padding: 0.5em;
+}
+
+#preloader {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:999999;
+	background-color: #212121;
+	text-align: center;
+	margin: 0 auto;
+}
+#source{
+	visibility: hidden;
+}
+
+		</style>
+	</head>
+	<body>
+		<textarea id="source">
+class: center, middle, main-title
+
+# WeeThings
+<h3>A workshop of little connected things.</h3>
+
+Emiliano Burgos
+
+<a href="http://wework.com">wework.com</a> | <a href="mailto:emiliano@wework.com">emiliano@wework.com</a>
+
+
+---
+class: center, middle, main-title
+
+# Github Repository
+[WeeThings](https://github.com/goliatone/wee-things-workshop)
+
+https://github.com/goliatone/wee-things-workshop
+
+
+---
+## WeeThings
+
+- Microcontrollers
+
+
+---
+## WeeThings
+
+- Microcontrollers
+- The Basics
+
+
+---
+## WeeThings
+
+- Microcontrollers
+- The Basics
+ - Hardware
+
+
+---
+## WeeThings
+
+- Microcontrollers
+- The Basics
+ - Hardware
+ - Software
+
+
+---
+## WeeThings
+
+- Microcontrollers
+- The Basics
+ - Hardware
+ - Software
+- Hello World
+
+
+---
+## WeeThings
+
+- Microcontrollers
+- The Basics
+ - Hardware
+ - Software
+- Hello World
+- Hello Blink
+
+#### Requirements:
+
+- Basic programming knowledge
+
+
+---
+## WeeThings
+
+- Microcontrollers
+- The Basics
+ - Hardware
+ - Software
+- Hello World
+- Hello Blink
+
+#### Requirements:
+
+- Basic programming knowledge
+- Mac OS
+
+
+---
+class: center, middle, main-title
+
+# Microcontrollers
+
+---
+## Introduction to microcontrollers
+*Wikipedia: [Microcontroller](https://en.wikipedia.org/wiki/Microcontroller)*
+
+> A microcontroller is a small computer on a single integrated circuit containing a processor core, memory, and programmable input/output peripherals.
+
+
+---
+## Introduction to microcontrollers
+*Arduino Uno image courtesy of Fritzing*
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/microcontroller-001.png)
+
+
+---
+## Introduction to microcontrollers
+<h4>ESP8266</h4>
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-001.png)
+
+
+---
+class: center, middle, main-title
+
+# The basics
+
+---
+## NodeMCU
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
+
+
+---
+## ESPlorer IDE
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
+
+
+---
+## Lua programming language
+```lua
+local pin = 4
+local lighton = 0
+
+gpio.mode(pin, gpio.OUTPUT)
+
+-- time is in milliseconds
+tmr.alarm(1, 2000, 1, function()
+    if lighton == 0 then
+        lighton = 1
+        gpio.write(pin, gpio.HIGH)
+    else
+        lighton = 0
+        gpio.write(pin, gpio.LOW)
+    end
+end)
+```
+
+---
+class: center, middle, main-title
+
+# Let's get started
+
+---
+## The Setup (hardware)
+
+- NodeMCU dev board
+- Micro USB cable
+
+
+---
+## The Setup (software)
+
+- Drivers
+- Firmware
+- esptool
+- ESPLorer
+
+<!--
+Everybody should make a directory in the same place, and cd.
+-->
+Bootstrap script:
+
+```
+$ curl -SLs https://goo.gl/3N7lDw | bash
+```
+
+---
+## The Setup (software)
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png)
+
+
+---
+## The Setup (software)
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-002.png)
+
+
+---
+## The Setup (software)
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
+
+
+---
+class: center, middle, main-title
+
+# IDE
+<!--
+TODO: bootstrap should check for Java
+make a slide of bootstrap result, cd ~/Desktop, mkdir wee-things, execute curl
+and then take screenshot
+-->
+Commands to install
+Command to run (image of cli and command)
+Image of IDE open
+
+
+---
+class: center, middle, main-title
+
+# Hello World
+
+---
+## Hello World
+```lua
+print("Hello World!")
+```
+<!--
+SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
+-->
+
+---
+class: center, middle, main-title
+
+# Hello Blink!
+
+---
+## Hello Blink!
+```lua
+local pin = 4
+local lighton = 0
+
+gpio.mode(pin, gpio.OUTPUT)
+
+tmr.alarm(1, 2000, 1, function()
+    if lighton == 0 then
+        lighton = 1
+        gpio.write(pin, gpio.HIGH)
+    else
+        lighton = 0
+        gpio.write(pin, gpio.LOW)
+    end
+end)
+```
+
+---
+class: center, middle, main-title
+
+# Thank you.
+Emiliano Burgos
+
+<a href="mailto:emiliano@wework.com">emiliano@wework.com</a>
+
+<!-- samples
+http://www.slideshare.net/JulinDavidDuque/javascript-robotics-a-nodebots-show
+http://www.slideshare.net/coolsimo/how-to-structure-a-presentation-a-guide-with-examples
+http://www.slideshare.net/msimonehouston/nodebots-50566451
+-->
+
+		</textarea>
+		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script>
+			var slideshow = remark.create();
+            $(document).ready(function(){
+				$('img').on('load',function(){
+				    var css;
+				    var ratio=$(this).width() / $(this).height();
+				    var pratio=$(this).parent().width() / $(this).parent().height();
+				    if (ratio<pratio) css={width:'auto', height:'100%'};
+				    else css={width:'100%', height:'auto'};
+				    $(this).css(css);
+				});
+                hideLoadingLayer();
+    			function hideLoadingLayer(){
+    				document.getElementById('preloader').style.visibility = 'hidden';
+    				document.getElementById('source').style.visibility = 'normal';
+    			}
+			});
+		</script>
+		<script></script>
+	</body>
+</html>

@@ -92,11 +92,35 @@ function clean_up()
     popd
 }
 
+
 function done()
 {
     echo "Done!"
 }
 
+#############################
+# check resources
+#############################
+function check()
+{
+    echo "Checking for dependencies..."
+    check_java
+}
+
+function check_java()
+{
+if [ -x /usr/bin/java ] ; then
+    java -version 2>&1 | head -1 | awk -F '"' '{print " √ java: " $2}'
+
+else
+    echo "You need to have Java SE 1.7 or greater installed."
+    exit
+fi
+}
+
+#############################
+# BOOT process
+#############################
 function boot()
 {
     download_zip
@@ -108,4 +132,5 @@ function boot()
     clean_up
 }
 
+check
 boot

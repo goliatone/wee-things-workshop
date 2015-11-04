@@ -162,19 +162,19 @@ _Arduino Uno image courtesy of Fritzing_
 ## Lua programming language
 
 ```lua
-local pin = 4
-local lighton = 0
+local LED = 0
+local lighton = false
 
-gpio.mode(pin, gpio.OUTPUT)
+gpio.mode(LED, gpio.OUTPUT)
 
 -- time is in milliseconds
 tmr.alarm(1, 2000, 1, function()
-    if lighton == 0 then
-        lighton = 1
-        gpio.write(pin, gpio.HIGH)
+    if lighton == false then
+        lighton = true
+        gpio.write(LED, gpio.HIGH)
     else
-        lighton = 0
-        gpio.write(pin, gpio.LOW)
+        lighton = false
+        gpio.write(LED, gpio.LOW)
     end
 end)
 ```
@@ -318,18 +318,19 @@ SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
 ## Hello Blink!
 
 ```lua
-local pin = 4
-local lighton = 0
+local LED = 0
+local lighton = false
 
-gpio.mode(pin, gpio.OUTPUT)
+gpio.mode(LED, gpio.OUTPUT)
 
+-- time is in milliseconds
 tmr.alarm(1, 2000, 1, function()
-    if lighton == 0 then
-        lighton = 1
-        gpio.write(pin, gpio.HIGH)
+    if lighton == false then
+        lighton = true
+        gpio.write(LED, gpio.HIGH)
     else
-        lighton = 0
-        gpio.write(pin, gpio.LOW)
+        lighton = false
+        gpio.write(LED, gpio.LOW)
     end
 end)
 ```

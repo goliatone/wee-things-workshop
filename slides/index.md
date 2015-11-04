@@ -14,6 +14,12 @@ https://github.com/goliatone/wee-things-workshop
 
 [wt]:https://github.com/goliatone/wee-things-workshop
 
+## Goals
+
+* Familiarize ourselves with the NodeMCU dev board.
+* Setup a work environment.
+* Be able to load and execute code.
+
 ## WeeThings
 
 <h4>Outline</h4>
@@ -151,7 +157,7 @@ _Arduino Uno image courtesy of Fritzing_
 
 ## ESPlorer IDE
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
+![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
 
 ## Lua programming language
 
@@ -259,10 +265,6 @@ $ esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash \
 
 Unplug USB cable.
 
-## Check
-![check](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-check-001.png)
-
-
 ```
 Connecting...
 Erasing flash...
@@ -271,6 +273,10 @@ Wrote 400384 bytes at 0x00000000 in 38.5 seconds (83.1 kbit/s)...
 Leaving...
 ```
 
+## Check
+![check](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-check-001.png)
+
+
 # Hello World
 
 ## Hello World
@@ -278,6 +284,30 @@ Leaving...
 ```lua
 print("Hello World!")
 ```
+
+
+## Hello World
+
+Send command through IDE.
+
+```lua
+print("Hello World!")
+```
+
+![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
+
+
+## Hello World
+
+Create file and upload through IDE.
+
+```lua
+print("Hello World!")
+```
+
+![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
+
+
 
 <!--
 SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE

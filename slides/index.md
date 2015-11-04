@@ -214,13 +214,9 @@ $ curl -SLs https://goo.gl/3N7lDw | bash
 
 ![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
 
-# Drivers
-<h3>Requires computer restart :(</h3>
-
-## Drivers
-![drives](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/drivers-siliconlabs-001.png)
-
 # IDE
+<h3>Communication with NodeMCU</h3>
+
 <!--
 TODO: bootstrap should check for Java
 make a slide of bootstrap result, cd ~/Desktop, mkdir wee-things, execute curl
@@ -235,6 +231,45 @@ and then take screenshot
 
 ## IDE
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-ide-003.png)
+
+# Drivers
+<h3>Requires computer restart :(</h3>
+
+## Drivers
+![drives](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/drivers-siliconlabs-001.png)
+
+# esptool
+<h3>Loading firmware to NodeMCU</h3>
+
+## esptool
+
+```
+$ cd ~/Desktop/wee-things/wee-things-workshop/bin/esptool
+```
+
+## esptool
+
+```
+$ esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash \
+ -fm=dio -fs=32m -ff=40m 0x00000 \
+ ../nodemcu_float_0.9.6-dev_20150704.bin
+```
+
+## esptool
+
+Unplug USB cable.
+
+## Check
+![check](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-check-001.png)
+
+
+```
+Connecting...
+Erasing flash...
+Wrote 400384 bytes at 0x00000000 in 38.5 seconds (83.1 kbit/s)...
+
+Leaving...
+```
 
 # Hello World
 

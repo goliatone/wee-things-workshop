@@ -293,23 +293,8 @@ class: center, middle, main-title
 
 ---
 ## Lua programming language
-```lua
-local LED = 0
-local lighton = false
+ <code data-gist-id="558e5f9edb57ec8f65e8"></code>
 
-gpio.mode(LED, gpio.OUTPUT)
-
--- time is in milliseconds
-tmr.alarm(1, 2000, 1, function()
-    if lighton == false then
-        lighton = true
-        gpio.write(LED, gpio.HIGH)
-    else
-        lighton = false
-        gpio.write(LED, gpio.LOW)
-    end
-end)
-```
 
 ---
 class: center, middle, main-title
@@ -481,23 +466,8 @@ class: center, middle, main-title
 
 ---
 ## Hello Blink!
-```lua
-local LED = 0
-local lighton = false
+<code data-gist-id="558e5f9edb57ec8f65e8"></code>
 
-gpio.mode(LED, gpio.OUTPUT)
-
--- time is in milliseconds
-tmr.alarm(1, 2000, 1, function()
-    if lighton == false then
-        lighton = true
-        gpio.write(LED, gpio.HIGH)
-    else
-        lighton = false
-        gpio.write(LED, gpio.LOW)
-    end
-end)
-```
 
 ---
 class: center, middle, main-title
@@ -514,8 +484,9 @@ http://www.slideshare.net/msimonehouston/nodebots-50566451
 -->
 
 		</textarea>
-		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
-        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="//gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    	<script src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
 		<script>
 			var slideshow = remark.create();
             $(document).ready(function(){

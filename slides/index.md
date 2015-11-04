@@ -214,6 +214,12 @@ $ curl -SLs https://goo.gl/3N7lDw | bash
 
 ![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
 
+# Drivers
+<h3>Requires computer restart :(</h3>
+
+## Drivers
+![drives](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/drivers-siliconlabs-001.png)
+
 # IDE
 <!--
 TODO: bootstrap should check for Java

@@ -137,7 +137,12 @@ _Arduino Uno image courtesy of Fritzing_
 ## Introduction to microcontrollers
 
 <h4>ESP8266</h4>
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-001.png)
+![ESP8266](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-001.png)
+
+## Introduction to microcontrollers
+
+<h4>NodeMCU</h4>
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
 
 # Setup
 
@@ -171,8 +176,15 @@ end)
 # Let's get started
 
 ## Setup (hardware)
+
 * NodeMCU dev board
+
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
+
+## Setup (hardware)
+
 * Micro USB cable
+![microusb](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/microusb-cable-001.jpg)
 
 ## Setup (software)
 * Drivers
@@ -191,16 +203,16 @@ $ curl -SLs https://goo.gl/3N7lDw | bash
 
 ## Setup (software)
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png)
+![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png)
 
 
 ## Setup (software)
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-002.png)
+![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-002.png)
 
 ## Setup (software)
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
+![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
 
 # IDE
 <!--

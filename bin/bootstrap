@@ -73,6 +73,8 @@ function install_esplorer
 
 function install_drivers
 {
+    #TODO!
+    #http://commandlinemac.blogspot.com/2008/12/installing-dmg-application-from-command.html
     echo "Installing drivers"
     pushd $BIN
     mkdir drivers

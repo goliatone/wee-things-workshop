@@ -160,24 +160,7 @@ _Arduino Uno image courtesy of Fritzing_
 ![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
 
 ## Lua programming language
-
-```lua
-local LED = 0
-local lighton = false
-
-gpio.mode(LED, gpio.OUTPUT)
-
--- time is in milliseconds
-tmr.alarm(1, 2000, 1, function()
-    if lighton == false then
-        lighton = true
-        gpio.write(LED, gpio.HIGH)
-    else
-        lighton = false
-        gpio.write(LED, gpio.LOW)
-    end
-end)
-```
+ <code data-gist-id="558e5f9edb57ec8f65e8"></code>
 
 # Let's get started
 
@@ -317,23 +300,7 @@ SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
 
 ## Hello Blink!
 
-```lua
-local LED = 0
-local lighton = false
-
-gpio.mode(LED, gpio.OUTPUT)
-
--- time is in milliseconds
-tmr.alarm(1, 2000, 1, function()
-    if lighton == false then
-        lighton = true
-        gpio.write(LED, gpio.HIGH)
-    else
-        lighton = false
-        gpio.write(LED, gpio.LOW)
-    end
-end)
-```
+<code data-gist-id="558e5f9edb57ec8f65e8"></code>
 
 
 # Thank you.

@@ -15,19 +15,19 @@ As far as the code goes is fairly simple but it highlights some important concep
 Here's the code:
 
 ```lua
-local pin = 4
-local lighton = 0
+local LED = 0
+local lighton = false
 
-gpio.mode(pin, gpio.OUTPUT)
+gpio.mode(LED, gpio.OUTPUT)
 
 -- time is in milliseconds
 tmr.alarm(1, 2000, 1, function()
-    if lighton == 0 then
-        lighton = 1
-        gpio.write(pin, gpio.HIGH)
+    if lighton == false then
+        lighton = true
+        gpio.write(LED, gpio.HIGH)
     else
-        lighton = 0
-        gpio.write(pin, gpio.LOW)
+        lighton = false
+        gpio.write(LED, gpio.LOW)
     end
 end)
 ```
@@ -44,7 +44,7 @@ We then create a 2 second loop interval that will execute the passed in callback
 tmr.alarm(1, 2000, 1, function()
 ```
 
-Next we check the LED current state. If it's off we supply voltage to **pin 4**:
+Next we check the LED's current state. If it's off we supply voltage to **pin 4**:
 
 ```
 gpio.write(pin, gpio.HIGH)

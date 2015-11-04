@@ -7,11 +7,11 @@ A tutorial of little connected things.
 - [Introduction](#introduction)
 - [Materials](#materials)
 - [Set up](#set-up)
-    - [espytool](#espytool)
+    - [ESPlorer](#esplorer)
     - [SiLabs Drivers](#silabs-drivers)
+    - [espytool](#espytool)
     - [NodeMCU firmware](#nodemcu-firmware)
     - [Flashing the NodeMCU](#flashing-the-nodemcu)
-- [ESPlorer](#esplorer)
 - [Colofon](#colofon)
 - [Resources](#resources)
     - [ESP8266](#esp8266)
@@ -63,17 +63,27 @@ $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/mast
 
 What follows is a step by step guide on what the script automates for you.
 
-#### esptool
+#### ESPlorer
+You can download the ESPlorer IDE from [here][esplorer]. However, we will be using the version bundled with this tutorial for convenience.
 
-We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the directory **esptool** directory and run the following command:
+_NOTE:_ ESPlorer requires [Java SE version 7][java-se] and above installed.
+
+First, we need to un-zip the **ESPlorer.zip** file.
+
+On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, and type this command in your terminal:
 
 ```
-python setup.py install
+java –jar "ESPlorer.jar"
 ```
 
-This will install `esptool.py` system-wide.
+This command wil open up the IDE, it should look something similar to this:
 
-If you do not want a global install you can follow the [instructions][esptool-install] on the repo to use the tool locally. It's really easy.
+![ESPlorer](./images/esplorer-001.png)
+
+We will be using the ESPlorer to validate our next step, installing the SiLabs Drivers.
+
+*NOTE:*
+Some online resources tell you to `sudo` the command in order to run the **ESPlorer** IDE. Most _likely_ you will be able to leave it out.
 
 #### SiLabs Drivers
 
@@ -89,6 +99,18 @@ _NOTE:_
 
 This requires your computer to restart, save your work.
 
+
+#### esptool
+
+We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the directory **esptool** directory and run the following command:
+
+```
+python setup.py install
+```
+
+This will install `esptool.py` system-wide.
+
+If you do not want a global install you can follow the [instructions][esptool-install] on the repo to use the tool locally. It's really easy.
 
 #### NodeMCU firmware
 You can find the latest NodeMCU firmware at their github repository, in the release page following this [link][esp-binaries].
@@ -126,36 +148,14 @@ Now **unplug the USB cable** and **plug it** again.
 
 Congratulations, we now have a board properly flashed and we are ready to start uploading code. We will do so using an IDE.
 
----
-### ESPlorer
-You can download the ESPlorer IDE from [here][esplorer]. However, we will be using the version bundled with this tutorial for convenience.
-
-_NOTE:_ ESPlorer requires [Java SE version 7][java-se] and above installed.
-
-First, we need to un-zip the **ESPlorer.zip** file.
-
-On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, and type this command in your terminal:
-
-```
-java –jar "ESPlorer.jar"
-```
-
-This command wil open up the IDE, it should look something similar to this:
-
-![ESPlorer](./images/esplorer-001.png)
-
-*NOTE:*
-Some online resources tell you to `sudo` the command in order to run the **ESPlorer** IDE. Most _likely_ you will be able to leave it out.
-
-
 <!--
 ### More on ESP8266
 
 The [ESP8266][espressif] is a microcontroller with 2.4 GHz WiFi capabilities supporting the WPA/WPA2 [protocols][wpa-protocols], general-purpose input/output (GPIO), Inter-Integrated Circuit (I2C), analog-to-digital conversion (ADC), Serial Peripheral Interface (SPI), and pulse-width modulation (PWM). The chip operates at 80Mhz, has a 64KB boot ROM, 64KB instruction RAM, and 96KB data RAM.
 -->
 
-[wpa-protocols]: https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access
 
+---
 ### Colofon
 And with this we conclude the boring setup process. We are ready to start coding and making things. We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board. Next, we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
 
@@ -176,9 +176,6 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
 * [NodeMCU iot 1][nodemcu-iot-1]
 * [NodeMCU iot 2][nodemcu-iot-1]
 
-[nodemcu-iot-1]: http://www.allaboutcircuits.com/projects/guts-of-the-iot-part-1-building-nodemcu-from-source-for-the-esp8266/
-[nodemcu-iot-2]: http://www.allaboutcircuits.com/projects/how-to-make-an-interactive-tcp-server-nodemcu-on-the-esp8266/
-
 #### Lua
 * [Cheatsheet][lua-cheatsheet]
 * [Official site][lua]
@@ -191,8 +188,6 @@ If you are new to programming, there is an online tutorial following the *Learn 
 Lua has a package manager, [LuaRocks][luarocks]. A package manager is a set of tools that help you install, upgrade, configure, and manage software packages, or modules, and their dependencies. From the LuaRocks website:
 >LuaRocks allows you to create and install Lua modules as self-contained packages called rocks.
 
-
-[learn-lua]: http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/
 
 If you are using Atom you can install the following plugins:
 * [Lua support][language-lua]
@@ -252,3 +247,7 @@ brew install luajit --with-52compat
 [hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/2-hello-blink
 
 [bin-directory]: https://github.com/goliatone/esp8266-intro
+[wpa-protocols]: https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access
+[nodemcu-iot-1]: http://www.allaboutcircuits.com/projects/guts-of-the-iot-part-1-building-nodemcu-from-source-for-the-esp8266/
+[nodemcu-iot-2]: http://www.allaboutcircuits.com/projects/how-to-make-an-interactive-tcp-server-nodemcu-on-the-esp8266/
+[learn-lua]: http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/

@@ -106,10 +106,20 @@ From the project's main directory, open terminal and `cd` to the **bin** directo
 
 We need to put the board in flash mode. To do so hold down the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-Type the following command in terminal and press enter:
+From terminal, `cd` into your project's **bin/esptool** directory. Then
+type the following command in terminal and press enter:
 
 ```
-sudo python esptool.py --port /dev/ttyUSB0  write_flash 0x00000 nodemcu_float_0.9.6-dev_20150704.bin
+esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash -fm=dio -fs=32m -ff=40m 0x00000 ../nodemcu_float_0.9.6-dev_20150704.bin
+```
+The script should provide some feedback in the terminal window while is executing.
+
+```
+Connecting...
+Erasing flash...
+Wrote 400384 bytes at 0x00000000 in 38.5 seconds (83.1 kbit/s)...
+
+Leaving...
 ```
 
 Now **unplug the USB cable** and **plug it** again.

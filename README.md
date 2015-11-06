@@ -1,10 +1,16 @@
 ## WeeThings
 
-A tutorial of little connected things.
+An introduction to the [ESP8266][esp8266-wiki] microcontroller, a $4 WiFi module with an ARM processor, running the NodeMCU firmware, programmed in the [Lua][lua] programming language. 
+
+This little thing is great because:
+ - it's cheap: $4, compared to $24 for the more popular arduino 
+ - it comes with WiFi: if you were to get an arduino, you'd _also_ have to get a WiFi module, possibly even an ESP8266!
+
+With it, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...all for $4. 
 
 ### TOC
 
-- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
 - [Materials](#materials)
 - [Set up](#set-up)
     - [ESPlorer](#esplorer)
@@ -18,25 +24,20 @@ A tutorial of little connected things.
     - [Lua](#lua)
 
 ---
-### Introduction
-This is intended as a brief introduction to microcontrollers using the [ESP8266][esp8266-wiki]. The goal is to get started and gain insight on what we can do with a cheap board and some basic coding.
+### Prerequisites
 
-The greatest advantage of the ESP8266 over micro-controllers like the Arduino is that the former has built-in WiFi support.
+This tutorial expects:
+- some basic programming knowledge
+- you know how to open a **terminal**, execute scripts and type in a commands
+- you can find your way around **Github**
+- a working **Java** installation
+    - [Java SE version 7][java-se] or above
+    - we won't be using Java directly, but the application that loads software onto the microcontroller is a Java application
 
-There are three components we will be using through this tutorial: hardware (ESP8266), firmware (NodeMCU), and software (Lua).
-
-The ESP8266 is a $4 WiFi module with an ARM processor. NodeMCU is firmware and a development kit that makes it palatable to program ESP8266 modules using the [Lua][lua] programming language.
-
-You need some basic programming knowledge, you need to know how to open a terminal and execute a script or type in a command, and find your way around Github.
-
-
-_NOTE_:
-
-The following tutorial has been tested with a NodeMCU dev board and using a Mac OS. It is possible to follow up using a Windows computer but there might be differences- i.e.  how to flash the board or how to use some of the tools.
-
+We've tested this tutorial on **MacOS**. It's possible to do with Windows, but there might be subtle differences when it comes to flashing the board and using the tools. 
 
 ### Materials
-The list of materials is intentionally short. We can get up and running pretty fast.
+The list of materials is intentionally short; we can get up and running pretty fast.
 
 Hardware:
 * [NodeMCU dev board][amazon-esp]
@@ -52,6 +53,9 @@ Binaries:
 
 ---
 ### Set up
+
+**NOTE: installing the drivers requires a reboot - save your work before you start!**
+
 To make things easier all dependencies are bundled in the [bin][bin-directory] directory. We will go over how to install all the different tools.
 
 

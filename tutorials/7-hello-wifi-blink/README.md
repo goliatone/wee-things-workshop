@@ -164,12 +164,12 @@ srv:listen(80, function(conn)
     conn:on('receive', function(conn, payload)
         -- Handle requests to http://192.168.4.1
         if payload:find('GET /') == 1 then
-            conn:send('HTTP/1.0 200 OK\r\n\r\n' ..
-                '<html><head><meta charset="utf-8"><title>Wee Things</title></head>' ..
-                '<style>html{background-color:#212121; color:#fafafa}</style>'..
-                '<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>'..
-                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'led/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
-                '<script>b=true</script></html>')
+            conn:send("HTTP/1.0 200 OK\r\nContent-type: text/html\r\nServer: wee-thing\r\n\n")
+            conn:semd('<html><head><meta charset="utf-8"><title>Wee Things</title></head>')
+            conn:semd('<style>html{background-color:#212121; color:#fafafa}</style>')
+            conn:send('<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>')
+            conn:send('<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'led/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>')
+            conn:send('<script>b=true</script></html>')
         end
 
         -- POST request to "http://192.168.4.1/led/on"

@@ -14,10 +14,10 @@ The API provides two submodules; `sta`, and `ap`. Any NodeMCU board can function
 * SOFTAP: You can connect to the board without internet access.
 * STATIONAP: Enables to connect to the board and give the board access to the internet.
 
-We will create a local network to which we can connect to using the **STATIONAP** mode.
+We will create a local network to which we can connect to using the **SOFTAP** mode.
 
 ```lua
-wifi.setmode(wifi.STATIONAP)
+wifi.setmode(wifi.SOFTAP)
 ```
 
 We use table with configuration values for the access point such as the SSID name and the password.

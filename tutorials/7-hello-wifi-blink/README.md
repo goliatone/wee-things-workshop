@@ -62,18 +62,35 @@ end)
 
 The `net.createServer` function takes a callback that gets the current connection instance as an argument. We register a listener for the **receive** event, which get's triggered every time we make a request to the HTTP server.
 
+```lua
+conn:on('receive', function(conn, payload)
+...
+end)
+```
+
 We are going to handle three routes:
 
 * GET /
 * POST /led/on
 * POST /led/off
 
+Our index page will be really simple, with a button to toggle the current state of the LED.
+
+The button has a small bit of [hacky] JavaScript to handle the HTTP request to the server:
+
+```javascript
+x = new XMLHttpRequest();
+x.open('POST', 'led/'+(b?'on':'off'));
+x.send();
+b=!b;
+```
+
+
+
 The POST request to the **led** endpoint are self explanatory, they effectively turn the LED on and off.
 
 
 Once we are connected to the **WEE_THINGS_XXXXXX** local network, this will enable us to go connect to the board using a browser, at the address [http://192.168.4.1][localhost].
-
-
 
 
 ![wifi-blink](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/hello-wifi-blink-001.png)

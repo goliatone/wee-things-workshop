@@ -1,10 +1,11 @@
--- Initialize WiFi access point and connect to router
+-- Initialize WiFi access point
+wifi.setmode(wifi.STATIONAP)
+
+-- Configure the access point
 cfg = {
     ssid = "WEE_THINGS_"..node.chipid(),
     pwd = "weething"
 }
--- wifi.setmode(wifi.SOFTAP)
-wifi.setmode(wifi.STATIONAP)
 wifi.ap.config(cfg)
 
 print('Wifi mode: ', wifi.getmode())
@@ -29,33 +30,39 @@ print('IP: ', wifi.ap.getip())
 -- Initialize LED pin
 gpio.mode(4, gpio.OUTPUT)
 
+-- Close any server instances running
+if server then srv:close() end
+
 -- Create a server
 srv = net.createServer(net.TCP)
+
 srv:listen(80, function(conn)
+    -- close the connection once we are done
     conn:on('sent', function(conn)
         conn:close()
     end)
 
+    -- handle all incomming requests
     conn:on('receive', function(conn, payload)
-        -- Handle index request
+        -- Handle requests to http://192.168.4.1
         if payload:find('GET /') == 1 then
             conn:send('HTTP/1.0 200 OK\r\n\r\n' ..
                 '<html><head><meta charset="utf-8"><title>Wee Things</title></head>' ..
-                '<body><input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'pin/\'+(b=1-b));x.send()" /></body>' ..
-                '<script>b=0</script></html>')
+                '<style>html{background-color:#212121; color:#fafafa}</style>'..
+                '<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>'..
+                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'pin/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
+                '<script>b=true</script></html>')
         end
 
-        -- Handle POST request to pin/0
-        -- we set LED on
-        if payload:find('POST /pin/0') == 1 then
-            gpio.write(4, gpio.LOW)
+        -- POST request to "http://192.168.4.1/pin/on"
+        if payload:find('POST /pin/on') == 1 then
+            gpio.write(4, gpio.LOW) -- turn LED on
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end
 
-        -- Handle POST request to pin/1
-        -- we set LED off
-        if payload:find('POST /pin/1') == 1 then
-            gpio.write(4, gpio.HIGH)
+        -- POST request to "http://192.168.4.1/pin/off"
+        if payload:find('POST /pin/off') == 1 then
+            gpio.write(4, gpio.HIGH) -- turn LED off
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end
     end)

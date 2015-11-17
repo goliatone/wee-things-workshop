@@ -9,6 +9,7 @@ This little thing is great because:
 With it, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...all for $4.
 
 ![wee](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/weethings_green.png)
+<br/>
 (_[Logo][logo-dribbble] by Tracy Loi_)
 
 ### TOC

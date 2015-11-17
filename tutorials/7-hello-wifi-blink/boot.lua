@@ -50,18 +50,18 @@ srv:listen(80, function(conn)
                 '<html><head><meta charset="utf-8"><title>Wee Things</title></head>' ..
                 '<style>html{background-color:#212121; color:#fafafa}</style>'..
                 '<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>'..
-                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'pin/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
+                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'led/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
                 '<script>b=true</script></html>')
         end
 
-        -- POST request to "http://192.168.4.1/pin/on"
-        if payload:find('POST /pin/on') == 1 then
+        -- POST request to "http://192.168.4.1/led/on"
+        if payload:find('POST /led/on') == 1 then
             gpio.write(4, gpio.LOW) -- turn LED on
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end
 
-        -- POST request to "http://192.168.4.1/pin/off"
-        if payload:find('POST /pin/off') == 1 then
+        -- POST request to "http://192.168.4.1/led/off"
+        if payload:find('POST /led/off') == 1 then
             gpio.write(4, gpio.HIGH) -- turn LED off
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end

@@ -9,6 +9,7 @@ This little thing is great because:
 With it, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...all for $4.
 
 ![wee](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/weethings_green.png)
+(_[Logo][logo-dribbble] by Tracy Loi_)
 
 ### TOC
 
@@ -257,3 +258,5 @@ brew install luajit --with-52compat
 [nodemcu-iot-1]: http://www.allaboutcircuits.com/projects/guts-of-the-iot-part-1-building-nodemcu-from-source-for-the-esp8266/
 [nodemcu-iot-2]: http://www.allaboutcircuits.com/projects/how-to-make-an-interactive-tcp-server-nodemcu-on-the-esp8266/
 [learn-lua]: http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/
+
+[logo-dribbble]: https://dribbble.com/shots/2352690-Hardware-Workshop

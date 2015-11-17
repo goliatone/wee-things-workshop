@@ -60,10 +60,26 @@ srv:listen(80, function(conn)
 end)
 ```
 
+The `net.createServer` function takes a callback that gets the current connection instance as an argument. We register a listener for the **receive** event, which get's triggered every time we make a request to the HTTP server.
+
+We are going to handle three routes:
+
+* GET /
+* POST /led/on
+* POST /led/off
+
+The POST request to the **led** endpoint are self explanatory, they effectively turn the LED on and off.
+
+
 Once we are connected to the **WEE_THINGS_XXXXXX** local network, this will enable us to go connect to the board using a browser, at the address [http://192.168.4.1][localhost].
 
 
-NOTE:
+
+
+![wifi-blink](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/hello-wifi-blink-001.png)
+
+
+**NOTE:**
 
 If you upload the script file to the board, make changes locally and then re-upload the file, most likely you will get the following error:
 
@@ -74,9 +90,6 @@ To prevent this error, we first disconect any previous server instance.
 ```lua
 if server then srv:close() end
 ```
-
-
-![wifi-blink](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/hello-wifi-blink-001.png)
 
 ### Source Code
 
@@ -136,18 +149,18 @@ srv:listen(80, function(conn)
                 '<html><head><meta charset="utf-8"><title>Wee Things</title></head>' ..
                 '<style>html{background-color:#212121; color:#fafafa}</style>'..
                 '<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>'..
-                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'pin/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
+                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'led/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
                 '<script>b=true</script></html>')
         end
 
-        -- POST request to "http://192.168.4.1/pin/on"
-        if payload:find('POST /pin/on') == 1 then
+        -- POST request to "http://192.168.4.1/led/on"
+        if payload:find('POST /led/on') == 1 then
             gpio.write(4, gpio.LOW) -- turn LED on
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end
 
-        -- POST request to "http://192.168.4.1/pin/off"
-        if payload:find('POST /pin/off') == 1 then
+        -- POST request to "http://192.168.4.1/led/off"
+        if payload:find('POST /led/off') == 1 then
             gpio.write(4, gpio.HIGH) -- turn LED off
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end

@@ -183,6 +183,8 @@ srv:listen(80, function(conn)
             gpio.write(4, gpio.HIGH) -- turn LED off
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end
+        
+        conn:close()
     end)
 end)
 ```

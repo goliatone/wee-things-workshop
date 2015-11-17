@@ -1,12 +1,12 @@
 ## WeeThings
 
-An introduction to the [ESP8266][esp8266-wiki] microcontroller, a $4 WiFi module with an ARM processor, running the NodeMCU firmware, programmed in the [Lua][lua] programming language. 
+An introduction to the [ESP8266][esp8266-wiki] microcontroller, a $4 WiFi module with an ARM processor, running the NodeMCU firmware, programmed in the [Lua][lua] programming language.
 
 This little thing is great because:
- - it's cheap: $4, compared to $24 for the more popular arduino 
+ - it's cheap: $4, compared to $24 for the more popular arduino
  - it comes with WiFi: if you were to get an arduino, you'd _also_ have to get a WiFi module, possibly even an ESP8266!
 
-With it, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...all for $4. 
+With it, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...all for $4.
 
 ### TOC
 
@@ -34,7 +34,7 @@ This tutorial expects:
     - [Java SE version 7][java-se] or above
     - we won't be using Java directly, but the application that loads software onto the microcontroller is a Java application
 
-We've tested this tutorial on **MacOS**. It's possible to do with Windows, but there might be subtle differences when it comes to flashing the board and using the tools. 
+We've tested this tutorial on **MacOS**. It's possible to do with Windows, but there might be subtle differences when it comes to flashing the board and using the tools.
 
 ### Materials
 The list of materials is intentionally short; we can get up and running pretty fast.
@@ -136,7 +136,7 @@ From terminal, `cd` into your project's **bin/esptool** directory. Then
 type the following command in terminal and press enter:
 
 ```
-esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash -fm=dio -fs=32m -ff=40m 0x00000 ../nodemcu_float_0.9.6-dev_20150704.bin
+esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash -fm=dio -fs=32m -ff=40m 0x00000 ../nodemcu_integer_0.9.6-dev_20150627.bin
 ```
 The script should provide some feedback in the terminal window while is executing.
 

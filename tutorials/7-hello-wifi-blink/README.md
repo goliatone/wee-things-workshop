@@ -110,6 +110,8 @@ if server then srv:close() end
 
 ### Source Code
 
+<script src="https://gist.github.com/nisrulz/001a3b147ddfee3e8451.js"></script>
+
 The full script:
 
 `boot.lua`:

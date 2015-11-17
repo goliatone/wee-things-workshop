@@ -117,7 +117,7 @@ The full script:
 `boot.lua`:
 ```lua
 -- Initialize WiFi access point
-wifi.setmode(wifi.STATIONAP)
+wifi.setmode(wifi.SOFTAP)
 
 -- Configure the access point
 cfg = {

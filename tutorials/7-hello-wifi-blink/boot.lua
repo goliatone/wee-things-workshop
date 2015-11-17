@@ -3,7 +3,7 @@ cfg = {
     ssid = "WEE_THINGS_"..node.chipid(),
     pwd = "weething"
 }
-wifi.setmode(wifi.SOFTAP)
+-- wifi.setmode(wifi.SOFTAP)
 wifi.setmode(wifi.STATIONAP)
 wifi.ap.config(cfg)
 
@@ -11,7 +11,9 @@ print('Wifi mode: ', wifi.getmode())
 print('MAC: ', wifi.sta.getmac())
 print('')
 print('Created WiFi network:')
+print('Network Name')
 print('- SSID: ', cfg.ssid)
+print('Security: WPA/WPA 2 Personal')
 print('- PWD: ', cfg.pwd)
 print('')
 

@@ -50,6 +50,10 @@ If we load this code into the board we would be able to see a new network:
 ![wifi-networks]((https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/wifi-config-001.png))
 
 
+### HTTP Local Server
+
+Next, we are goin to use the `net` module to create a local HTTP server.
+
 ### Source Code
 
 The full script:
@@ -102,7 +106,7 @@ srv:listen(80, function(conn)
                 '<html><head><meta charset="utf-8"><title>Wee Things</title></head>' ..
                 '<style>html{background-color:#212121; color:#fafafa}</style>'..
                 '<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>'..
-                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'pin/\'+((b=!b)? 'on' : 'off'));x.send()" /></body>' ..
+                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'pin/\'+((b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
                 '<script>b=true</script></html>')
         end
 

@@ -61,7 +61,8 @@ If we load this code into the board and we scan the local networks we should be 
 
 ### Source Code
 
-The full script:
+The full source of the tutorial is below. You can upload it to the board using the ESPlorer IDE, and execute the script using any of the techniques we [introduced earlier][hello-world].
+
 
 `boot.lua`:
 ```lua

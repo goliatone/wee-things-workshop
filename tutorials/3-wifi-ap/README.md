@@ -23,7 +23,7 @@ wifi.setmode(wifi.SOFTAP)
 
 The next step will be to configure te access point with the necessary credentials so that we can connect to the network.
 
-To give the local network a unique name we are going to use the boards unique id, which we access through the `node.chipid` function. The name look something like  **WEE_THINGS_315587**, depending on the actual chip id of your board.
+To give the local network a unique name we are going to use the board's unique id, which we access using the `node.chipid` function. The name look something like  **WEE_THINGS_315587**, depending on the actual chip id of your board.
 
 The password to connect to this network will be **weething**.
 

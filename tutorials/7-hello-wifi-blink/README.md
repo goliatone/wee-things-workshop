@@ -1,54 +1,10 @@
 ## Hello Wifi Blink!
 
-In this tutorial we will learn how to configure our NodeMCU board to connect to the internet and also how to configure it as an Access Point so we can connect to it through a web browser.
+In this tutorial we will configure our NodeMCU board as an Access Point so we can connect to it through a web browser.
 
-We will make a simple page that sends commands to our server and toggles one of the board's LED. In order to do that we will introduce the `wifi` module for connectivity and the `net` module to create a local HTTP server.
+We will make a simple page that sends requests to our server and toggles one of the board's LED. In order to do that we will introduce use `net` module to create a local HTTP server.
 
-### WiFi
-
-The [NodeMCU firmware][wiki] provides the `wifi` module to configure and manage... well, wifi things.
-
-The API provides two submodules; `sta`, and `ap`. Any NodeMCU board can function in three different modes:
-
-* STATION: Connect to a router to access the internet.
-* SOFTAP: You can connect to the board without internet access.
-* STATIONAP: Enables to connect to the board and give the board access to the internet.
-
-We will create a local network to which we can connect to using the **SOFTAP** mode.
-
-```lua
-wifi.setmode(wifi.SOFTAP)
-```
-
-We use table with configuration values for the access point such as the SSID name and the password.
-
-To give the local network a unique name we are going to use the boards unique id, which we access through the `node.chipid` function. The name look something like  **WEE_THINGS_315587**, depending on the actual chip id of your board.
-
-The password to connect to this network will be **weething**.
-
-```lua
-cfg = {
-    ssid = "WEE_THINGS_"..node.chipid(),
-    pwd = "weething"
-}
-wifi.ap.config(cfg)
-```
-
-We then will configure the **IP** address we will use to connect to the board:
-
-```lua
-address = {
-  ip = '192.168.4.1',
-  netmask = '255.255.255.0',
-  gateway = '192.168.4.1'
-}
-wifi.ap.setip(address)
-```
-
-If we load this code into the board we would be able to see a new network:
-
-![wifi-networks](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/wifi-config-001.png)
-
+You can check the full API in the NodeMCU [wiki][net-module].
 
 ### HTTP Local Server
 
@@ -84,8 +40,6 @@ x.open('POST', 'led/'+(b?'on':'off'));
 x.send();
 b=!b;
 ```
-
-
 
 The POST request to the **led** endpoint are self explanatory, they effectively turn the LED on and off.
 
@@ -199,3 +153,4 @@ The source code in this example was taken from [here][tut] and modified where ne
 [tut]: https://github.com/Densaugeo/ESP-8266-NodeMCU-Tutorial
 [wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
 [localhost]: http://192.168.4.1
+[net-module]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#net-module

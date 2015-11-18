@@ -43,7 +43,7 @@ cfg = {
 wifi.ap.config(cfg)
 ```
 
-We then have to configure the **IP** address clients will use to connect to the board:
+We then have to configure the **IP** address clients, like a web browser, will use to connect to the board:
 
 ```lua
 address = {

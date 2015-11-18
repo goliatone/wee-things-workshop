@@ -9,11 +9,19 @@ We will be using the `wifi` module. You can check the full API in the NodeMCU [w
 
 The [NodeMCU firmware][wiki] provides the `wifi` module to configure and manage... well, wifi things.
 
-The API provides two submodules; `sta`, and `ap`. Any NodeMCU board can function in three different modes:
+Any NodeMCU board can function in three different modes:
 
 * STATION: Connect to a router for internet connectivity.
 * SOFTAP: Board reachable through IP- ie browser.
 * STATIONAP: Acts as both STATION and SOFTAP modes.
+
+The API provides two submodules; [sta][sta-wiki], and [ap][ap-wiki]. The `sta` submodule provides methods for the station functionality while the `ap` provides the access point functionality.
+
+If our script needs to send data over the wire either by making HTTP requests- say to send sensor data to our backend- or to send/receive **MQTT** messages the board needs an internet connection. In this case we will use the **STATION** mode.
+
+If we need to interact with our board, say by serving an HTML web page through which we send commands to the board or to provide configuration values, we will use the **SOFTAP** mode.
+
+If we need to do both, we will configure the board to use the **STATIONAP** mode.
 
 We will configure the board's wifi mode as **SOFTAP**, this will create a local network to which we can connect using the browser.
 
@@ -23,7 +31,7 @@ wifi.setmode(wifi.SOFTAP)
 
 The next step will be to configure te access point with the necessary credentials so that we can connect to the network.
 
-To give the local network a unique name we are going to use the board's unique id, which we access using the `node.chipid` function. The name look something like  **WEE_THINGS_315587**, depending on the actual chip id of your board.
+To give the local network a unique name, we are going to use the board's unique id, which we access using the `node.chipid` function. The name look something like  **WEE_THINGS_315587**, depending on the actual chip id of your board.
 
 The password to connect to this network will be **weething**.
 
@@ -89,3 +97,5 @@ print('IP: ', wifi.ap.getip())
 
 
 [wifi-module]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifi-module
+[sta-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifista-sub-module
+[ap-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifiap-sub-module

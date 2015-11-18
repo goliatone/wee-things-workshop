@@ -66,7 +66,7 @@ if server then srv:close() end
 
 ### Source Code
 
-The full source of the tutorial is below. You can upload it to the board using the ESPlorer IDE, and execute the script using any of the techniques we introduced earlier.
+The full source of the tutorial is below. You can upload it to the board using the ESPlorer IDE, and execute the script using any of the techniques we [introduced earlier][hello-world].
 
 
 `boot.lua`:
@@ -160,3 +160,4 @@ The source code in this example was taken from [here][tut] and modified where ne
 
 [wifi-ap]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/3-wifi-ap
 [ap]: https://en.wikipedia.org/wiki/Wireless_access_point
+[hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world

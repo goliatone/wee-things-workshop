@@ -14,10 +14,10 @@ The API provides two submodules; `sta`, and `ap`. Any NodeMCU board can function
 * SOFTAP: You can connect to the board without internet access.
 * STATIONAP: Enables to connect to the board and give the board access to the internet.
 
-We will create a local network to which we can connect to using the **STATIONAP** mode.
+We will create a local network to which we can connect to using the **SOFTAP** mode.
 
 ```lua
-wifi.setmode(wifi.STATIONAP)
+wifi.setmode(wifi.SOFTAP)
 ```
 
 We use table with configuration values for the access point such as the SSID name and the password.
@@ -115,7 +115,7 @@ The full script:
 `boot.lua`:
 ```lua
 -- Initialize WiFi access point
-wifi.setmode(wifi.STATIONAP)
+wifi.setmode(wifi.SOFTAP)
 
 -- Configure the access point
 cfg = {
@@ -162,12 +162,12 @@ srv:listen(80, function(conn)
     conn:on('receive', function(conn, payload)
         -- Handle requests to http://192.168.4.1
         if payload:find('GET /') == 1 then
-            conn:send('HTTP/1.0 200 OK\r\n\r\n' ..
-                '<html><head><meta charset="utf-8"><title>Wee Things</title></head>' ..
-                '<style>html{background-color:#212121; color:#fafafa}</style>'..
-                '<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>'..
-                '<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'led/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>' ..
-                '<script>b=true</script></html>')
+            conn:send("HTTP/1.0 200 OK\r\nContent-type: text/html\r\nServer: wee-thing\r\n\n")
+            conn:semd('<html><head><meta charset="utf-8"><title>Wee Things</title></head>')
+            conn:semd('<style>html{background-color:#212121; color:#fafafa}</style>')
+            conn:send('<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>')
+            conn:send('<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'led/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>')
+            conn:send('<script>b=true</script></html>')
         end
 
         -- POST request to "http://192.168.4.1/led/on"
@@ -181,6 +181,8 @@ srv:listen(80, function(conn)
             gpio.write(4, gpio.HIGH) -- turn LED off
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end
+        
+        conn:close()
     end)
 end)
 ```

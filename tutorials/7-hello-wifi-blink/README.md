@@ -52,7 +52,7 @@ If we load this code into the board we would be able to see a new network:
 
 ### HTTP Local Server
 
-Next, we are going to use the `net` module to create a local HTTP server. If you have worked with nodejs this will feel somehow familiar, is equally as straight forward.
+Next, we are going to use the `net` module to create a local HTTP server. If you have worked with nodejs before this will feel somehow familiar, as it is equally as straight forward.
 
 ```lua
 srv:listen(80, function(conn)
@@ -163,8 +163,8 @@ srv:listen(80, function(conn)
         -- Handle requests to http://192.168.4.1
         if payload:find('GET /') == 1 then
             conn:send("HTTP/1.0 200 OK\r\nContent-type: text/html\r\nServer: wee-thing\r\n\n")
-            conn:semd('<html><head><meta charset="utf-8"><title>Wee Things</title></head>')
-            conn:semd('<style>html{background-color:#212121; color:#fafafa}</style>')
+            conn:send('<html><head><meta charset="utf-8"><title>Wee Things</title></head>')
+            conn:send('<style>html{background-color:#212121; color:#fafafa}</style>')
             conn:send('<body><h3>Wee Things</h3><p>Use the button to toggle the board LED</p>')
             conn:send('<input type="button" value="Toggle LED" onclick="x=new XMLHttpRequest();x.open(\'POST\', \'led/\'+(b?\'on\':\'off\'));x.send();b=!b;" /></body>')
             conn:send('<script>b=true</script></html>')
@@ -181,7 +181,7 @@ srv:listen(80, function(conn)
             gpio.write(4, gpio.HIGH) -- turn LED off
             conn:send('HTTP/1.0 204 No Content\r\n\r\n')
         end
-        
+
         conn:close()
     end)
 end)

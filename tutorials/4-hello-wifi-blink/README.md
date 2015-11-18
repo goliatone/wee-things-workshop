@@ -1,15 +1,15 @@
 ## Hello Wifi Blink!
 
-In this tutorial we will configure our NodeMCU board as an Access Point so we can connect to it through a web browser. The `wifi` module is introduced in the [wifi-ap][wifi-ap] tutorial.
+In this tutorial we will configure our NodeMCU board as an [Access Point][ap] so we can connect to it through a web browser. The `wifi` module is introduced in the [wifi-ap][wifi-ap] tutorial.
 
-We will make a simple page that sends requests to our server and toggles one of the board's LED. In order to do that we will introduce use `net` module to create a local HTTP server.
+We will make a simple web page to which we can connect using the browser. The page has one button that sends requests to our server and toggles one of the board's LEDs. In order to do that we will introduce the `net` module to create a local HTTP server.
 
 
 You can check the full API in the NodeMCU [wiki][net-module].
 
 ### HTTP Local Server
 
-Next, we are going to use the `net` module to create a local HTTP server. If you have worked with nodejs before this will feel somehow familiar, as it is equally as straight forward.
+Next, we are going to use the `net` module to create a local HTTP server. If you have worked with nodejs before this will feel somehow familiar.
 
 ```lua
 srv:listen(80, function(conn)
@@ -17,7 +17,7 @@ srv:listen(80, function(conn)
 end)
 ```
 
-The `net.createServer` function takes a callback that gets the current connection instance as an argument. We register a listener for the **receive** event, which get's triggered every time we make a request to the HTTP server.
+The `net.createServer` function takes a callback that gets the current connection instance as an argument. We register a listener for the **receive** event, which gets triggered every time we make a request to the HTTP server.
 
 ```lua
 conn:on('receive', function(conn, payload)
@@ -42,10 +42,9 @@ x.send();
 b=!b;
 ```
 
-The POST request to the **led** endpoint are self explanatory, they effectively turn the LED on and off.
+The POST request to the **led** endpoint is self-explanatory, it effectively turns the LED on and off.
 
-
-Once we are connected to the **WEE_THINGS_XXXXXX** local network, this will enable us to go connect to the board using a browser, at the address [http://192.168.4.1][localhost].
+Once we are connected to the **WEE_THINGS_XXXXXX** local network, this will enable us to reach the webpage using a browser, at the address [http://192.168.4.1][localhost].
 
 
 ![wifi-blink](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/hello-wifi-blink-001.png)
@@ -53,11 +52,13 @@ Once we are connected to the **WEE_THINGS_XXXXXX** local network, this will enab
 
 **NOTE:**
 
-If you upload the script file to the board, make changes locally and then re-upload the file, most likely you will get the following error:
+If you upload the script file to the board, and then make changes locally and re-upload the file, most likely you will get the following error:
 
 >boot.lua:34: only one tcp server allowed
 
-To prevent this error, we first disconect any previous server instance.
+This happens because we have a running copy of the file in memory and then we are uploading a new copy. The `server` variable is global, so when the compiler reaches the `server` instance we just uploaded, it complains because it has one already in memory.
+
+To prevent this error, we will disconnect any previous server instance.
 
 ```lua
 if server then srv:close() end
@@ -157,3 +158,4 @@ The source code in this example was taken from [here][tut] and modified where ne
 [net-module]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#net-module
 
 [wifi-ap]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/3-wifi-ap
+[ap]: https://en.wikipedia.org/wiki/Wireless_access_point

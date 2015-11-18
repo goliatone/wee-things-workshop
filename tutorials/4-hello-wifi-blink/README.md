@@ -66,7 +66,8 @@ if server then srv:close() end
 
 ### Source Code
 
-The full script:
+The full source of the tutorial is below. You can upload it to the board using the ESPlorer IDE, and execute the script using any of the techniques we introduced earlier.
+
 
 `boot.lua`:
 ```lua
@@ -114,7 +115,7 @@ srv:listen(80, function(conn)
         conn:close()
     end)
 
-    -- handle all incomming requests
+    -- handle all requests
     conn:on('receive', function(conn, payload)
         -- Handle requests to http://192.168.4.1
         if payload:find('GET /') == 1 then

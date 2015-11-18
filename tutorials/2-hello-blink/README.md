@@ -4,7 +4,11 @@ If you are familiar with Arduino chances are you have followed through their ver
 
 This is the NodeMCU equivalent. Note that we will not be using an external LED but the devkit's built in instead.
 
-_NOTE:_ We learned how to load a script into the NodeMCU devkit using ESPlorer in a previous [tutorial][hello-world]
+_NOTE:_ We learned how to load a script into the NodeMCU devkit using ESPlorer in a previous [tutorial][hello-world], check this [introduction][intro] if you need to set up your Mac environment.
+
+### Source Code
+
+As far as the code goes is fairly simple but it highlights some important concepts.
 
 Here's the code:
 

@@ -1,8 +1,9 @@
 ## Hello Wifi Blink!
 
-In this tutorial we will configure our NodeMCU board as an Access Point so we can connect to it through a web browser.
+In this tutorial we will configure our NodeMCU board as an Access Point so we can connect to it through a web browser. The `wifi` module is introduced in the [wifi-ap][wifi-ap] tutorial.
 
 We will make a simple page that sends requests to our server and toggles one of the board's LED. In order to do that we will introduce use `net` module to create a local HTTP server.
+
 
 You can check the full API in the NodeMCU [wiki][net-module].
 
@@ -154,3 +155,5 @@ The source code in this example was taken from [here][tut] and modified where ne
 [wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
 [localhost]: http://192.168.4.1
 [net-module]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#net-module
+
+[wifi-ap]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/3-wifi-ap

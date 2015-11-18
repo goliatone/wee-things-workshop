@@ -45,3 +45,4 @@ Icon
 # CRUFT AND STUFF
 #######################################
 .tmp
+*/node_modules

@@ -96,6 +96,7 @@ print('IP: ', wifi.ap.getip())
 ```
 
 
+[wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
 [wifi-module]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifi-module
 [sta-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifista-sub-module
 [ap-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifiap-sub-module

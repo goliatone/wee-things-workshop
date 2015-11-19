@@ -230,6 +230,11 @@ Bootstrap script:
 $ curl -SLs https://goo.gl/3N7lDw | bash
 ```
 
+Clone repo:
+```
+$ git clone git@github.com:goliatone/wee-things-workshop.git
+```
+
 ## Setup (software)
 
 ![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png)
@@ -281,7 +286,7 @@ $ cd ~/Desktop/wee-things/wee-things-workshop/bin/esptool
 ```
 $ esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash \
  -fm=dio -fs=32m -ff=40m 0x00000 \
- ../nodemcu_float_0.9.6-dev_20150704.bin
+ ../nodemcu_integer_0.9.6-dev_20150627.bin
 ```
 
 ## esptool

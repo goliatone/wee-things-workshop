@@ -17,6 +17,15 @@ https://github.com/goliatone/wee-things-workshop
 ## Goals
 
 * Familiarize ourselves with the NodeMCU dev board.
+
+## Goals
+
+* Familiarize ourselves with the NodeMCU dev board.
+* Setup a work environment.
+
+## Goals
+
+* Familiarize ourselves with the NodeMCU dev board.
 * Setup a work environment.
 * Be able to load and execute code.
 
@@ -90,6 +99,33 @@ https://github.com/goliatone/wee-things-workshop
 * Code
     * Hello World
     * Hello Blink
+    * Hello WiFi
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+    * Hello World
+    * Hello Blink
+    * Hello WiFi
+    * WiFi Blink!
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+    * Hello World
+    * Hello Blink
+    * Hello WiFi
+    * WiFi Blink!
 
 #### Requirements:
 
@@ -103,6 +139,8 @@ https://github.com/goliatone/wee-things-workshop
 * Code
     * Hello World
     * Hello Blink
+    * Hello WiFi
+    * WiFi Blink!
 
 #### Requirements:
 
@@ -118,6 +156,8 @@ https://github.com/goliatone/wee-things-workshop
 * Code
     * Hello World
     * Hello Blink
+    * Hello WiFi
+    * WiFi Blink!
 
 #### Requirements:
 
@@ -301,6 +341,20 @@ SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
 ## Hello Blink!
 
 <code data-gist-id="558e5f9edb57ec8f65e8"></code>
+
+
+# Hello WiFi!
+
+## Hello WiFi!
+
+<code data-gist-id="7ca042f7cc421fe84447"></code>
+
+
+# WiFi Blink!
+
+## WiFi Blink!
+
+<code data-gist-id="001a3b147ddfee3e8451"></code>
 
 
 # Thank you.

@@ -57,7 +57,7 @@ Binaries:
 * [NodeMCU firmware][esp-binaries] Latest release of the NodeMCU firmware
 
 ---
-### Set up using the bootstrap script (quick start!)
+### Quick Set Up
 
 **NOTE: installing the drivers requires a reboot - save your work before you start!**
 
@@ -88,7 +88,7 @@ $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/mast
 7. Woohoo!! Now we are ready to start coding. Open up the ESPlorer IDE (step 2) if you've closed it.
 
 ---
-### Set up by yourself
+### Set up
 
 #### ESPlorer
 You can download the ESPlorer IDE from [here][esplorer]. However, we will be using the version bundled with this tutorial for convenience.

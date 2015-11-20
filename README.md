@@ -56,7 +56,7 @@ Binaries:
 * [NodeMCU firmware][esp-binaries] Latest release of the NodeMCU firmware
 
 ---
-### Set up
+### Set up using the bootstrap script (quick start!)
 
 **NOTE: installing the drivers requires a reboot - save your work before you start!**
 
@@ -69,7 +69,17 @@ There is also a `bash` script to bootstrap via CLI:
 $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
 ```
 
-What follows is a step by step guide on what the script automates for you.
+After that, `cd` in the bin file.
+1. Install the SiLabs Driver: The image is located in the `drivers` folder. Double click to start the installation process. THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER
+2. Open up the ESPlorer IDE: `cd` into  **bin/ESPlorer**. run `java -jar "ESPlorer.jar"`
+3. Install esptool to flash the board: `cd` into **bin/esptool**. run `python setup.py install`
+4. Prep the board to be flashed: Press the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
+5. Flash the board:  `cd` into **bin/esptool**. run `esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash -fm=dio -fs=32m -ff=40m 0x00000 ../nodemcu_integer_0.9.6-dev_20150627.bin`
+6. **Unplug the USB cable** and **plug it** again.
+7. Woohoo!! Now we are ready to start coding. Open up the ESPlorer IDE (step 2) if you've closed it.
+
+---
+### Set up by yourself
 
 #### ESPlorer
 You can download the ESPlorer IDE from [here][esplorer]. However, we will be using the version bundled with this tutorial for convenience.
@@ -81,7 +91,7 @@ First, we need to un-zip the **ESPlorer.zip** file.
 On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, and type this command in your terminal:
 
 ```
-java –jar "ESPlorer.jar"
+java -jar "ESPlorer.jar"
 ```
 
 This command wil open up the IDE, it should look something similar to this:

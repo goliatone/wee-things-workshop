@@ -16,6 +16,7 @@ With it, we can stream data from sensors, control appliances, build armies of ro
 
 - [Prerequisites](#prerequisites)
 - [Materials](#materials)
+- [Quick Set Up](#quick-set-up)
 - [Set up](#set-up)
     - [ESPlorer](#esplorer)
     - [SiLabs Drivers](#silabs-drivers)

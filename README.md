@@ -99,13 +99,14 @@ From the SiLabs driver [download page][silabs-drivers]:
 
 >The CP210x USB to UART Bridge Virtual COM Port (VCP) drivers are required for device operation as a Virtual COM Port to facilitate host communication with CP210x products.
 
-In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers].
+In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers]. The bash script already downloaded the image file into your bin folder so open it up and follow the install instructions.
 
 The ESP8266 runs a Lua interpreter and you can send in commands and read out results over serial.
 
 _NOTE:_
 
 This requires your computer to restart, save your work.
+
 
 
 #### esptool

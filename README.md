@@ -69,7 +69,10 @@ There is also a `bash` script to bootstrap via CLI:
 $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
 ```
 
-1. Install the SiLabs Driver: The image is located in the `drivers` folder. Double click to start the installation process. THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER
+
+1. Connect the board to your computer.
+
+2. Install the SiLabs Driver: The image is located in the `drivers` folder. Double click to start the installation process. THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER
 
 2. Open up the ESPlorer IDE: `cd` into  **bin/ESPlorer**. run `java -jar "ESPlorer.jar"`
 

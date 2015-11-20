@@ -7,6 +7,10 @@ We will make a simple web page to which we can connect using the browser. The pa
 
 You can check the full API in the NodeMCU [wiki][net-module].
 
+<!--
+ESP8266 is a microcontroller with 2.4 GHz WiFi capabilities. If you are having issues connecting to your router, check that is not a 5GHz device.
+-->
+
 ### HTTP Local Server
 
 Next, we are going to use the `net` module to create a local HTTP server. If you have worked with nodejs before this will feel somehow familiar.

@@ -23,7 +23,7 @@ With it, we can stream data from sensors, control appliances, build armies of ro
     - [espytool](#espytool)
     - [NodeMCU firmware](#nodemcu-firmware)
     - [Flashing the NodeMCU](#flashing-the-nodemcu)
-- [Colofon](#colofon)
+- [Colophon](#colophon)
 - [Resources](#resources)
     - [ESP8266](#esp8266)
     - [Lua](#lua)
@@ -64,8 +64,9 @@ Binaries:
 To make things easier all dependencies are bundled in the [bin][bin-directory] directory. We will go over how to install all the different tools.
 
 
-There is also a `bash` script to bootstrap via CLI:
+There is also a `bash` script to bootstrap via CLI. This scripts automates a bunch of steps that you would have to do manually otherwise. Those steps are explained further down so you understand what the script is doing.
 
+Type the following in a terminal window:
 ```
 $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
 ```
@@ -93,14 +94,14 @@ $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/mast
 #### ESPlorer
 You can download the ESPlorer IDE from [here][esplorer]. However, we will be using the version bundled with this tutorial for convenience.
 
-_NOTE:_ ESPlorer requires [Java SE version 7][java-se] and above installed.
+_NOTE:_ ESPlorer requires [Java SE version 7][java-se] or greater to be installed in your computer.
 
 First, we need to un-zip the **ESPlorer.zip** file.
 
 On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, and type this command in your terminal:
 
 ```
-java -jar "ESPlorer.jar"
+java -jar ESPlorer.jar
 ```
 
 This command wil open up the IDE, it should look something similar to this:
@@ -130,7 +131,7 @@ This requires your computer to restart, save your work.
 
 #### esptool
 
-We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the directory **esptool** directory and run the following command:
+We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the **esptool** directory and run the following command:
 
 ```
 python setup.py install
@@ -176,15 +177,19 @@ Now **unplug the USB cable** and **plug it** again.
 
 Congratulations, we now have a board properly flashed and we are ready to start uploading code. We will do so using an IDE.
 
+Now you can proceed with the next tutorials:
+* [Hello World][hello-world]
+* [Hello Blink][hello-blink]
+* [Hello WiFi][hello-wifi]
+* [WiFi Blink][hello-blink]
 <!--
 ### More on ESP8266
 
 The [ESP8266][espressif] is a microcontroller with 2.4 GHz WiFi capabilities supporting the WPA/WPA2 [protocols][wpa-protocols], general-purpose input/output (GPIO), Inter-Integrated Circuit (I2C), analog-to-digital conversion (ADC), Serial Peripheral Interface (SPI), and pulse-width modulation (PWM). The chip operates at 80Mhz, has a 64KB boot ROM, 64KB instruction RAM, and 96KB data RAM.
 -->
 
-
 ---
-### Colofon
+### Colophon
 And with this we conclude the boring setup process. We are ready to start coding and making things. We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board. Next, we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
 
 If you are not familiar with the Lua programming language you can always follow a quick intro tutorial. Check out the Lua links in the [Resources](#resources) section.
@@ -269,10 +274,13 @@ brew install luajit --with-52compat
 [luarocks]: https://luarocks.org
 
 [java-install]: http://crunchify.com/where-is-java-installed-on-my-mac-osx-system/
-[java-se]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[java-se]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
 
 [hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world
 [hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/2-hello-blink
+[hello-wifi]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/3-wifi-ap
+[hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/4-hello-wifi-blink
 
 [bin-directory]: https://github.com/goliatone/esp8266-intro
 [wpa-protocols]: https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access

@@ -14,13 +14,37 @@ print("Hello World!")
 
 The `print` statement takes a string parameter and will output it to the console, in this case the string "Hello World!".
 
-
 _NOTE_
 
 In Lua you use two dots to concatenate strings,
 ```lua
 print("Hello ".."World!")
 ```
+You could also use variables. If you assign a string value to a variable, you could dynamically create a string:
+
+```
+local name = "Peperone"
+print("Hello "..name.."!") -- outputs: Hello Peperone!
+```
+
+If we want to interpolate variables in a string, it can get unwieldy pretty fast:
+```lua
+local name = "Peperone"
+local something = "pancakes"
+print("Hello "..name..", do you like "..something.."?") -- outputs: Hello Peperone, do you like pancakes?
+```
+
+In lua you can do [string interpolation][wiki-string-interpolation] using the `string.format` utility, which you can read about [here][wiki-lua-string-interpolation].
+
+> String interpolation is the process of evaluating a string literal containing one or more placeholders, yielding a result in which the placeholders are replaced with their corresponding values.
+
+```lua
+local name = "Peperone"
+local something = "pancakes"
+print(string.format("Hello %s, do you like %s?", name, something)) -- outputs: Hello Peperone, do you like pancakes?
+```
+
+
 
 Once we have completed this tutorial we should be able to write our own programs and upload them to a NodeMCU board.
 
@@ -127,6 +151,8 @@ Snippets:
 [dofile-tutorial]: http://luatut.com/dofile.html
 [dofile]: http://www.lua.org/pil/8.html
 
+[wiki-lua-string-interpolation]: http://lua-users.org/wiki/StringInterpolation
+[wiki-string-interpolation]: https://en.wikipedia.org/wiki/String_interpolation
 <!--
 http://stackoverflow.com/questions/31304082/how-to-recover-nodemcu-infinite-loop
 -->

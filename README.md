@@ -104,14 +104,32 @@ On Mac to open the IDE you need to do so from **terminal**. Open a new **termina
 java -jar ESPlorer.jar
 ```
 
+*NOTE:*
+Some online resources tell you to `sudo` the command in order to run the **ESPlorer** IDE. Most _likely_ you will be able to leave it out.
+
 This command wil open up the IDE, it should look something similar to this:
 
 ![ESPlorer](./images/esplorer-001.png)
 
 We will be using the ESPlorer to validate our next step, installing the SiLabs Drivers.
 
-*NOTE:*
-Some online resources tell you to `sudo` the command in order to run the **ESPlorer** IDE. Most _likely_ you will be able to leave it out.
+Maybe the command did not work. It could be due to different things. If you get an error message that looks similar to this one it means that you have an outdated version of java:
+
+>Exception in thread "main" java.lang.UnsupportedClassVersionError: ESPlorer/ESPlorer : Unsupported major.minor version 51.0
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClassCond(ClassLoader.java:637)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:621)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+
+You should [update][java-se] your Java version.
 
 #### SiLabs Drivers
 

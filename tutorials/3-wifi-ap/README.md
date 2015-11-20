@@ -11,13 +11,15 @@ The [NodeMCU firmware][wiki] provides the `wifi` module to configure and manage.
 
 Any NodeMCU board can function in three different modes:
 
-* STATION: Connect to a router for internet connectivity.
-* SOFTAP: Board reachable through IP- ie browser.
+* STATION: Connect to a router for internet connectivity. ie: Send POST request with sensor values to bakcend service.
+* SOFTAP: Board reachable through IP- ie serve HTML page to configure WiFi credentials through browser.
 * STATIONAP: Acts as both STATION and SOFTAP modes.
 
 The API provides two submodules; [sta][sta-wiki], and [ap][ap-wiki]. The `sta` submodule provides methods for the station functionality while the `ap` provides the access point functionality.
 
 If our script needs to send data over the wire either by making HTTP requests- say to send sensor data to our backend- or to send/receive **MQTT** messages the board needs an internet connection. In this case we will use the **STATION** mode.
+
+Let's say the script we are developing is collecting sensor data, say temperature values, and we want to store it in a service like [ubidots][ubidots], we need internet access to **POST** data to the service. We do so by setting the board wifi mode to **STATION** and then you would use `net` module to send a **POST** request. We will show how in a later tutorial.
 
 If we need to interact with our board, say by serving an HTML web page through which we send commands to the board or to provide configuration values, we will use the **SOFTAP** mode.
 
@@ -102,3 +104,4 @@ print('IP: ', wifi.ap.getip())
 [sta-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifista-sub-module
 [ap-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en#wifiap-sub-module
 [hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world
+[ubidots]: http://ubidots.com

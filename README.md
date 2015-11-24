@@ -58,19 +58,12 @@ Binaries:
 
 ---
 ### Quick Set Up
-
-**NOTE: installing the drivers requires a reboot - save your work before you start!**
-
-To make things easier all dependencies are bundled in the [bin][bin-directory] directory. We will go over how to install all the different tools.
-
-
-There is also a `bash` script to bootstrap via CLI. This scripts automates a bunch of steps that you would have to do manually otherwise. Those steps are explained further down so you understand what the script is doing.
+Here is a `bash` script to bootstrap via CLI. This scripts automates a bunch of steps that you would have to do manually otherwise. Those steps are explained in the next section so you understand what the script is doing. If you are doing the quick set up, you do **NOT** have to clone this repo. The script will do it all for you.
 
 Type the following in a terminal window:
 ```
 $ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
 ```
-
 
 1. Connect the board to your computer.
 

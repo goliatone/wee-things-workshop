@@ -43,11 +43,24 @@ tmr.alarm(BOOT_ALARM, BOOT_DELAY, 0, function()
 end)
 ```
 
-You can load and execute a script by calling it with the `dofile` directive:
+`tmr.alarm` executes a function in intervals of time. It takes 4 parameters. The first one is a numerical id so we can can cancel it with a call to `tmr.stop`. The second is the interval in milliseconds. The third one indicates wether the callback is executed one or until we stop the interval. The fourth is the callback that gets executed on each interval.
+
+The following snippet executes the callback once after a dealy of two seconds.
+```lua
+tmr.alarm(0, 2000, 0, function()
+    ...
+end)
+```
+
+Inside the callback we are stoping `tmr.alarm` and loading our `boot.lua` script that will hold the logic to bootstrap the program.
+
+We load and execute the `boot.lua` script by calling it with the `dofile` directive:
 
 ```lua
 dofile('boot.lua')
 ```
+
+What we get is a two second pause in which we can issue a `file.remove('init.lua')` to abort the execution of the script.
 
 ### WatchDog
 

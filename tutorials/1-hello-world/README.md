@@ -4,6 +4,11 @@ In this tutorial we will learn how to load a simple **hello world** script into 
 
 You should follow the [introductory tutorial][intro-tutorial] to get your Mac environment ready.
 
+Once we have completed this tutorial we should be able to write our own programs and upload them to a NodeMCU board.
+
+
+### Lua Strings
+
 The actual program we are going to write is rather simple. The main focus is the process to get code running. We will also learn how to upload and execute a file from the ESPLorer IDE.
 
 Here is the code we will be running:
@@ -44,9 +49,23 @@ local something = "pancakes"
 print(string.format("Hello %s, do you like %s?", name, something)) -- outputs: Hello Peperone, do you like pancakes?
 ```
 
+#### Multiline
+In Lua you can also have multiline strings using the `[[` characters to open a multiline sequence, and the `]]` characters to close it.
 
 
-Once we have completed this tutorial we should be able to write our own programs and upload them to a NodeMCU board.
+```lua
+conn:send([[<h2>The module MAC address is: ]].. ap_mac..[[</h2>
+    <h2>Enter SSID and Password for your WIFI router</h2>
+    <form action='' method='get' accept-charset='ascii'>
+    SSID:
+    <input type='text' name='SSID' value='' maxlength='32' placeholder='your network name'/>
+    <br />
+    Password:
+    <input type='text' name='PASS' value='' maxlength='100' placeholder='network password'/>
+    <br/>
+    <input type='submit' value='Submit' />
+    </form> </body> </html>]])
+```
 
 ### Firing up the IDE
 

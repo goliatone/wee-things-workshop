@@ -14,8 +14,10 @@ _[''''']_
  R | G B
    Vin
 ```
+_ASCII: pin layout_
 
-Pin out:
+
+The wiring:
 
 ```
 Vin => 3.3v
@@ -24,9 +26,12 @@ G => 7
 B => 5
 ```
 
+
+We are going to create three global variables and assign them a pin port number, we will later wire the corresponding legs of the LED to this ports.
+
 ```lua
-GREEN_PIN  = 7    -- GPIO2
 RED_PIN    = 6
+GREEN_PIN  = 7
 BLUE_PIN   = 5
 ```
 

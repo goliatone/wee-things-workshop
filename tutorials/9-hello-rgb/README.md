@@ -33,6 +33,10 @@ We are going to create three global variables and assign them a pin port number,
 RED_PIN    = 6
 GREEN_PIN  = 7
 BLUE_PIN   = 5
+
+gpio.mode(RED_PIN, gpio.OUTPUT)
+gpio.mode(BLUE_PIN, gpio.OUTPUT)
+gpio.mode(GREEN_PIN, gpio.OUTPUT)
 ```
 
 ![hello-led-1](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/hello-led-001.png)

@@ -72,5 +72,22 @@ NodeMCU is single threaded. The ESP8266 uses a [WatchDog][watchdog] timer to det
 
 The best way to deal with this is by using the built in event system which is similar to JavaScript's event system.
 
+For instance, albeit valid code, the following would not work in NodeMCU:
+
+```lua
+isConnected = false
+repeat
+   -- Lets see if we are already connected by getting the IP
+   ipAddr = wifi.sta.getip()
+   if ( ( ipAddr ~= nil ) and  ( ipAddr ~= "0.0.0.0" ) )then  -- Check if IP is valid
+      isConnected = true
+   end
+
+until ( isConnected == true )
+```
+
+The reason being the loop would hang the board, kicking in the watchdog timer, restarting the firmware. Read more about it [here][example]
+
 
 [watchdog]: https://en.wikipedia.org/wiki/Watchdog_timer
+[example]: https://primalcortex.wordpress.com/2014/12/30/esp8266-nodemcu-and-lua-language-and-some-arduino-issues/

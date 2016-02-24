@@ -108,6 +108,16 @@ $ npm i -g esp8266-cli
 
 To ensure we the utility installed correctly, open a terminal window and type `esp --help`. It should display the `help` dialog.
 
+The first time you use the `esp` tool you need to configure the port to talk to the NodeMCU board:
+
+If you are using a Mac:
+
+```
+$ esp port set /dev/cu.SLAB_USBtoUART
+```
+
+
+
 #### NodeMCU firmware
 You can find the latest NodeMCU firmware at their github repository, in the release page following this [link][esp-binaries].
 

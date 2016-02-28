@@ -1,6 +1,6 @@
 ## Hello World!
 
-In this tutorial we will learn how to load a simple **hello world** script into our NodeMCU devkit board using the ESPLorer IDE.
+In this tutorial we will learn how to load a simple **hello world** script into our NodeMCU devkit board using the [esp clit tool][node-esp].
 
 You should follow the [introductory tutorial][intro-tutorial] to get your Mac environment ready.
 
@@ -9,7 +9,7 @@ Once we have completed this tutorial we should be able to write our own programs
 
 ### Lua Strings
 
-The actual program we are going to write is rather simple. The main focus is the process to get code running. We will also learn how to upload and execute a file from the ESPLorer IDE.
+The actual program we are going to write is rather simple. The main focus is the process to get code running. We will also learn how to upload and execute a file using the [esp clit tool][node-esp].
 
 Here is the code we will be running:
 
@@ -67,68 +67,13 @@ conn:send([[<h2>The module MAC address is: ]].. ap_mac..[[</h2>
     </form> </body> </html>]])
 ```
 
-### Firing up the IDE
-
-If you don't have the ESPLorer IDE running then open a terminal window, `cd` to the directory containing the **ESPLorer.jar** file and type the following command:
-
-```
-java -jar ESPLorer.jar
-```
-
-### Connecting to the board
-In order for the IDE to talk to the devkit we need to stablish a connection first.
-
-In the top right corner of the IDE:
-- Select **/dev/cu.SLAB_USBtoUART** port
-- Select 9600
-- Click Open
-
-![ESPlorer](./images/esplorer-connect.png)
-
-_NOTE:_
-If the connection was successful the Open button should toggle to a Close state. If this is not working make sure that you have installed the [SiLabs drivers][silabs-drivers]. If you don't see the /dev/cu.SLAB_USBtoUART option in the dropdown menu also make sure that you installed the drivers and restarted your computer. More information on the [introductory tutorial][intro-tutorial].
-
 ### Create a new file
 
-We will create a new file, name it `hello_world.lua` and upload it to the board using the ESPlorer IDE.
+We will create a new file, name it `hello_world.lua` and upload it to the board using the [esp clit tool][node-esp].
 
-You can use the IDE to create and edit files as well as to manage the files in the board. Also, we use it to upload files.
-
-To create a new file:
-
-- Select NodeMCU tab
-- Select Script tab
-- Click the blank file icon
-
-![ESPlorer](./images/esplorer-create-file.png)
+You can use any text editor or IDE to create and edit files. I recommend using Atom since you can lint your lua code rather easily.
 
 
-- Copy and paste the following code snippet:
-    - `print("Hello World!")`
-- Click the floppy disk icon and name the file `hello_world.lua`
-
-![ESPlorer](./images/esplorer-code.png)
-
-Type the **hello world** code:
-
-```lua
-print("Hello World!")
-```
-
-![ESPlorer](./images/esplorer-type-hello-world.png)
-
-If we have the board connected to the ESPlorer, when we create a new, once we save it locally the file will also be uploaded to the board.
-
-![ESPlorer](./images/esplorer-create-hello-world.png)
-
-
-Next we will upload our file to the board!
-
-![ESPlorer](./images/esplorer-upload.png)
-
-Once the file has been updloaded, we need to click the refresh button on the right most menu and it will show us all the files in the board:
-
-![ESPlorer](./images/esplorer-file-uploaded.png)
 
 
 ### Executing a file
@@ -175,3 +120,5 @@ Snippets:
 <!--
 http://stackoverflow.com/questions/31304082/how-to-recover-nodemcu-infinite-loop
 -->
+
+[node-esp]: https://www.npmjs.com/package/node-esp

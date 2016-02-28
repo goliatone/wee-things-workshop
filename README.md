@@ -19,7 +19,7 @@ With it, we can stream data from sensors, control appliances, build armies of ro
 - [Quick Set Up](#quick-set-up)
 - [Set up](#set-up)
     - [SiLabs Drivers](#silabs-drivers)
-    - [ Node.js](#nodejs)
+    - [Node.js](#nodejs)
     - [NodeMCU firmware](#nodemcu-firmware)
     - [Flashing the NodeMCU](#flashing-the-nodemcu)
 - [Colophon](#colophon)
@@ -47,52 +47,49 @@ Hardware:
 
 Software:
 * [SiLabs Drivers][silabs-drivers] Used to communicate with the devkit
-* [esp8266-cli][esp8266-cli] Command line interface to program the devkit. **TODO: Update package name**
+* [node-esp][node-esp] Command line interface to program the devkit. **TODO: Update package name**
 
 Binaries:
 * [NodeMCU firmware][esp-binaries] Latest release of the NodeMCU firmware
 
 ---
 ### Quick Set Up
-Here is a `bash` script to bootstrap via CLI. This scripts automates a bunch of steps that you would have to do manually otherwise. Those steps are explained in the next section so you understand what the script is doing. If you are doing the quick set up, you do **NOT** have to clone this repo. The script will do it all for you.
 
-Type the following in a terminal window:
-```
-$ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
-```
+The quick setup consists of 7 steps.
+Clone this repo or download the zip archive. The following steps are relative to the projects main directory.
 
-1. Install the SiLabs Driver: The image is located in the `drivers` folder. Double click to start the installation process. **THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER AFTER INSTALLING THE DRIVER**
+1. Install the [SiLabs Drivers](#silabs-drivers): The image is located in the `drivers` folder. Double click to start the installation process. **THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER AFTER INSTALLING THE DRIVER**
 
 2. Ensure you have [Node.js][nodejs] installed. It is recommended that you use a node version manager tool like [nvm][nvm]
 
-3. Install `esp8266-cli`: `npm i -g esp8266-cli`. **TODO: Update package name**
+3. Install `node-esp`: `npm i -g node-esp`.
 
 4. Connect the board to your computer.
 
-5. Prep the board to be flashed: Press the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
+5. Prep the board to flash the [NodeMCU firmware](#nodemcu-firmware):
+    * From terminal, `cd` into **bin**.
+    * Press the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-6. Flash the board:  `cd` into **bin**. run `esp flash nodemcu_integer_0.9.6-dev_20150627.bin`
+6. Flash the board: run `esp flash nodemcu_integer_0.9.6-dev_20150627.bin`
 
 7. **Unplug the USB cable** and **plug it** again.
 
-8. Woohoo!! Now we are ready to start coding.
+Woohoo!! Now we are ready to start coding.
 
 ---
 ### Set up
 
 #### SiLabs Drivers
 
+_NOTE: This requires your computer to restart, save your work._
+
 From the SiLabs driver [download page][silabs-drivers]:
 
 >The CP210x USB to UART Bridge Virtual COM Port (VCP) drivers are required for device operation as a Virtual COM Port to facilitate host communication with CP210x products.
 
-In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers]. The bash script already downloaded the image file into your bin folder so open it up and follow the install instructions.
+In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers]. **[The bash script already downloaded the image file into your bin folder so open it up and follow the install instructions.]** TODO: DO WE NEED THE BASH SCRIPT? SHOULD THE DRIVER BE IN THE REPO?
 
 The ESP8266 runs a Lua interpreter and you can send in commands and read out results over serial.
-
-_NOTE:_
-
-This requires your computer to restart, save your work.
 
 #### Node.js
 If you don't have **Node.js** installed in your computer, download the installer from [here][nodejs-download].
@@ -101,9 +98,8 @@ We will be using node's package manager, `npm`, to install our CLI tool.
 
 Once you know you have `node` then `npm` should be available from terminal as well.
 
-**TODO: Update package name**
 ```
-$ npm i -g esp8266-cli
+$ npm i -g node-esp
 ```
 
 To ensure we the utility installed correctly, open a terminal window and type `esp --help`. It should display the `help` dialog.
@@ -115,8 +111,6 @@ If you are using a Mac:
 ```
 $ esp port set /dev/cu.SLAB_USBtoUART
 ```
-
-
 
 #### NodeMCU firmware
 You can find the latest NodeMCU firmware at their github repository, in the release page following this [link][esp-binaries].
@@ -167,7 +161,11 @@ The [ESP8266][espressif] is a microcontroller with 2.4 GHz WiFi capabilities sup
 
 ---
 ### Colophon
-And with this we conclude the boring setup process. We are ready to start coding and making things. We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board. Next, we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
+And with this we conclude the boring setup process. We are ready to start coding and making things.
+
+We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board.
+
+Next, we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
 
 If you are not familiar with the Lua programming language you can always follow a quick intro tutorial. Check out the Lua links in the [Resources](#resources) section.
 
@@ -205,7 +203,6 @@ If you are using Atom you can install the following plugins:
 
 Sublime:
 * [SublimeLinter-lua][SublimeLinter-lua]
-
 
 
 http://luajit.org/install.html
@@ -272,3 +269,4 @@ brew install luajit --with-52compat
 [nodejs-org]: https://nodejs.org/en
 [nvm]: https://github.com/creationix/nvm
 [nodejs-download]: https://nodejs.org/en/download
+[node-esp]: https://www.npmjs.com/package/node-esp

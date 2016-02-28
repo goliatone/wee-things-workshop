@@ -221,11 +221,6 @@ brew install luajit --with-52compat
 [amazon-usb]: http://www.amazon.com/AmazonBasics-Micro-USB-USB-Cable-Meters/dp/B00NH124VM/
 [amazon-esp]: http://www.amazon.com/Eleduino-Version-Internet-ESP8266-Development/dp/B010O1G1ES/
 
-[esplorer]: http://esp8266.ru/esplorer/#download
-[esptool]: https://github.com/themadinventor/esptool
-[esptool-install]: https://github.com/themadinventor/esptool#installation--dependencies
-
-
 [esp-binaries]: https://github.com/nodemcu/nodemcu-firmware/releases
 [esp8266-forum]: http://www.esp8266.com
 [esp8266-wiki]: https://en.wikipedia.org/wiki/ESP8266
@@ -246,10 +241,6 @@ brew install luajit --with-52compat
 [lua-linter]: https://github.com/AtomLinter/linter-lua
 [SublimeLinter-lua]: https://github.com/SublimeLinter/SublimeLinter-lua
 [luarocks]: https://luarocks.org
-
-[java-install]: http://crunchify.com/where-is-java-installed-on-my-mac-osx-system/
-[java-se]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-
 
 [hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world
 [hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/2-hello-blink

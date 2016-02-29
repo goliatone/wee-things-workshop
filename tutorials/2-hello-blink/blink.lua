@@ -3,7 +3,7 @@ local lighton = false
 
 gpio.mode(LED, gpio.OUTPUT)
 
--- time is in milliseconds
+-- time is in milliseconds, so 2 seconds.
 tmr.alarm(1, 2000, 1, function()
     if lighton == false then
         lighton = true

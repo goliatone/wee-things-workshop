@@ -1,4 +1,4 @@
-## Hello World!
+## Hello, World!
 
 In this tutorial we will learn how to load a simple **hello world** script into our NodeMCU devkit board using the [esp cli tool][node-esp].
 

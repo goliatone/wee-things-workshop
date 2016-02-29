@@ -231,8 +231,7 @@ brew install luajit --with-52compat
 
 [firmware]: https://github.com/nodemcu/nodemcu-firmware/releases
 [nodemcu-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki
-[nodemcu-wiki-api]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
-
+[nodemcu-wiki-api]:http://nodemcu.readthedocs.org/en/dev/
 [amazon-usb]: http://www.amazon.com/AmazonBasics-Micro-USB-USB-Cable-Meters/dp/B00NH124VM/
 [amazon-esp]: http://www.amazon.com/Eleduino-Version-Internet-ESP8266-Development/dp/B010O1G1ES/
 

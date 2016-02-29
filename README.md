@@ -202,6 +202,11 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
 * [Quick introduction][lua-intro]
 * [Introductory tutorial][lua-tutorial]
 * [Tutorials directory][lua-tutorials-directory]
+    * [dofile][dofile]
+    * [dofile tutorial][dofile-tutorial]
+
+[dofile]: http://www.lua.org/pil/8.html
+[dofile-tutorial]: http://luatut.com/dofile.html
 
 If you are new to programming, there is an online tutorial following the *Learn the Hard Way* method that uses Lua. [Here][learn-lua]
 
@@ -212,17 +217,13 @@ Lua has a package manager, [LuaRocks][luarocks]. A package manager is a set of t
 If you are using Atom you can install the following plugins:
 * [Lua support][language-lua]
 * [Lua linter][lua-linter]
+* [Lua globals][atom-lua-globals]
 
 Sublime:
 * [SublimeLinter-lua][SublimeLinter-lua]
 
-Atom:
-* [Lua syntax][atom-lua-syntax]
-* [Lua linter][atom-lua-linter]
-* [Lua globals][atom-lua-globals]
 
-
-http://luajit.org/install.html
+To install [Lua JIT][luajit] compiler on Mac using `brew`:
 
 ```
 brew install luajit --with-52compat
@@ -242,7 +243,6 @@ brew install luajit --with-52compat
 [esp8266-forum]: http://www.esp8266.com
 [esp8266-wiki]: https://en.wikipedia.org/wiki/ESP8266
 
-
 [nodemcu-faq]: http://www.esp8266.com/wiki/doku.php?id=nodemcu-unofficial-faq
 [silabs-drivers]: https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
 [nodemcu-mqtt]: http://www.allaboutcircuits.com/projects/introduction-to-the-mqtt-protocol-on-nodemcu/
@@ -258,6 +258,8 @@ brew install luajit --with-52compat
 [lua-linter]: https://github.com/AtomLinter/linter-lua
 [SublimeLinter-lua]: https://github.com/SublimeLinter/SublimeLinter-lua
 [luarocks]: https://luarocks.org
+
+[luajit]:http://luajit.org/install.html
 
 [hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world
 [hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/2-hello-blink
@@ -278,7 +280,5 @@ brew install luajit --with-52compat
 [node-esp]: https://www.npmjs.com/package/node-esp
 
 
-[atom-lua-syntax]: https://atom.io/packages/language-lua
-[atom-lua-linter]: https://atom.io/packages/linter-lua
 [atom-lua-globals]: https://atom.io/packages/linter-lua-findglobals
 [atom]: https://atom.io

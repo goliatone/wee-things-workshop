@@ -4,13 +4,13 @@ If you are familiar with Arduino chances are you have followed through their ver
 
 This is the NodeMCU equivalent. Note that we will not be using an external LED but the devkit's built in instead.
 
-_NOTE:_ We learned how to load a script into the NodeMCU devkit using ESPlorer in a previous [tutorial][hello-world], check this [introduction][intro] if you need to set up your Mac environment.
+_NOTE:_ We learned how to load a script into the NodeMCU devkit in a previous [tutorial][hello-world], check this [introduction][intro] if you have not set your Mac environment.
+
+---
 
 ### Source Code
 
-As far as the code goes is fairly simple but it highlights some important concepts.
-
-Here's the code:
+First, the source code:
 
 ```lua
 local pin = 4
@@ -18,7 +18,7 @@ local lighton = 0
 
 gpio.mode(pin, gpio.OUTPUT)
 
--- time is in milliseconds
+-- time is in milliseconds, so 2 seconds.
 tmr.alarm(1, 2000, 1, function()
     if lighton == 0 then
         lighton = 1
@@ -29,6 +29,26 @@ tmr.alarm(1, 2000, 1, function()
     end
 end)
 ```
+
+### Create file and upload
+
+Create a file in your **code** directory named `blink.lua` and type the source code.
+
+To upload the file to the board we will issue the following commands in a terminal window. `cd` to the **code** directory and execute:
+
+```
+$ esp file write blink.lua
+```
+
+To execute our file we will send a Lua command to the board:
+
+```
+$ esp run 'dofile("blink.lua")'
+```
+
+
+### GPIO
+As far as the code goes is fairly simple but it highlights some important concepts like interacting with peripherals using the `gpio` module.
 
 The first thing we do is to initialize **pin 4** as an **output** pin:
 

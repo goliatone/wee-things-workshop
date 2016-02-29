@@ -1,29 +1,64 @@
 ## Hello World!
 
-In this tutorial we will learn how to load a simple **hello world** script into our NodeMCU devkit board using the [esp clit tool][node-esp].
+In this tutorial we will learn how to load a simple **hello world** script into our NodeMCU devkit board using the [esp cli tool][node-esp].
 
 You should follow the [introductory tutorial][intro-tutorial] to get your Mac environment ready.
 
-Once we have completed this tutorial we should be able to write our own programs and upload them to a NodeMCU board.
+Once we have completed this tutorial we should be able to write our own programs and upload them to a NodeMCU board. There will be also a minimal introduction to strings in the Lua programming language.
 
+---
 
-### Lua Strings
+### Code
 
-The actual program we are going to write is rather simple. The main focus is the process to get code running. We will also learn how to upload and execute a file using the [esp clit tool][node-esp].
+The actual program we are going to write is rather simple. The main focus is the process to get code running in the board. We will use the [esp cli tool][node-esp] to upload and execute a file.
 
-Here is the code we will be running:
+In the spirit of [hello world][hw], here is our very first program:
 
 ```lua
-print("Hello World!")
+print("Hello, World!")
 ```
 
-The `print` statement takes a string parameter and will output it to the console, in this case the string "Hello World!".
+The `print` statement takes a string parameter and will output it to the console, in this case the string "Hello World!". Below you can find some information about [strings in Lua](#lua-strings).
 
-_NOTE_
+#### Create a new file
+
+Create a new file, type our glorious program:
+```lua
+print("Hello, World!")
+```
+ Name it `hello_world.lua` and save it to the **code** directory. To upload the file to the board we will be using the [esp cli tool][node-esp]. If you have not installed it yet you can follow the instructions on the tool's [repository][node-esp].
+
+To upload the file to the board we will issue the following commands in a terminal window. `cd` to the directory where you saved the `hello_world.lua` file, and from there execute:
+
+```
+$ esp file write hello_world.lua
+```
+
+You can peek the contents of the file system with the following command:
+
+```
+$ esp file list
+```
+
+To see a list of the `esp file` subcommands type the `esp file --help` command to display the help content.
+
+#### Executing a file
+
+Now we are going to execute our program.
+
+```
+$ esp file execute hello_world.lua
+```
+Your terminal window should show the following text:
+```
+Hello, World!
+```
+
+#### Lua Strings
 
 In Lua you use two dots to concatenate strings,
 ```lua
-print("Hello ".."World!")
+print("Hello, ".."World!")
 ```
 You could also use variables. If you assign a string value to a variable, you could dynamically create a string:
 
@@ -36,17 +71,19 @@ If we want to interpolate variables in a string, it can get unwieldy pretty fast
 ```lua
 local name = "Peperone"
 local something = "pancakes"
-print("Hello "..name..", do you like "..something.."?") -- outputs: Hello Peperone, do you like pancakes?
+print("Hello "..name..", do you like "..something.."?")
+-- outputs: Hello Peperone, do you like pancakes?
 ```
 
-In lua you can do [string interpolation][wiki-string-interpolation] using the `string.format` utility, which you can read about [here][wiki-lua-string-interpolation].
+In lua you can do [string interpolation][wiki-string-interpolation] using the `string.format` utility- you can read about it  [here][wiki-lua-string-interpolation]. But basically...
 
 > String interpolation is the process of evaluating a string literal containing one or more placeholders, yielding a result in which the placeholders are replaced with their corresponding values.
 
 ```lua
 local name = "Peperone"
 local something = "pancakes"
-print(string.format("Hello %s, do you like %s?", name, something)) -- outputs: Hello Peperone, do you like pancakes?
+print(string.format("Hello %s, do you like %s?", name, something))
+-- outputs: Hello Peperone, do you like pancakes?
 ```
 
 #### Multiline
@@ -67,46 +104,6 @@ conn:send([[<h2>The module MAC address is: ]].. ap_mac..[[</h2>
     </form> </body> </html>]])
 ```
 
-### Create a new file
-
-We will create a new file, name it `hello_world.lua` and upload it to the board using the [esp clit tool][node-esp].
-
-You can use any text editor or IDE to create and edit files. I recommend using Atom since you can lint your lua code rather easily.
-
-
-
-
-### Executing a file
-
-From the ESPLorer IDE, there are different ways we can execute a file.
-
-If we right click on the `hello_world.lua` file, we get a context menu with different options:
-
-![ESPlorer](./images/esplorer-execute-file.png)
-
-If we click on *Run hello_world.lua*, you will never believe what happens next...
-
-![ESPlorer](./images/esplorer-hello-world-output.png)
-
-We get the string `Hello World!` printed in the IDE's console window.
-
-
-### Features
-
-The ESPlorer IDE has a lot of different and useful features that you will discover as you use the program. Here we cover a small sample of those.
-
-We can send commands to the board from the IDE.
-
-Another way we have to execute a file, is to send a Lua command directly to the board. In this case, the [dofile][dofile] command. You can read more about the command [here][dofile-tutorial]. Basically the `dofile` commands opens the named file and executes its contents. This is actually really handy, since the ESP8266 have so little resources it enables us to only bring into memory chunks of code if and when needed.
-
-![ESPlorer](./images/esplorer-dofile.png)
-
-
-Show the current files uploaded in the board:
-
-Send commands:
-
-Snippets:
 
 
 [silabs-drivers]: https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
@@ -117,8 +114,12 @@ Snippets:
 
 [wiki-lua-string-interpolation]: http://lua-users.org/wiki/StringInterpolation
 [wiki-string-interpolation]: https://en.wikipedia.org/wiki/String_interpolation
+
+
 <!--
-http://stackoverflow.com/questions/31304082/how-to-recover-nodemcu-infinite-loop
+//stackoverflow.com/questions/31304082/how-to-recover-nodemcu-infinite-loop
 -->
 
 [node-esp]: https://www.npmjs.com/package/node-esp
+[hw]: https://en.wikipedia.org/wiki/%22Hello,_World!%22_program
+[atom]: https://atom.io

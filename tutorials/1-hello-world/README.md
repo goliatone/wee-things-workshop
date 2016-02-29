@@ -8,7 +8,7 @@ Once we have completed this tutorial we should be able to write our own programs
 
 ---
 
-### Code
+### Source Code
 
 The actual program we are going to write is rather simple. The main focus is the process to get code running in the board. We will use the [esp cli tool][node-esp] to upload and execute a file.
 

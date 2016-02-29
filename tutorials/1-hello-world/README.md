@@ -40,7 +40,7 @@ You can peek the contents of the file system with the following command:
 $ esp file list
 ```
 
-To see a list of the `esp file` subcommands type the `esp file --help` command to display the help content.
+To see a list of the `esp file` subcommands type the `esp file --help` command to display the help dialog.
 
 #### Executing a file
 
@@ -106,11 +106,7 @@ conn:send([[<h2>The module MAC address is: ]].. ap_mac..[[</h2>
 
 
 
-[silabs-drivers]: https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
 [intro-tutorial]: https://github.com/goliatone/wee-things-workshop
-
-[dofile-tutorial]: http://luatut.com/dofile.html
-[dofile]: http://www.lua.org/pil/8.html
 
 [wiki-lua-string-interpolation]: http://lua-users.org/wiki/StringInterpolation
 [wiki-string-interpolation]: https://en.wikipedia.org/wiki/String_interpolation

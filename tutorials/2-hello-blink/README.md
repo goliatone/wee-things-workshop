@@ -40,9 +40,11 @@ To upload the file to the board we will issue the following commands in a termin
 $ esp file write blink.lua
 ```
 
-In the [hello-world][hello-world] tutorial we saw that we could use the `esp file execute` subcommand to run our program. Under the hood, `esp` is using the [dofile][dofile] command. You can think of `dofile` as a kind of primitive operation to run chunks of Lua code.
+In the [hello-world][hello-world] tutorial we saw that we could use the `esp file execute` subcommand to run our program. Under the hood, `esp` is using Lua's [dofile][dofile] command. You can think of `dofile` as a kind of primitive operation to run chunks of Lua code.
 
-To execute our file we will send a Lua command to the board:
+To execute the `blink.lua` file we will use the `esp run` command, which sends a string- hopefully Lua code- to the NodeMCU board and executes it.
+
+Will send send a Lua command to the board:
 
 ```
 $ esp run 'dofile("blink.lua")'
@@ -50,6 +52,8 @@ $ esp run 'dofile("blink.lua")'
 
 ### GPIO
 As far as the code goes is fairly simple but it highlights some important concepts like interacting with peripherals using the `gpio` module.
+
+**GPIO** stands for general-purpose input/output.
 
 The first thing we do is to initialize **pin 4** as an **output** pin:
 

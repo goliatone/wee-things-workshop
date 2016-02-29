@@ -205,9 +205,6 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
     * [dofile][dofile]
     * [dofile tutorial][dofile-tutorial]
 
-[dofile]: http://www.lua.org/pil/8.html
-[dofile-tutorial]: http://luatut.com/dofile.html
-
 If you are new to programming, there is an online tutorial following the *Learn the Hard Way* method that uses Lua. [Here][learn-lua]
 
 Lua has a package manager, [LuaRocks][luarocks]. A package manager is a set of tools that help you install, upgrade, configure, and manage software packages, or modules, and their dependencies. From the LuaRocks website:
@@ -282,3 +279,7 @@ brew install luajit --with-52compat
 
 [atom-lua-globals]: https://atom.io/packages/linter-lua-findglobals
 [atom]: https://atom.io
+
+
+[dofile]: http://www.lua.org/pil/8.html
+[dofile-tutorial]: http://luatut.com/dofile.html

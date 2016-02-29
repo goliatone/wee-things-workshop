@@ -40,12 +40,13 @@ To upload the file to the board we will issue the following commands in a termin
 $ esp file write blink.lua
 ```
 
+In the [hello-world][hello-world] tutorial we saw that we could use the `esp file execute` subcommand to run our program. Under the hood, `esp` is using the [dofile][dofile] command. You can think of `dofile` as a kind of primitive operation to run chunks of Lua code.
+
 To execute our file we will send a Lua command to the board:
 
 ```
 $ esp run 'dofile("blink.lua")'
 ```
-
 
 ### GPIO
 As far as the code goes is fairly simple but it highlights some important concepts like interacting with peripherals using the `gpio` module.
@@ -76,6 +77,8 @@ gpio.write(pin, gpio.LOW)
 
 
 [hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world
+[dofile]: http://www.lua.org/pil/8.html
+[dofile-tutorial]: http://luatut.com/dofile.html
 
 <!-- LINKS
 http://www.ladyada.net/learn/arduino/lesson1.html

@@ -148,6 +148,18 @@ Now **unplug the USB cable** and **plug it** again.
 
 Congratulations, we now have a board properly flashed and we are ready to start uploading code.
 
+<!--
+#### Tutorials
+To follow along the tutorials when you have to create a file with source code, place your files inside the [code][code-dir] directory. In the tutorials we will assume that you did so and all paths will be relative to the `code` directory.
+
+You can use any text editor or IDE to create and edit files. I recommend using [Atom][atom] since it supports Lua syntax and you can lint your Lua code which will help you catch some errors before you execute your code on the board.
+
+We will be using the [esp cli tool][node-esp] to manage the boards file system and send commands to it as well to see debug information in our terminal console.
+
+A lot of our workflow happens in a terminal environment.
+
+-->
+
 Now you can proceed with the next tutorials:
 * [Hello World][hello-world]
 * [Hello Blink][hello-blink]
@@ -204,6 +216,11 @@ If you are using Atom you can install the following plugins:
 Sublime:
 * [SublimeLinter-lua][SublimeLinter-lua]
 
+Atom:
+* [Lua syntax][atom-lua-syntax]
+* [Lua linter][atom-lua-linter]
+* [Lua globals][atom-lua-globals]
+
 
 http://luajit.org/install.html
 
@@ -255,9 +272,13 @@ brew install luajit --with-52compat
 
 [logo-dribbble]: https://dribbble.com/shots/2352690-Hardware-Workshop
 
-
-
 [nodejs-org]: https://nodejs.org/en
 [nvm]: https://github.com/creationix/nvm
 [nodejs-download]: https://nodejs.org/en/download
 [node-esp]: https://www.npmjs.com/package/node-esp
+
+
+[atom-lua-syntax]: https://atom.io/packages/language-lua
+[atom-lua-linter]: https://atom.io/packages/linter-lua
+[atom-lua-globals]: https://atom.io/packages/linter-lua-findglobals
+[atom]: https://atom.io

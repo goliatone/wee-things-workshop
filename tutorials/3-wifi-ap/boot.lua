@@ -2,7 +2,7 @@
 wifi.setmode(wifi.SOFTAP)
 
 -- Configure the access point
-cfg = {
+local cfg = {
     ssid = "WEE_THINGS_"..node.chipid(),
     pwd = "weething"
 }
@@ -18,7 +18,7 @@ print('Security: WPA/WPA 2 Personal')
 print('- PWD: ', cfg.pwd)
 print('')
 
-address = {
+local address = {
   ip = '192.168.4.1',
   netmask = '255.255.255.0',
   gateway = '192.168.4.1'

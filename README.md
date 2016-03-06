@@ -3,8 +3,8 @@
 An introduction to the [ESP8266][esp8266-wiki] microcontroller, a $4 WiFi module with an ARM processor, running the NodeMCU firmware, programmed in the [Lua][lua] programming language.
 
 This little thing is great because:
- - it's cheap: $4, compared to $24 for the more popular arduino
- - it comes with WiFi: if you were to get an arduino, you'd _also_ have to get a WiFi module, possibly even an ESP8266!
+ - it's cheap: $4, compared to $24 for the more popular Arduino
+ - it comes with WiFi: if you were to get an Arduino, you'd _also_ have to get a WiFi module, possibly even an ESP8266!
 
 With it, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...all for $4.
 
@@ -18,9 +18,8 @@ With it, we can stream data from sensors, control appliances, build armies of ro
 - [Materials](#materials)
 - [Quick Set Up](#quick-set-up)
 - [Set up](#set-up)
-    - [ESPlorer](#esplorer)
     - [SiLabs Drivers](#silabs-drivers)
-    - [espytool](#espytool)
+    - [Node.js](#nodejs)
     - [NodeMCU firmware](#nodemcu-firmware)
     - [Flashing the NodeMCU](#flashing-the-nodemcu)
 - [Colophon](#colophon)
@@ -35,9 +34,7 @@ This tutorial expects:
 - some basic programming knowledge
 - you know how to open a **terminal**, execute scripts and type in a commands
 - you can find your way around **Github**
-- a working **Java** installation
-    - [Java SE version 7][java-se] or above
-    - we won't be using Java directly, but the application that loads software onto the microcontroller is a Java application
+- [Node.js][nodejs-org] installed in your machine
 
 We've tested this tutorial on **MacOS**. It's possible to do with Windows, but there might be subtle differences when it comes to flashing the board and using the tools.
 
@@ -49,108 +46,71 @@ Hardware:
 * [Micro USB cable][amazon-usb]
 
 Software:
-* [esptool][esptool] Used to flash NodeMCU devkit
 * [SiLabs Drivers][silabs-drivers] Used to communicate with the devkit
-* [ESPlorer][esplorer] IDE used to program the devkit
+* [node-esp][node-esp] Command line interface to program the devkit. **TODO: Update package name**
 
 Binaries:
 * [NodeMCU firmware][esp-binaries] Latest release of the NodeMCU firmware
 
 ---
 ### Quick Set Up
-Here is a `bash` script to bootstrap via CLI. This scripts automates a bunch of steps that you would have to do manually otherwise. Those steps are explained in the next section so you understand what the script is doing. If you are doing the quick set up, you do **NOT** have to clone this repo. The script will do it all for you.
 
-Type the following in a terminal window:
-```
-$ curl -SLs https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/bin/bootstrap | bash
-```
+The quick setup consists of 7 steps.
+Clone this repo or download the zip archive. The following steps are relative to the projects main directory.
 
-1. Connect the board to your computer.
+1. Install the [SiLabs Drivers](#silabs-drivers): The image is located in the `drivers` folder. Double click to start the installation process. **THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER AFTER INSTALLING THE DRIVER**
 
-2. Install the SiLabs Driver: The image is located in the `drivers` folder. Double click to start the installation process. THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER
+2. Ensure you have [Node.js][nodejs] installed. It is recommended that you use a node version manager tool like [nvm][nvm]
 
-2. Open up the ESPlorer IDE: `cd` into  **bin/ESPlorer**. run `java -jar "ESPlorer.jar"`
+3. Install `node-esp`: `npm i -g node-esp`.
 
-3. Install esptool to flash the board: `cd` into **bin/esptool**. run `python setup.py install`
+4. Connect the board to your computer.
 
-4. Prep the board to be flashed: Press the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
+5. Prep the board to flash the [NodeMCU firmware](#nodemcu-firmware):
+    * From terminal, `cd` into **bin**.
+    * Press the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-5. Flash the board:  `cd` into **bin/esptool**. run `esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash -fm=dio -fs=32m -ff=40m 0x00000 ../nodemcu_integer_0.9.6-dev_20150627.bin`
+6. Flash the board: run `esp flash nodemcu_integer_0.9.6-dev_20150627.bin`
 
-6. **Unplug the USB cable** and **plug it** again.
+7. **Unplug the USB cable** and **plug it** again.
 
-7. Woohoo!! Now we are ready to start coding. Open up the ESPlorer IDE (step 2) if you've closed it.
+Woohoo!! Now we are ready to start coding.
 
 ---
 ### Set up
 
-#### ESPlorer
-You can download the ESPlorer IDE from [here][esplorer]. However, we will be using the version bundled with this tutorial for convenience.
-
-_NOTE:_ ESPlorer requires [Java SE version 7][java-se] or greater to be installed in your computer.
-
-First, we need to un-zip the **ESPlorer.zip** file.
-
-On Mac to open the IDE you need to do so from **terminal**. Open a new **terminal** window, `cd` to the **ESPlorer** directory created after uncompressing the zip file, and type this command in your terminal:
-
-```
-java -jar ESPlorer.jar
-```
-
-*NOTE:*
-Some online resources tell you to `sudo` the command in order to run the **ESPlorer** IDE. Most _likely_ you will be able to leave it out.
-
-This command wil open up the IDE, it should look something similar to this:
-
-![ESPlorer](./images/esplorer-001.png)
-
-We will be using the ESPlorer to validate our next step, installing the SiLabs Drivers.
-
-Maybe the command did not work. It could be due to different things. If you get an error message that looks similar to this one it means that you have an outdated version of java:
-
->Exception in thread "main" java.lang.UnsupportedClassVersionError: ESPlorer/ESPlorer : Unsupported major.minor version 51.0
-at java.lang.ClassLoader.defineClass1(Native Method)
-at java.lang.ClassLoader.defineClassCond(ClassLoader.java:637)
-at java.lang.ClassLoader.defineClass(ClassLoader.java:621)
-at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
-at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
-at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
-at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
-at java.security.AccessController.doPrivileged(Native Method)
-at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
-at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
-at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
-at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
-
-You should [update][java-se] your Java version.
-
 #### SiLabs Drivers
+
+_NOTE: This requires your computer to restart, save your work._
 
 From the SiLabs driver [download page][silabs-drivers]:
 
 >The CP210x USB to UART Bridge Virtual COM Port (VCP) drivers are required for device operation as a Virtual COM Port to facilitate host communication with CP210x products.
 
-In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers]. The bash script already downloaded the image file into your bin folder so open it up and follow the install instructions.
+In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers]. **[The bash script already downloaded the image file into your bin folder so open it up and follow the install instructions.]** TODO: DO WE NEED THE BASH SCRIPT? SHOULD THE DRIVER BE IN THE REPO?
 
 The ESP8266 runs a Lua interpreter and you can send in commands and read out results over serial.
 
-_NOTE:_
+#### Node.js
+If you don't have **Node.js** installed in your computer, download the installer from [here][nodejs-download].
 
-This requires your computer to restart, save your work.
+We will be using node's package manager, `npm`, to install our CLI tool.
 
-
-
-#### esptool
-
-We will first install **esptool** in order to flash our boards. It's a `python` script which can be run using the Mac's default `python`. Open terminal and cd to the **esptool** directory and run the following command:
+Once you know you have `node` then `npm` should be available from terminal as well.
 
 ```
-python setup.py install
+$ npm i -g node-esp
 ```
 
-This will install `esptool.py` system-wide.
+To ensure we the utility installed correctly, open a terminal window and type `esp --help`. It should display the `help` dialog.
 
-If you do not want a global install you can follow the [instructions][esptool-install] on the repo to use the tool locally. It's really easy.
+The first time you use the `esp` tool you need to configure the port to talk to the NodeMCU board:
+
+If you are using a Mac:
+
+```
+$ esp port set /dev/cu.SLAB_USBtoUART
+```
 
 #### NodeMCU firmware
 You can find the latest NodeMCU firmware at their github repository, in the release page following this [link][esp-binaries].
@@ -160,7 +120,7 @@ The ESP8266 chip comes loaded with an AT command set, and it's meant to be used 
 #### Flashing the NodeMCU
 In this step, we are going to flash our devkit with the NodeMCU binaries downloaded before so we can start loading programs to the board. It sounds intimidating, but it's quite simple actually.
 
-We already downloaded the NodeMCU [firmware][firmware], installed the SiLabs drivers, and have **esptool** installed.
+We already downloaded the NodeMCU [firmware][firmware], installed the SiLabs drivers, and have **esp** installed.
 
 Connect the board to the computer using the USB cable.
 
@@ -168,11 +128,11 @@ From the project's main directory, open terminal and `cd` to the **bin** directo
 
 We need to put the board in flash mode. To do so hold down the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-From terminal, `cd` into your project's **bin/esptool** directory. Then
+From terminal, `cd` into your project's **bin** directory. Then
 type the following command in terminal and press enter:
 
 ```
-esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash -fm=dio -fs=32m -ff=40m 0x00000 ../nodemcu_integer_0.9.6-dev_20150627.bin
+esp flash nodemcu_integer_0.9.6-dev_20150627.bin
 ```
 The script should provide some feedback in the terminal window while is executing.
 
@@ -186,7 +146,19 @@ Leaving...
 
 Now **unplug the USB cable** and **plug it** again.
 
-Congratulations, we now have a board properly flashed and we are ready to start uploading code. We will do so using an IDE.
+Congratulations, we now have a board properly flashed and we are ready to start uploading code.
+
+<!--
+#### Tutorials
+To follow along the tutorials when you have to create a file with source code, place your files inside the [code][code-dir] directory. In the tutorials we will assume that you did so and all paths will be relative to the `code` directory.
+
+You can use any text editor or IDE to create and edit files. I recommend using [Atom][atom] since it supports Lua syntax and you can lint your Lua code which will help you catch some errors before you execute your code on the board.
+
+We will be using the [esp cli tool][node-esp] to manage the boards file system and send commands to it as well to see debug information in our terminal console.
+
+A lot of our workflow happens in a terminal environment.
+
+-->
 
 Now you can proceed with the next tutorials:
 * [Hello World][hello-world]
@@ -201,7 +173,11 @@ The [ESP8266][espressif] is a microcontroller with 2.4 GHz WiFi capabilities sup
 
 ---
 ### Colophon
-And with this we conclude the boring setup process. We are ready to start coding and making things. We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board. Next, we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
+And with this we conclude the boring setup process. We are ready to start coding and making things.
+
+We will start by doing the mandatory [hello world][hello-world] tutorial which will teach us how to load code into a devkit board.
+
+Next, we will do the classical [hello world of electronics][hello-blink] and get an LED blinking.
 
 If you are not familiar with the Lua programming language you can always follow a quick intro tutorial. Check out the Lua links in the [Resources](#resources) section.
 
@@ -226,6 +202,8 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
 * [Quick introduction][lua-intro]
 * [Introductory tutorial][lua-tutorial]
 * [Tutorials directory][lua-tutorials-directory]
+    * [dofile][dofile]
+    * [dofile tutorial][dofile-tutorial]
 
 If you are new to programming, there is an online tutorial following the *Learn the Hard Way* method that uses Lua. [Here][learn-lua]
 
@@ -236,13 +214,13 @@ Lua has a package manager, [LuaRocks][luarocks]. A package manager is a set of t
 If you are using Atom you can install the following plugins:
 * [Lua support][language-lua]
 * [Lua linter][lua-linter]
+* [Lua globals][atom-lua-globals]
 
 Sublime:
 * [SublimeLinter-lua][SublimeLinter-lua]
 
 
-
-http://luajit.org/install.html
+To install [Lua JIT][luajit] compiler on Mac using `brew`:
 
 ```
 brew install luajit --with-52compat
@@ -253,20 +231,13 @@ brew install luajit --with-52compat
 
 [firmware]: https://github.com/nodemcu/nodemcu-firmware/releases
 [nodemcu-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki
-[nodemcu-wiki-api]: https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en
-
+[nodemcu-wiki-api]:http://nodemcu.readthedocs.org/en/dev/
 [amazon-usb]: http://www.amazon.com/AmazonBasics-Micro-USB-USB-Cable-Meters/dp/B00NH124VM/
 [amazon-esp]: http://www.amazon.com/Eleduino-Version-Internet-ESP8266-Development/dp/B010O1G1ES/
-
-[esplorer]: http://esp8266.ru/esplorer/#download
-[esptool]: https://github.com/themadinventor/esptool
-[esptool-install]: https://github.com/themadinventor/esptool#installation--dependencies
-
 
 [esp-binaries]: https://github.com/nodemcu/nodemcu-firmware/releases
 [esp8266-forum]: http://www.esp8266.com
 [esp8266-wiki]: https://en.wikipedia.org/wiki/ESP8266
-
 
 [nodemcu-faq]: http://www.esp8266.com/wiki/doku.php?id=nodemcu-unofficial-faq
 [silabs-drivers]: https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
@@ -284,9 +255,7 @@ brew install luajit --with-52compat
 [SublimeLinter-lua]: https://github.com/SublimeLinter/SublimeLinter-lua
 [luarocks]: https://luarocks.org
 
-[java-install]: http://crunchify.com/where-is-java-installed-on-my-mac-osx-system/
-[java-se]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-
+[luajit]:http://luajit.org/install.html
 
 [hello-world]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/1-hello-world
 [hello-blink]: https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/2-hello-blink
@@ -300,3 +269,16 @@ brew install luajit --with-52compat
 [learn-lua]: http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/
 
 [logo-dribbble]: https://dribbble.com/shots/2352690-Hardware-Workshop
+
+[nodejs-org]: https://nodejs.org/en
+[nvm]: https://github.com/creationix/nvm
+[nodejs-download]: https://nodejs.org/en/download
+[node-esp]: https://www.npmjs.com/package/node-esp
+
+
+[atom-lua-globals]: https://atom.io/packages/linter-lua-findglobals
+[atom]: https://atom.io
+
+
+[dofile]: http://www.lua.org/pil/8.html
+[dofile-tutorial]: http://luatut.com/dofile.html

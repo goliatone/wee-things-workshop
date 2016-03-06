@@ -1,4 +1,4 @@
-## Hello Wifi Blink!
+## Hello, Wifi Blink!
 
 In this tutorial we will configure our NodeMCU board as an [Access Point][ap] so we can connect to it through a web browser. The `wifi` module is introduced in the [wifi-ap][wifi-ap] tutorial.
 

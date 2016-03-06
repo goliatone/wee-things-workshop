@@ -1,4 +1,4 @@
-## Blink
+## Hello, Blink!
 
 If you are familiar with Arduino chances are you have followed through their version of the *hello world* tutorial. The code shows the simplest thing you can do with an Arduino to see physical output, a blinking light.
 

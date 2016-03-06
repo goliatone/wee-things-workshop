@@ -1,4 +1,4 @@
-## WiFi
+## Hello, WiFi!
 
 In this tutorial we will learn how to configure our NodeMCU board to connect to the internet and also how to configure it as an Access Point so we can connect to it through a web browser.
 

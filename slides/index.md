@@ -195,7 +195,7 @@ _Arduino Uno image courtesy of Fritzing_
 ## NodeMCU
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
 
-## ESPlorer IDE
+## node-esp cli tool
 
 ![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
 

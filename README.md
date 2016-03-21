@@ -1,22 +1,24 @@
 ## WeeThings
 
-An introduction to the [ESP8266][esp8266-wiki] microcontroller, a $4 WiFi module with an ARM processor, running the NodeMCU firmware, programmed in the [Lua][lua] programming language.
+An introduction to the [ESP8266][esp8266-wiki], how to program it, and tools to help us do so.
+
+The ESP8266 microcontroller is a WiFi module with an [ARM][arm] processor, we will use the [NodeMCU][nodemcu] firmware and will program in the [Lua][lua] programming language.
 
 This little thing is great because:
  - it's cheap: $4, compared to $24 for the more popular Arduino
- - it comes with WiFi: if you were to get an Arduino, you'd _also_ have to get a WiFi module, possibly even an ESP8266!
+ - it comes with WiFi: Arduino need separate modules to be "connected", possibly even an ESP8266!
 
-With it, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...all for $4.
+With the ESP8266, we can stream data from sensors, control appliances, build armies of robots...all over WiFi...
 
 ![wee](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/weethings_green.png)
 <br/>
 (_[Logo][logo-dribbble] by Tracy Loi_)
 
-### TOC
+### Table Of Contents
 
 - [Prerequisites](#prerequisites)
 - [Materials](#materials)
-- [Quick Set Up](#quick-set-up)
+- [Quick Start](#quick-start)
 - [Set up](#set-up)
     - [SiLabs Drivers](#silabs-drivers)
     - [Node.js](#nodejs)
@@ -31,12 +33,12 @@ With it, we can stream data from sensors, control appliances, build armies of ro
 ### Prerequisites
 
 This tutorial expects:
-- some basic programming knowledge
-- you know how to open a **terminal**, execute scripts and type in a commands
-- you can find your way around **Github**
-- [Node.js][nodejs-org] installed in your machine
+- you have some basic programming knowledge
+- you know [how to open a **terminal**][how-to-terminal], execute scripts and type in a commands
+- you can find your way around Github
+- you have [Node.js][nodejs-org] [installed][node-install] in your machine
 
-We've tested this tutorial on **MacOS**. It's possible to do with Windows, but there might be subtle differences when it comes to flashing the board and using the tools.
+We've tested this tutorial on MacOS. It's possible to do with Windows, but there might be subtle differences when it comes to flashing the board and using the tools.
 
 ### Materials
 The list of materials is intentionally short; we can get up and running pretty fast.
@@ -47,30 +49,33 @@ Hardware:
 
 Software:
 * [SiLabs Drivers][silabs-drivers] Used to communicate with the devkit
-* [node-esp][node-esp] Command line interface to program the devkit. **TODO: Update package name**
-
+<!--
+**TODO: Update package name**
+-->
+* [node-esp][node-esp] Command line interface to program the devkit.
 Binaries:
 * [NodeMCU firmware][esp-binaries] Latest release of the NodeMCU firmware
 
 ---
-### Quick Set Up
+### Quick Start
 
-The quick setup consists of 7 steps.
+The quick setup consists of 7 steps. [Below](#set-up) you can find a more detailed set of instructions.
+
 Clone this repo or download the zip archive. The following steps are relative to the projects main directory.
 
-1. Install the [SiLabs Drivers](#silabs-drivers): The image is located in the `drivers` folder. Double click to start the installation process. **THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER AFTER INSTALLING THE DRIVER**
+1. Install the [SiLabs Drivers](#silabs-drivers): The disk image ,with a dmg extension, is located in the `drivers` folder. Double click to start the installation process. **THIS WILL REQUIRE YOU TO RESTART YOUR COMPUTER AFTER INSTALLING THE DRIVER**
 
-2. Ensure you have [Node.js][nodejs] installed. It is recommended that you use a node version manager tool like [nvm][nvm]
+2. Ensure you have [Node.js][nodejs-org] installed.
 
-3. Install `node-esp`: `npm i -g node-esp`.
+3. From terminal, use [npm][npm] to install node-esp: `npm i -g node-esp`.
 
 4. Connect the board to your computer.
 
 5. Prep the board to flash the [NodeMCU firmware](#nodemcu-firmware):
     * From terminal, `cd` into **bin**.
-    * Press the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
+    * Press the [board][nodemcu-diagram]'s **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-6. Flash the board: run `esp flash nodemcu_integer_0.9.6-dev_20150627.bin`
+6. Flash the board: from terminal run `esp flash nodemcu_integer_0.9.6-dev_20150627.bin`
 
 7. **Unplug the USB cable** and **plug it** again.
 
@@ -87,7 +92,7 @@ From the SiLabs driver [download page][silabs-drivers]:
 
 >The CP210x USB to UART Bridge Virtual COM Port (VCP) drivers are required for device operation as a Virtual COM Port to facilitate host communication with CP210x products.
 
-In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers]. **[The bash script already downloaded the image file into your bin folder so open it up and follow the install instructions.]** TODO: DO WE NEED THE BASH SCRIPT? SHOULD THE DRIVER BE IN THE REPO?
+In order for your computer to communicate with the devkit you need to have installed special drivers. You can find the download [link here][silabs-drivers].
 
 The ESP8266 runs a Lua interpreter and you can send in commands and read out results over serial.
 
@@ -106,25 +111,21 @@ To ensure we the utility installed correctly, open a terminal window and type `e
 
 The first time you use the `esp` tool you need to configure the port to talk to the NodeMCU board:
 
-If you are using a Mac:
-
 ```
 $ esp port set /dev/cu.SLAB_USBtoUART
 ```
 
 #### NodeMCU firmware
-You can find the latest NodeMCU firmware at their github repository, in the release page following this [link][esp-binaries].
+You can find the latest NodeMCU firmware at their Github repository, in the release page following this [link][esp-binaries].
 
-The ESP8266 chip comes loaded with an AT command set, and it's meant to be used by an external controller like an Arduino driving the chip over serial.
+The ESP8266 chip comes loaded with an [AT command set][at-commands], and it's meant to be used by an external controller like an Arduino driving the chip over serial.
 
 #### Flashing the NodeMCU
-In this step, we are going to flash our devkit with the NodeMCU binaries downloaded before so we can start loading programs to the board. It sounds intimidating, but it's quite simple actually.
+In this step, we are going to flash our devkit with the NodeMCU binaries downloaded before so we can start loading programs to the board. It sounds intimidating, but it's quite simple actually, think of it as upgrading the operating system on a computer.
 
 We already downloaded the NodeMCU [firmware][firmware], installed the SiLabs drivers, and have **esp** installed.
 
 Connect the board to the computer using the USB cable.
-
-From the project's main directory, open terminal and `cd` to the **bin** directory where the **nodemcu_float_0.9.6-dev_20150704.bin** file is located.
 
 We need to put the board in flash mode. To do so hold down the board's **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
@@ -134,7 +135,7 @@ type the following command in terminal and press enter:
 ```
 esp flash nodemcu_integer_0.9.6-dev_20150627.bin
 ```
-The script should provide some feedback in the terminal window while is executing.
+The script should provide some feedback in the terminal window while it is executing.
 
 ```
 Connecting...
@@ -146,7 +147,7 @@ Leaving...
 
 Now **unplug the USB cable** and **plug it** again.
 
-Congratulations, we now have a board properly flashed and we are ready to start uploading code.
+Congratulations, we now have a board properly setup and we are ready to start uploading code.
 
 <!--
 #### Tutorials
@@ -159,13 +160,6 @@ We will be using the [esp cli tool][node-esp] to manage the boards file system a
 A lot of our workflow happens in a terminal environment.
 
 -->
-
-Now you can proceed with the next tutorials:
-* [Hello World][hello-world]
-* [Hello Blink][hello-blink]
-* [Hello WiFi][hello-wifi]
-* [WiFi Blink][hello-blink]
-
 
 <!--
 ### More on ESP8266
@@ -184,6 +178,12 @@ Next, we will do the classical [hello world of electronics][hello-blink] and get
 If you are not familiar with the Lua programming language you can always follow a quick intro tutorial. Check out the Lua links in the [Resources](#resources) section.
 
 You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers succinctly all the different modules and their methods.
+
+Now you can proceed with the next tutorials:
+* [Hello World][hello-world]
+* [Hello Blink][hello-blink]
+* [Hello WiFi][hello-wifi]
+* [WiFi Blink][hello-blink]
 
 ---
 ### Resources
@@ -207,7 +207,7 @@ You should also check out NodeMCU's [API wiki page][nodemcu-wiki-api]. It covers
     * [dofile][dofile]
     * [dofile tutorial][dofile-tutorial]
 
-If you are new to programming, there is an online tutorial following the *Learn the Hard Way* method that uses Lua. [Here][learn-lua]
+If you are new to programming, there is an online tutorial following the [Learn the Hard Way][learn-lua] method that uses Lua.
 
 Lua has a package manager, [LuaRocks][luarocks]. A package manager is a set of tools that help you install, upgrade, configure, and manage software packages, or modules, and their dependencies. From the LuaRocks website:
 >LuaRocks allows you to create and install Lua modules as self-contained packages called rocks.
@@ -218,11 +218,11 @@ If you are using Atom you can install the following plugins:
 * [Lua linter][lua-linter]
 * [Lua globals][atom-lua-globals]
 
-Sublime:
+If you are using Sublime Text you can install the following plugins:
 * [SublimeLinter-lua][SublimeLinter-lua]
 
 
-To install [Lua JIT][luajit] compiler on Mac using `brew`:
+Some of this plugins might require you to install [Lua JIT][luajit] compiler, on Mac use [brew][brew]:
 
 ```
 brew install luajit --with-52compat
@@ -273,7 +273,6 @@ brew install luajit --with-52compat
 [logo-dribbble]: https://dribbble.com/shots/2352690-Hardware-Workshop
 
 [nodejs-org]: https://nodejs.org/en
-[nvm]: https://github.com/creationix/nvm
 [nodejs-download]: https://nodejs.org/en/download
 [node-esp]: https://www.npmjs.com/package/node-esp
 
@@ -284,3 +283,11 @@ brew install luajit --with-52compat
 
 [dofile]: http://www.lua.org/pil/8.html
 [dofile-tutorial]: http://luatut.com/dofile.html
+[arm]: https://en.wikipedia.org/wiki/ARM_architecture
+[nodemcu]: http://www.nodemcu.com/index_en.html
+[how-to-terminal]: http://www.coderanch.com/t/111327/Mac/open-terminal-window-mac
+[node-install]: http://www.lynda.com/Node-js-tutorials/Installing-Node-js-Mac/417077/454428-4.html
+[npm]:https://docs.npmjs.com/getting-started/what-is-npm
+[nodemcu-diagram]:https://arduining.files.wordpress.com/2015/08/nodemcudevkit_v1-0_io.jpg
+[at-commands]:https://en.wikipedia.org/wiki/Hayes_command_set
+[brew]:http://brew.sh/

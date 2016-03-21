@@ -49,9 +49,6 @@ Hardware:
 
 Software:
 * [SiLabs Drivers][silabs-drivers] Used to communicate with the devkit
-<!--
-**TODO: Update package name**
--->
 * [node-esp][node-esp] Command line interface to program the devkit.
 Binaries:
 * [NodeMCU firmware][esp-binaries] Latest release of the NodeMCU firmware

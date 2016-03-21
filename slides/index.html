@@ -338,7 +338,7 @@ class: center, middle, main-title
 
 ---
 ## node-esp cli tool
-![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
+![node-esp](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-001.png?a)
 
 
 ---
@@ -356,7 +356,7 @@ class: center, middle, main-title
 
 - NodeMCU dev board
 
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
+![nodemcu](https://arduining.files.wordpress.com/2015/08/nodemcudevkit_v1-0_io.jpg)
 
 
 ---
@@ -371,17 +371,8 @@ class: center, middle, main-title
 
 - Drivers
 - Firmware
-- esptool
-- ESPLorer
+- node-esp
 
-<!--
-Everybody should make a directory in the same place, and cd.
--->
-Bootstrap script:
-
-```
-$ curl -SLs https://goo.gl/3N7lDw | bash
-```
 Clone repo:
 
 ```
@@ -389,45 +380,25 @@ $ git clone git@github.com:goliatone/wee-things-workshop.git
 ```
 
 ---
-## Setup (software)
-![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png)
+class: center, middle, main-title
 
-
----
-## Setup (software)
-![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-002.png)
-
+# Project Directory
 
 ---
-## Setup (software)
-![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-003.png)
+## Project Directory
+![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png?u)
 
 
 ---
 class: center, middle, main-title
 
-# IDE
+# node-esp
 <h3>Communication with NodeMCU</h3>
 
-<!--
-TODO: bootstrap should check for Java
-make a slide of bootstrap result, cd ~/Desktop, mkdir wee-things, execute curl
-and then take screenshot
--->
 
 ---
-## IDE
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-ide-001.png)
-
-
----
-## IDE
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-ide-002.png)
-
-
----
-## IDE
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-ide-003.png)
+## node-esp
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-002.png)
 
 
 ---
@@ -445,70 +416,57 @@ class: center, middle, main-title
 ---
 class: center, middle, main-title
 
-# esptool
-<h3>Loading firmware to NodeMCU</h3>
+# Flashing NodeMCU
+<h3>Loading NodeMCU firmware</h3>
 
 
 ---
-## esptool
+## Flashing NodeMCU
+From bin directory:
+
 ```
-$ cd ~/Desktop/wee-things/wee-things-workshop/bin/esptool
+esp flash nodemcu_integer_0.9.6-dev_20150627.bin
 ```
 
 ---
-## esptool
-```
-$ esptool.py --port=/dev/cu.SLAB_USBtoUART write_flash \
- -fm=dio -fs=32m -ff=40m 0x00000 \
- ../nodemcu_integer_0.9.6-dev_20150627.bin
-```
-
----
-## esptool
-Unplug USB cable.
-
-```
-Connecting...
-Erasing flash...
-Wrote 400384 bytes at 0x00000000 in 38.5 seconds (83.1 kbit/s)...
-
-Leaving...
-```
-
----
-## Check
-![check](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-check-001.png)
+## Flashing NodeMCU
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-003.png)
 
 
 ---
 class: center, middle, main-title
 
-# Hello World
-
----
-## Hello World
-```lua
-print("Hello World!")
-```
-
----
-## Hello World
-Send command through IDE.
-
-```lua
-print("Hello World!")
-```
-![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
+# Hello, World!
+<h3>NodeMCU programming in Lua</h3>
 
 
 ---
-## Hello World
-Create file and upload through IDE.
-
+## Hello, World!
 ```lua
-print("Hello World!")
+print("Hello, World!")
 ```
-![esplorer](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esplorer-001.png)
+
+---
+## Hello, World!
+```lua
+print("Hello, World!")
+```
+Send command using node-esp:
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-004.png)
+
+
+---
+## Hello, World!
+```lua
+print("Hello, World!")
+```
+Create file and upload using node-esp:
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-005.png)
+
+
+---
+## Hello, World!
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-006.png)
 
 <!--
 SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
@@ -517,30 +475,30 @@ SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
 ---
 class: center, middle, main-title
 
-# Hello Blink!
+# Hello, Blink!
 
 ---
-## Hello Blink!
+## Hello, Blink!
 <code data-gist-id="558e5f9edb57ec8f65e8"></code>
 
 
 ---
 class: center, middle, main-title
 
-# Hello WiFi!
+# Hello, WiFi!
 
 ---
-## Hello WiFi!
+## Hello, WiFi!
 <code data-gist-id="7ca042f7cc421fe84447"></code>
 
 
 ---
 class: center, middle, main-title
 
-# WiFi Blink!
+# WiFi, Blink!
 
 ---
-## WiFi Blink!
+## WiFi, Blink!
 <code data-gist-id="001a3b147ddfee3e8451"></code>
 
 

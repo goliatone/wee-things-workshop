@@ -343,6 +343,40 @@ $ esp file execute hello_blink.lua
 
 <code data-gist-id="7ca042f7cc421fe84447"></code>
 
+## Hello, WiFi!
+Create file in **code** directory, name it **hello_wifi.lua**
+
+```
+$ esp file write hello_wifi.lua
+```
+
+```
+$ esp file list
+```
+
+## Hello, WiFi!
+
+```
+$ esp file execute hello_wifi.lua
+```
+
+```
+Wifi mode: 	2
+MAC: 	18:fe:34:f1:fa:df
+
+Created WiFi network:
+Network Name
+- SSID: 	WEE_THINGS_15858399
+Security: WPA/WPA 2 Personal
+- PWD: 	weething
+
+IP: 	192.168.4.1	255.255.255.0	192.168.4.1
+```
+
+## Hello, WiFi!
+Connect to Access Point:
+
+
 
 # WiFi, Blink!
 

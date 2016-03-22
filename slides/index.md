@@ -218,8 +218,8 @@ _Arduino Uno image courtesy of Fritzing_
 
 ## Setup (software)
 * Drivers
-* Firmware
 * node-esp
+* Firmware
 
 Clone repo:
 ```
@@ -231,28 +231,47 @@ $ git clone git@github.com:goliatone/wee-things-workshop.git
 
 ![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png?u)
 
-
-# node-esp
-<h3>Communication with NodeMCU</h3>
-
-## node-esp
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-002.png)
-
-
 # Drivers
 <h3>Requires computer restart :(</h3>
 
 ## Drivers
 ![drives](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/drivers-siliconlabs-001.png)
 
+# node-esp
+
+<h3>Communication with NodeMCU</h3>
+
+## node-esp
+
+Install:
+
+```
+$ npm i -g node-esp
+```
+
+Need SiLabs drivers installed:
+```
+$ esp port list
+```
+
+Set port name:
+```
+$ esp port set /dev/cu.SLAB_USBtoUART
+```
+
+## node-esp
+
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-002.png)
+
 # Flashing NodeMCU
 <h3>Loading NodeMCU firmware</h3>
 
 ## Flashing NodeMCU
+Hold down the board's **FLASH** button and press the **RST** button at the same time.
 
 From bin directory:
 ```
-esp flash nodemcu_integer_0.9.6-dev_20150627.bin
+$ esp flash nodemcu_integer_0.9.6-dev_20150627.bin
 ```
 
 ## Flashing NodeMCU

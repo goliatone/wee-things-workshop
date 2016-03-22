@@ -76,7 +76,7 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
+    * Hello, World!
 
 ## WeeThings
 

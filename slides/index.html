@@ -370,8 +370,8 @@ class: center, middle, main-title
 ## Setup (software)
 
 - Drivers
-- Firmware
 - node-esp
+- Firmware
 
 Clone repo:
 
@@ -392,18 +392,6 @@ class: center, middle, main-title
 ---
 class: center, middle, main-title
 
-# node-esp
-<h3>Communication with NodeMCU</h3>
-
-
----
-## node-esp
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-002.png)
-
-
----
-class: center, middle, main-title
-
 # Drivers
 <h3>Requires computer restart :(</h3>
 
@@ -416,16 +404,48 @@ class: center, middle, main-title
 ---
 class: center, middle, main-title
 
+# node-esp
+<h3>Communication with NodeMCU</h3>
+
+
+---
+## node-esp
+Install:
+
+```
+$ npm i -g node-esp
+```
+Need SiLabs drivers installed:
+
+```
+$ esp port list
+```
+Set port name:
+
+```
+$ esp port set /dev/cu.SLAB_USBtoUART
+```
+
+---
+## node-esp
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-002.png)
+
+
+---
+class: center, middle, main-title
+
 # Flashing NodeMCU
 <h3>Loading NodeMCU firmware</h3>
 
 
 ---
 ## Flashing NodeMCU
+Hold down the board&#39;s **FLASH** button and press the **RST** button at the same time.
+
 From bin directory:
 
 ```
-esp flash nodemcu_integer_0.9.6-dev_20150627.bin
+$ esp flash nodemcu_integer_0.9.6-dev_20150627.bin
 ```
 
 ---

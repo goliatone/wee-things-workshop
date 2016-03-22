@@ -113,6 +113,7 @@ $ esp port set /dev/cu.SLAB_USBtoUART
 ```
 
 #### NodeMCU firmware
+
 You can find the latest NodeMCU firmware at their Github repository, in the release page following this [link][esp-binaries].
 
 The ESP8266 chip comes loaded with an [AT command set][at-commands], and it's meant to be used by an external controller like an Arduino driving the chip over serial.

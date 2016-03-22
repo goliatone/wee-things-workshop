@@ -317,6 +317,8 @@ SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
 
 ## Hello, Blink!
 
+**https://goo.gl/Kbw7Ep**
+
 <code data-gist-id="558e5f9edb57ec8f65e8"></code>
 
 ## Hello, Blink!
@@ -341,6 +343,7 @@ $ esp file execute hello_blink.lua
 
 ## Hello, WiFi!
 
+**https://goo.gl/7TftH2**
 <code data-gist-id="7ca042f7cc421fe84447"></code>
 
 ## Hello, WiFi!
@@ -381,6 +384,8 @@ Connect to Access Point:
 # WiFi, Blink!
 
 ## WiFi, Blink!
+
+**https://goo.gl/KwAFu4**
 
 <code data-gist-id="001a3b147ddfee3e8451"></code>
 

@@ -384,6 +384,42 @@ Connect to Access Point:
 
 <code data-gist-id="001a3b147ddfee3e8451"></code>
 
+## WiFi, Blink!
+Create file in **code** directory, name it **wifi_blink.lua**
+
+```
+$ esp file write wifi_blink.lua
+```
+
+```
+$ esp file list
+```
+
+## WiFi, Blink!
+
+```
+$ esp file execute wifi_blink.lua
+```
+
+```
+Wifi mode: 	2
+MAC: 	18:fe:34:f1:fa:df
+
+Created WiFi network:
+Network Name
+- SSID: 	WEE_THINGS_15858399
+Security: WPA/WPA 2 Personal
+- PWD: 	weething
+
+IP: 	192.168.4.1	255.255.255.0	192.168.4.1
+```
+
+## WiFi, Blink!
+Browse to:
+
+```
+http://192.168.4.1/
+```
 
 # Thank you.
 Emiliano Burgos

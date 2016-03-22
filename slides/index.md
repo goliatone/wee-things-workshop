@@ -86,8 +86,8 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
+    * Hello, World!
+    * Hello, Blink!
 
 ## WeeThings
 
@@ -97,9 +97,9 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
 
 ## WeeThings
 
@@ -109,10 +109,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 ## WeeThings
 
@@ -122,10 +122,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 #### Requirements:
 
@@ -137,10 +137,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 #### Requirements:
 
@@ -154,10 +154,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 #### Requirements:
 

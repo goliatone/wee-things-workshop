@@ -421,6 +421,9 @@ Browse to:
 http://192.168.4.1/
 ```
 
+## WiFi, Blink!
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/wifi-blink-001.png)
+
 # Thank you.
 Emiliano Burgos
 

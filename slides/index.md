@@ -319,6 +319,23 @@ SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
 
 <code data-gist-id="558e5f9edb57ec8f65e8"></code>
 
+## Hello, Blink!
+Create file in **code** directory, name it **hello_blink.lua**
+
+```
+$ esp file write hello_blink.lua
+```
+
+```
+$ esp file list
+```
+
+Execute file:
+
+```
+$ esp file execute hello_blink.lua
+```
+
 
 # Hello, WiFi!
 

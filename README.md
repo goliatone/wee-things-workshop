@@ -58,7 +58,7 @@ Binaries:
 ---
 ### Quick Start
 
-The quick setup consists of 7 steps. [Below](#set-up) you can find a more detailed set of instructions.
+The quick setup consists of 8 steps. [Below](#set-up) you can find a more detailed set of instructions.
 
 Clone this repo or download the zip archive. The following steps are relative to the projects main directory.
 
@@ -68,15 +68,16 @@ Clone this repo or download the zip archive. The following steps are relative to
 
 3. From terminal, use [npm][npm] to install node-esp: `npm i -g node-esp`.
 
-4. Connect the board to your computer.
+4. [Set the node-esp port][esp-install]: `esp port set /dev/cu.SLAB_USBtoUART`
 
-5. Prep the board to flash the [NodeMCU firmware](#nodemcu-firmware):
+5. Connect the board to your computer.
+
+6. Prep the board to flash the [NodeMCU firmware](#nodemcu-firmware):
     * From terminal, `cd` into **bin**.
-    * Press the [board][nodemcu-diagram]'s **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-6. Flash the board: from terminal run `esp flash nodemcu_integer_0.9.6-dev_20150704.bin`
+7. Flash the board: from terminal run `esp flash nodemcu_integer_0.9.6-dev_20150704.bin`
 
-7. **Unplug the USB cable** and **plug it** again.
+8. **Unplug the USB cable** and **plug it** again.
 
 Woohoo!! Now we are ready to start coding.
 
@@ -291,3 +292,4 @@ brew install luajit --with-52compat
 [nodemcu-diagram]:https://arduining.files.wordpress.com/2015/08/nodemcudevkit_v1-0_io.jpg
 [at-commands]:https://en.wikipedia.org/wiki/Hayes_command_set
 [brew]:http://brew.sh/
+[esp-install]:https://github.com/goliatone/node-esp#install

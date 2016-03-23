@@ -74,7 +74,7 @@ Clone this repo or download the zip archive. The following steps are relative to
     * From terminal, `cd` into **bin**.
     * Press the [board][nodemcu-diagram]'s **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-6. Flash the board: from terminal run `esp flash nodemcu_integer_0.9.6-dev_20150627.bin`
+6. Flash the board: from terminal run `esp flash nodemcu_integer_0.9.6-dev_20150704.bin`
 
 7. **Unplug the USB cable** and **plug it** again.
 
@@ -133,7 +133,7 @@ From terminal, `cd` into your project's **bin** directory. Then
 type the following command in terminal and press enter:
 
 ```
-esp flash nodemcu_integer_0.9.6-dev_20150627.bin
+esp flash nodemcu_integer_0.9.6-dev_20150704.bin
 ```
 The script should provide some feedback in the terminal window while it is executing.
 

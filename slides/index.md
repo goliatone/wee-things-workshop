@@ -304,7 +304,7 @@ Hold down the board's **FLASH** button and press the **RST** button at the same 
 
 From bin directory:
 ```
-$ esp flash nodemcu_integer_0.9.6-dev_20150627.bin
+$ esp flash nodemcu_integer_0.9.6-dev_20150704.bin
 ```
 
 ## Flashing NodeMCU

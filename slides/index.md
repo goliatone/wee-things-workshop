@@ -14,6 +14,15 @@ https://github.com/goliatone/wee-things-workshop
 
 [wt]:https://github.com/goliatone/wee-things-workshop
 
+
+# Gitter IM
+
+[wee-things-workshop][wt]
+
+https://gitter.im/goliatone/wee-things-workshop
+
+[wt]:https://gitter.im/goliatone/wee-things-workshop
+
 ## Goals
 
 * Familiarize ourselves with the NodeMCU dev board.

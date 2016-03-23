@@ -164,6 +164,25 @@ https://github.com/goliatone/wee-things-workshop
 - Basic programming knowledge
 - Mac OS
 
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+* Setup
+    * Hardware
+    * Software
+* Code
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
+
+#### Requirements:
+
+- Basic programming knowledge
+- Mac OS
+
+**NOTE**: Drivers require computer restart
 
 # Microcontrollers
 
@@ -235,6 +254,11 @@ $ git clone git@github.com:goliatone/wee-things-workshop.git
 <h3>Requires computer restart :(</h3>
 
 ## Drivers
+
+* Project directory, inside **bin** folder.
+* https://goo.gl/SS1YoE
+
+## Drivers
 ![drives](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/drivers-siliconlabs-001.png)
 
 # node-esp
@@ -286,7 +310,6 @@ $ esp flash nodemcu_integer_0.9.6-dev_20150627.bin
 ```lua
 print("Hello, World!")
 ```
-
 
 ## Hello, World!
 

@@ -76,7 +76,7 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
+    * Hello, World!
 
 ## WeeThings
 
@@ -86,8 +86,8 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
+    * Hello, World!
+    * Hello, Blink!
 
 ## WeeThings
 
@@ -97,9 +97,9 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
 
 ## WeeThings
 
@@ -109,10 +109,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 ## WeeThings
 
@@ -122,10 +122,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 #### Requirements:
 
@@ -137,10 +137,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 #### Requirements:
 
@@ -154,10 +154,10 @@ https://github.com/goliatone/wee-things-workshop
     * Hardware
     * Software
 * Code
-    * Hello World
-    * Hello Blink
-    * Hello WiFi
-    * WiFi Blink!
+    * Hello, World!
+    * Hello, Blink!
+    * Hello, WiFi!
+    * WiFi, Blink!
 
 #### Requirements:
 
@@ -218,8 +218,8 @@ _Arduino Uno image courtesy of Fritzing_
 
 ## Setup (software)
 * Drivers
-* Firmware
 * node-esp
+* Firmware
 
 Clone repo:
 ```
@@ -231,28 +231,47 @@ $ git clone git@github.com:goliatone/wee-things-workshop.git
 
 ![bootstrap](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/bootstrap-001.png?u)
 
-
-# node-esp
-<h3>Communication with NodeMCU</h3>
-
-## node-esp
-![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-002.png)
-
-
 # Drivers
 <h3>Requires computer restart :(</h3>
 
 ## Drivers
 ![drives](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/drivers-siliconlabs-001.png)
 
+# node-esp
+
+<h3>Communication with NodeMCU</h3>
+
+## node-esp
+
+Install:
+
+```
+$ npm i -g node-esp
+```
+
+Need SiLabs drivers installed:
+```
+$ esp port list
+```
+
+Set port name:
+```
+$ esp port set /dev/cu.SLAB_USBtoUART
+```
+
+## node-esp
+
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-002.png)
+
 # Flashing NodeMCU
 <h3>Loading NodeMCU firmware</h3>
 
 ## Flashing NodeMCU
+Hold down the board's **FLASH** button and press the **RST** button at the same time.
 
 From bin directory:
 ```
-esp flash nodemcu_integer_0.9.6-dev_20150627.bin
+$ esp flash nodemcu_integer_0.9.6-dev_20150627.bin
 ```
 
 ## Flashing NodeMCU
@@ -298,21 +317,118 @@ SHOW IMAGES STEP BY STEP, LOAD & EXEC CODE
 
 ## Hello, Blink!
 
+**https://goo.gl/Kbw7Ep**
+
 <code data-gist-id="558e5f9edb57ec8f65e8"></code>
+
+## Hello, Blink!
+Create file in **code** directory, name it **hello_blink.lua**
+
+```
+$ esp file write hello_blink.lua
+```
+
+```
+$ esp file list
+```
+
+Execute file:
+
+```
+$ esp file execute hello_blink.lua
+```
 
 
 # Hello, WiFi!
 
 ## Hello, WiFi!
 
+**https://goo.gl/7TftH2**
+
 <code data-gist-id="7ca042f7cc421fe84447"></code>
+
+## Hello, WiFi!
+Create file in **code** directory, name it **hello_wifi.lua**
+
+```
+$ esp file write hello_wifi.lua
+```
+
+```
+$ esp file list
+```
+
+## Hello, WiFi!
+
+```
+$ esp file execute hello_wifi.lua
+```
+
+```
+Wifi mode: 	2
+MAC: 	18:fe:34:f1:fa:df
+
+Created WiFi network:
+Network Name
+- SSID: 	WEE_THINGS_15858399
+Security: WPA/WPA 2 Personal
+- PWD: 	weething
+
+IP: 	192.168.4.1	255.255.255.0	192.168.4.1
+```
+
+## Hello, WiFi!
+Connect to Access Point:
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/hello-wifi-001.png)
 
 
 # WiFi, Blink!
 
 ## WiFi, Blink!
 
+**https://goo.gl/KwAFu4**
+
 <code data-gist-id="001a3b147ddfee3e8451"></code>
+
+## WiFi, Blink!
+Create file in **code** directory, name it **wifi_blink.lua**
+
+```
+$ esp file write wifi_blink.lua
+```
+
+```
+$ esp file list
+```
+
+## WiFi, Blink!
+
+```
+$ esp file execute wifi_blink.lua
+```
+
+```
+Wifi mode: 	2
+MAC: 	18:fe:34:f1:fa:df
+
+Created WiFi network:
+Network Name
+- SSID: 	WEE_THINGS_15858399
+Security: WPA/WPA 2 Personal
+- PWD: 	weething
+
+IP: 	192.168.4.1	255.255.255.0	192.168.4.1
+```
+
+## WiFi, Blink!
+Browse to:
+
+```
+http://192.168.4.1/
+```
+
+## WiFi, Blink!
+![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/wifi-blink-001.png)
 
 
 # Thank you.

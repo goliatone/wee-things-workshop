@@ -409,7 +409,18 @@ Execute file:
 $ esp file execute hello_blink.lua
 ```
 
+---
+## Hello, Blink!
 
+```
+$ esp restart
+Board restarted
+```
+
+???
+What we are doing is, first we are writing the file to the board and then we are loading the file into memory, and execute it. If we have to modify a file that is currently loaded i memory, we need to restart the board in order for the changes to take effect
+
+---
 # Hello, WiFi!
 
 ## Hello, WiFi!

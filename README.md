@@ -229,6 +229,17 @@ Some of this plugins might require you to install [Lua JIT][luajit] compiler, on
 brew install luajit --with-52compat
 ```
 
+
+## Thank you.
+
+A lot of people have contributed directly and indirectly to this workshop, and in different capacities. Thank you all.
+
+* Aurelia Moser
+* Alan Jackson
+* David Mills
+* Grace Tan
+* Tracy Loi
+
 <!-- LINKS -->
 [espressif]: http://espressif.com/en/products/esp8266/
 

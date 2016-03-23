@@ -1,5 +1,7 @@
 ## WeeThings
 
+[![Join the chat at https://gitter.im/goliatone/wee-things-workshop](https://badges.gitter.im/goliatone/wee-things-workshop.svg)](https://gitter.im/goliatone/wee-things-workshop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 An introduction to the [ESP8266][esp8266-wiki], how to program it, and tools to help us do so.
 
 The ESP8266 microcontroller is a WiFi module with an [ARM][arm] processor, we will use the [NodeMCU][nodemcu] firmware and will program in the [Lua][lua] programming language.

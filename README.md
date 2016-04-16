@@ -2,6 +2,8 @@
 
 An introduction to the [ESP8266][esp8266-wiki], how to program it, and tools to help us do so.
 
+[![Gitter](https://badges.gitter.im/goliatone/wee-things-workshop.svg)](https://gitter.im/goliatone/wee-things-workshop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 The ESP8266 microcontroller is a WiFi module with an [ARM][arm] processor, we will use the [NodeMCU][nodemcu] firmware and will program in the [Lua][lua] programming language.
 
 This little thing is great because:
@@ -56,7 +58,7 @@ Binaries:
 ---
 ### Quick Start
 
-The quick setup consists of 7 steps. [Below](#set-up) you can find a more detailed set of instructions.
+The quick setup consists of 8 steps. [Below](#set-up) you can find a more detailed set of instructions.
 
 Clone this repo or download the zip archive. The following steps are relative to the projects main directory.
 
@@ -66,15 +68,16 @@ Clone this repo or download the zip archive. The following steps are relative to
 
 3. From terminal, use [npm][npm] to install node-esp: `npm i -g node-esp`.
 
-4. Connect the board to your computer.
+4. [Set the node-esp port][esp-install]: `esp port set /dev/cu.SLAB_USBtoUART`
 
-5. Prep the board to flash the [NodeMCU firmware](#nodemcu-firmware):
+5. Connect the board to your computer.
+
+6. Prep the board to flash the [NodeMCU firmware](#nodemcu-firmware):
     * From terminal, `cd` into **bin**.
-    * Press the [board][nodemcu-diagram]'s **FLASH** button and press the **RST** button at the same time. You should see an LED blink on the board.
 
-6. Flash the board: from terminal run `esp flash nodemcu_integer_0.9.6-dev_20150627.bin`
+7. Flash the board: from terminal run `esp flash nodemcu_integer_0.9.6-dev_20150704.bin`
 
-7. **Unplug the USB cable** and **plug it** again.
+8. **Unplug the USB cable** and **plug it** again.
 
 Woohoo!! Now we are ready to start coding.
 
@@ -113,6 +116,7 @@ $ esp port set /dev/cu.SLAB_USBtoUART
 ```
 
 #### NodeMCU firmware
+
 You can find the latest NodeMCU firmware at their Github repository, in the release page following this [link][esp-binaries].
 
 The ESP8266 chip comes loaded with an [AT command set][at-commands], and it's meant to be used by an external controller like an Arduino driving the chip over serial.
@@ -130,7 +134,7 @@ From terminal, `cd` into your project's **bin** directory. Then
 type the following command in terminal and press enter:
 
 ```
-esp flash nodemcu_integer_0.9.6-dev_20150627.bin
+esp flash nodemcu_integer_0.9.6-dev_20150704.bin
 ```
 The script should provide some feedback in the terminal window while it is executing.
 
@@ -225,6 +229,17 @@ Some of this plugins might require you to install [Lua JIT][luajit] compiler, on
 brew install luajit --with-52compat
 ```
 
+
+## Thank you.
+
+A lot of people have contributed directly and indirectly to this workshop, and in different capacities. Thank you all.
+
+* Aurelia Moser
+* Alan Jackson
+* David Mills
+* Grace Tan
+* Tracy Loi
+
 <!-- LINKS -->
 [espressif]: http://espressif.com/en/products/esp8266/
 
@@ -288,3 +303,4 @@ brew install luajit --with-52compat
 [nodemcu-diagram]:https://arduining.files.wordpress.com/2015/08/nodemcudevkit_v1-0_io.jpg
 [at-commands]:https://en.wikipedia.org/wiki/Hayes_command_set
 [brew]:http://brew.sh/
+[esp-install]:https://github.com/goliatone/node-esp#install

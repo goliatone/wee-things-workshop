@@ -7,12 +7,14 @@ We will be using the `dht` module, which needs a custom build. You can check the
 
 ### Intro
 
-If you have a[ NodeMCU custom build][custom-build], ensure the `dht` module was selected. Otherwise you will need a new build from the master branch with the following modules:
+If you have a [NodeMCU custom build][custom-build], ensure the `dht` module was selected. Otherwise you will need a new build from the master branch with the following modules:
 
 - dht
 - mqtt
 
 The build service is pretty straight forward and easy to use. The only tricky part is dependency management, which due to a lack of guidance from NodeMCU.
+
+We will be using the **float** build, so that the readings we get from the sensor have decimal values.
 
 Once you have a build, flash the board with it, if you need instructions you can follow the [intro tutorial][intro-tutorial]
 
@@ -116,6 +118,8 @@ end)
 
 #### Deep Sleep
 
+We want to run this project out of a battery. To preserve some battery life we will try to minimize power consumption by reading sensor data every minute and putting our sensor to sleep between readings.
+
 To be able to use the deep-sleep feature, we need to connect the RST pin to the D0 pin.
 
 ![deep-sleep](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-deepsleep-001.png)
@@ -129,6 +133,10 @@ node.dsleep(time_between_sensor_readings, 2)
 We will use a [DHT-11][dht-11] humidity and temperature sensor, which thanks to the [dht][nodemcu-dht] module we can interface with rather easily.
 
 The wiring is rather simple, connect VCC and GND to the board, and then the out pin to D3.
+
+![deep-sleep](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-deepsleep-002.png)
+
+The code we use to read from the sensor:
 
 ```lua
 -- DHT22 sensor logic
@@ -162,9 +170,9 @@ end
 [tutorial-init]:https://github.com/goliatone/wee-things-workshop/tree/master/tutorials/5-init-file
 [dht11]:http://www.amazon.com/Qunqi-Temperature-Humidity-Arduino-Raspberry/dp/B014PCKTF4
 [dht-module]:http://nodemcu.readthedocs.org/en/dev/en/modules/dht
-[custom-build]:http://nodemcu-build.com/
+[custom-build]:http://nodemcu-build.com
 [intro-tutorial]:https://github.com/goliatone/wee-things-workshop#flashing-the-nodemcu
 [mqtt-org]: http://mqtt.org
-[mosquitto]:http://mosquitto.org/
-[docker-mosquitto]:https://hub.docker.com/r/toke/mosquitto/
-[nodemcu-mqtt]:http://nodemcu.readthedocs.org/en/dev/en/modules/mqtt/
+[mosquitto]:http://mosquitto.org
+[docker-mosquitto]:https://hub.docker.com/r/toke/mosquitto
+[nodemcu-mqtt]:http://nodemcu.readthedocs.org/en/dev/en/modules/mqtt

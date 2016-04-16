@@ -7,7 +7,7 @@ We will be using the `dht` module, which needs a custom build. You can check the
 
 ### Intro
 
-If you have a[ NodeMCU custom build][custom-build], ensure the `dht` module was selected. Otherwise you will need a new build with the following modules:
+If you have a[ NodeMCU custom build][custom-build], ensure the `dht` module was selected. Otherwise you will need a new build from the master branch with the following modules:
 
 - dht
 - mqtt
@@ -95,6 +95,10 @@ m = mqtt.Client(mqtt_client_id, 120, mqtt_username, mqtt_password)
 
 The `120` means a keep alive interval of 2 minutes, basically our client should publish a message before this interval ends.
 
+We will connect our client instance and then, in the callback function, collect our payload and publish a message to the `things/ESP8266/dht` topic.
+
+Once the message is
+
 ```lua
 m:connect( mqtt_broker_ip , mqtt_broker_port, 0, function(conn)
     -- Get sensor data
@@ -112,6 +116,10 @@ end)
 
 #### Deep Sleep
 
+To be able to use the deep-sleep feature, we need to connect the RST pin to the D0 pin.
+
+![deep-sleep](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-deepsleep-001.png)
+
 ```lua
 node.dsleep(time_between_sensor_readings, 2)
 ```
@@ -120,6 +128,7 @@ node.dsleep(time_between_sensor_readings, 2)
 
 We will use a [DHT-11][dht-11] humidity and temperature sensor, which thanks to the [dht][nodemcu-dht] module we can interface with rather easily.
 
+The wiring is rather simple, connect VCC and GND to the board, and then the out pin to D3.
 
 ```lua
 -- DHT22 sensor logic

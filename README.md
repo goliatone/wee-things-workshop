@@ -229,6 +229,12 @@ Some of this plugins might require you to install [Lua JIT][luajit] compiler, on
 brew install luajit --with-52compat
 ```
 
+#### Wiring Diagrams
+
+All wiring diagrams in the tutorials were made using the amazing [fritzing][fritzing] open-source project.
+
+The fritzing NodeMCU board part used here was done by [Daniel Eichhorn][nodemcu-part]
+
 
 ## Thank you.
 
@@ -236,7 +242,10 @@ A lot of people have contributed directly and indirectly to this workshop, and i
 
 * Aurelia Moser
 * Alan Jackson
+* Angus Gratton
+* Daniel Eichhorn
 * David Mills
+* Marcel Stör
 * Grace Tan
 * Tracy Loi
 
@@ -304,3 +313,5 @@ A lot of people have contributed directly and indirectly to this workshop, and i
 [at-commands]:https://en.wikipedia.org/wiki/Hayes_command_set
 [brew]:http://brew.sh/
 [esp-install]:https://github.com/goliatone/node-esp#install
+[fritzing]:http://fritzing.org
+[nodemcu-part]:http://blog.squix.ch/2015/05/esp8266-nodemcu-v10-part-created-for.html

@@ -1,6 +1,6 @@
 ## PIR Movement Detector
 
-In this tutorial we will build an IoT motion sensor.
+In this tutorial we will build an IoT motion sensor using Passive Infrared detection.
 
 To build our circuit and power the PIR sensor we will need to add a voltage regulator.
 
@@ -13,12 +13,13 @@ There are different ways to address this issue. One is to hack the PIR sensor, w
 
 Another option and the one we will use here, is to add a step-up voltage regulator, which will transform our board's 3.3V to the 5V needed by the motion sensor.
 
+You can get an in-depth explanation an overview of PIR sensors in this [adafruit][adafruit-pir-overview] write up.
 
-Material list:
+#### Material list:
 - PIR motion sensor [adafruit][pir-ada]
 - 5v Step-up Voltage regulator [U1V11F5][pololu]
 
-### Wiring Diagram
+#### Wiring Diagram
 
 ![pir-step-up](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/pir-step-up-001.png)
 
@@ -27,3 +28,4 @@ Material list:
 
 [pir-ada]:https://www.adafruit.com/products/189
 [pololu]:https://www.pololu.com/product/2562
+[adafruit-pir-overview]:https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/overview

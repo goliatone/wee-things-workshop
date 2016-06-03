@@ -45,7 +45,7 @@ We've tested this tutorial on MacOS. It's possible to do with Windows, but there
 ### Materials
 The list of materials is intentionally short; we can get up and running pretty fast.
 
-[Hardware](#disclaimer):
+[Hardware](#disclosure):
 * [NodeMCU dev board][amazon-esp] 
 * [Micro USB cable][amazon-usb] 
 
@@ -249,8 +249,8 @@ A lot of people have contributed directly and indirectly to this workshop, and i
 * Grace Tan
 * Tracy Loi
 
-### Disclaimer
-This page has two Amazon associate links, one for the USB cable and one for the ESP8266. The money gathered through this links will be matched out of my pocket and donated to [Girl Develop It][gdi].
+### Disclosure
+This page has two Amazon associate links, one for the USB cable and one for the ESP8266. The money collected through this links will be matched out of my pocket and donated to [Girl Develop It][gdi].
 
 [gdi]:https://www.girldevelopit.com
 

@@ -250,7 +250,7 @@ A lot of people have contributed directly and indirectly to this workshop, and i
 * Tracy Loi
 
 ### Disclosure
-This page has two Amazon associate links, one for the USB cable and one for the ESP8266. The money collected through this links will be matched out of my pocket and donated to [Girl Develop It][gdi].
+This page has two Amazon associate links, one for the USB cable and one for the ESP8266. The money collected through the links will be matched- out of my pocket- and donated to [Girl Develop It][gdi].
 
 [gdi]:https://www.girldevelopit.com
 

@@ -46,8 +46,8 @@ We've tested this tutorial on MacOS. It's possible to do with Windows, but there
 The list of materials is intentionally short; we can get up and running pretty fast.
 
 Hardware:
-* [NodeMCU dev board][amazon-esp]
-* [Micro USB cable][amazon-usb]
+* [NodeMCU dev board][amazon-esp] [note][#disclaimer]
+* [Micro USB cable][amazon-usb] [note][#disclaimer]
 
 Software:
 * [SiLabs Drivers][silabs-drivers] Used to communicate with the devkit
@@ -249,14 +249,20 @@ A lot of people have contributed directly and indirectly to this workshop, and i
 * Grace Tan
 * Tracy Loi
 
+### Disclaimer
+This page has two Amazon associate links, one for the USB cable and one for the ESP8266. The money gathered through this links will be matched out of my pocket and donated to [Girl Develop It][gdi].
+
+[gdi]:https://www.girldevelopit.com
+
+
 <!-- LINKS -->
 [espressif]: http://espressif.com/en/products/esp8266/
 
 [firmware]: https://github.com/nodemcu/nodemcu-firmware/releases
 [nodemcu-wiki]: https://github.com/nodemcu/nodemcu-firmware/wiki
 [nodemcu-wiki-api]:http://nodemcu.readthedocs.org/en/dev/
-[amazon-usb]: http://www.amazon.com/AmazonBasics-Micro-USB-USB-Cable-Meters/dp/B00NH124VM/
-[amazon-esp]: http://www.amazon.com/Eleduino-Version-Internet-ESP8266-Development/dp/B010O1G1ES/
+[amazon-usb]: http://amzn.to/1t6s7AG
+[amazon-esp]: http://amzn.to/1UjqoxL
 
 [esp-binaries]: https://github.com/nodemcu/nodemcu-firmware/releases
 [esp8266-forum]: http://www.esp8266.com

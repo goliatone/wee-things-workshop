@@ -45,9 +45,9 @@ We've tested this tutorial on MacOS. It's possible to do with Windows, but there
 ### Materials
 The list of materials is intentionally short; we can get up and running pretty fast.
 
-Hardware:
-* [NodeMCU dev board][amazon-esp] [note][#disclaimer]
-* [Micro USB cable][amazon-usb] [note][#disclaimer]
+[Hardware](#disclaimer):
+* [NodeMCU dev board][amazon-esp] 
+* [Micro USB cable][amazon-usb] 
 
 Software:
 * [SiLabs Drivers][silabs-drivers] Used to communicate with the devkit

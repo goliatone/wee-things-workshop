@@ -21,6 +21,10 @@ print("Hello, World!")
 The `print` statement takes a string parameter and will output it to the console, in this case the string "Hello World!". Below you can find some information about [strings in Lua](#lua-strings).
 
 #### Create a new file
+```
+$ touch hello_world.lua
+```
+
 
 Create a new file, type our glorious program:
 ```lua
@@ -33,6 +37,7 @@ To upload the file to the board we will issue the following commands in a termin
 ```
 $ esp file write hello_world.lua
 ```
+(this command won't work if you don't create the file first)
 
 You can peek the contents of the file system with the following command:
 

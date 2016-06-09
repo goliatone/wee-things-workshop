@@ -4,7 +4,7 @@
 
 Emiliano Burgos
 
-<a href="http://wework.com">wework.com</a> | <a href="mailto:emiliano@wework.com">emiliano@wework.com</a>
+R&D | <a href="http://wework.com">wework.com</a> | <a href="mailto:emiliano@wework.com">emiliano@wework.com</a>
 
 ???
 Please, everyone, introduce yourselves.
@@ -38,22 +38,26 @@ This workshop has 3 goals.
 
 ## Goals
 
-* Familiarize ourselves with the NodeMCU dev board.
+* Familiarize ourselves with the NodeMCU development board.
 
 ## Goals
 
-* Familiarize ourselves with the NodeMCU dev board.
+* Familiarize ourselves with the NodeMCU development board.
 * Setup a work environment.
 
 ## Goals
 
-* Familiarize ourselves with the NodeMCU dev board.
+* Familiarize ourselves with the NodeMCU development board.
 * Setup a work environment.
 * Be able to load and execute code.
+???
+It might not look like much, but oftentimes this is the hardest thing to accomplish on our own. When we are starting, hardware can be daunting. It definitively was for me...
 
 ## WeeThings
 
 <h4>Outline</h4>
+???
+This workshop has 3 parts to it, introduction to Microcontrollers, setup, and code.
 
 ## WeeThings
 
@@ -64,12 +68,22 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
+
+## WeeThings
+
+<h4>Outline</h4>
+* Microcontrollers
+    * ESP8266
 * Setup
+???
+Usually the hardest thing to get right without help.
 
 ## WeeThings
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
 
@@ -77,6 +91,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -85,6 +100,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -94,6 +110,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -104,6 +121,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -115,6 +133,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -127,6 +146,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -140,6 +160,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -155,6 +176,7 @@ This workshop has 3 goals.
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -174,6 +196,7 @@ We will be using Terminal a lot. The ESP8266 has a C SDK, software development k
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -194,6 +217,7 @@ More than anything Mac OS is a requirement right now because is the only platfor
 
 <h4>Outline</h4>
 * Microcontrollers
+    * ESP8266
 * Setup
     * Hardware
     * Software
@@ -225,12 +249,25 @@ _Wikipedia: [Microcontroller][microcontroller]_
 ## Introduction to microcontrollers
 _Arduino Uno image courtesy of Fritzing_
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/microcontroller-001.png)
+???
+Most people are introduced to microcontrollers via the Arduino. Here you can see an Arduino UNO and some peripherals.
 
+The Arduino was a breakthrough in electronics, it made an affordable and easy to use microcontroller, with a big community around.
+
+However, there are a few things that I, personally, don't like. Mainly it's lack of built in WiFi support. Which it was ok when it came out, but nowadays mostly everything useful happens online.
+
+And personally, I find it to cumbersome to quickly prototype things in C++... also, it's <b>form factor and price</b> are not ideal.
 
 ## Introduction to microcontrollers
 
 <h4>ESP8266</h4>
 ![ESP8266](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-001.png)
+
+
+## Introduction to microcontrollers
+
+<h4>ESP8266</h4>
+![ESP8266](../images/esp8266-002.jpg)
 
 ## Introduction to microcontrollers
 

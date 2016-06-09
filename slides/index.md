@@ -95,6 +95,8 @@ Usually the hardest thing to get right without help.
 * Setup
     * Hardware
     * Software
+???
+We have node as a dependency.
 
 ## WeeThings
 
@@ -262,30 +264,45 @@ And personally, I find it to cumbersome to quickly prototype things in C++... al
 
 <h4>ESP8266</h4>
 ![ESP8266](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-001.png)
+???
+The ESP8266 microcontroller is a WiFi module with an ARM processor, we will use the NodeMCU firmware and will program in the Lua programming language.
 
+This little thing is great because:
+ - it's cheap: $4, compared to $24 for the more popular Arduino
+ - it comes with WiFi: Arduino need separate modules to be "connected", possibly even an ESP8266!
 
 ## Introduction to microcontrollers
 
 <h4>ESP8266</h4>
-![ESP8266](../images/esp8266-002.jpg)
+![ESP8266](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp8266-002.jpg)
 
 ## Introduction to microcontrollers
 
 <h4>NodeMCU</h4>
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
+???
+NodeMCU is an open-source project that provides firmware for the ESP8266 so we can run programs using the Lua programming language
 
 # Setup
 
 ## NodeMCU
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-001.jpg)
+???
+NodeMCU is the firmware that we load in our development boards to control the input/output pins and do cool things.
+It is not related to Node.js, which can be a little bit confusing. I think because they have a similar approach to Nodejs programming, using callbacks, they used the name.
 
 ## node-esp cli tool
 
-![node-esp](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-001.png?a)
-
+![node-esp](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-001.png)
+???
+We are going to use a command line interface, or CLI, tool that I developed to make it easier to work with the ESP8266.
 
 ## Lua programming language
  <code data-gist-id="558e5f9edb57ec8f65e8"></code>
+???
+Lua is an old language, really terse and simple to learn, like a mix of JavaScript and Ruby, except that it was created before both of those languages.
+
+NodeMCU
 
 # Let's get started
 ???
@@ -345,6 +362,14 @@ So, I did what any software Engineer would do. I decided to build a better a too
 node-esp is a terminal application that let's you interact with a NodeMCU board. You can upload files, execute them, output debug information to the screen.
 
 ---
+
+## node
+Go to https://nodejs.org
+![nodejs](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodejs-001.png)
+
+
+???
+We have Nodejs as a dependency to run node-esp. Again, NodeMCU and Nodejs are not related. I just happen to work with Nodejs and built this tool using JavaScript.
 
 ## node-esp
 

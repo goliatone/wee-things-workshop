@@ -365,6 +365,7 @@ node-esp is a terminal application that let's you interact with a NodeMCU board.
 
 ## node
 Go to https://nodejs.org
+
 ![nodejs](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodejs-001.png)
 
 
@@ -407,6 +408,8 @@ From bin directory:
 ```
 $ esp flash nodemcu_integer_0.9.6-dev_20150704.bin
 ```
+???
+From terminal, cd into the projects bin directory
 
 ## Flashing NodeMCU
 ![nodemcu](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/esp-tool-003.png)

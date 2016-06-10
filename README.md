@@ -46,8 +46,8 @@ We've tested this tutorial on MacOS. It's possible to do with Windows, but there
 The list of materials is intentionally short; we can get up and running pretty fast.
 
 [Hardware](#disclosure):
-* [NodeMCU dev board][amazon-esp] 
-* [Micro USB cable][amazon-usb] 
+* [NodeMCU dev board][amazon-esp]
+* [Micro USB cable][amazon-usb]
 
 Software:
 * [SiLabs Drivers][silabs-drivers] Used to communicate with the devkit
@@ -197,7 +197,8 @@ Now you can proceed with the next tutorials:
 * [The unoficial NodeMCU FAQ][nodemcu-faq]
 * [MQTT on the NodeMCU][nodemcu-mqtt]
 * [NodeMCU iot 1][nodemcu-iot-1]
-* [NodeMCU iot 2][nodemcu-iot-1]
+* [NodeMCU iot 2][nodemcu-iot-2]
+* [Custom NodeMCU builds][nodemcu-build]
 
 #### Lua
 * [Cheatsheet][lua-cheatsheet]
@@ -321,3 +322,4 @@ This page has two Amazon associate links, one for the USB cable and one for the 
 [esp-install]:https://github.com/goliatone/node-esp#install
 [fritzing]:http://fritzing.org
 [nodemcu-part]:http://blog.squix.ch/2015/05/esp8266-nodemcu-v10-part-created-for.html
+[nodemcu-build]:http://nodemcu-build.com/

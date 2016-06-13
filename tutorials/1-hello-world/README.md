@@ -22,17 +22,28 @@ The `print` statement takes a string parameter and will output it to the console
 
 #### Create a new file
 
-Create a new file, type our glorious program:
+```
+$ touch hello_world.lua
+```
+
+
+Create a new file, and name it `hello_world.lua` and save it to the **code** directory. You can use any text editor or IDE to create the file.
+
+The contents of the `hello_world.lua` fie is our glorious program:
+
 ```lua
 print("Hello, World!")
 ```
- Name it `hello_world.lua` and save it to the **code** directory. To upload the file to the board we will be using the [esp cli tool][node-esp]. If you have not installed it yet you can follow the instructions on the tool's [repository][node-esp].
 
-To upload the file to the board we will issue the following commands in a terminal window. `cd` to the directory where you saved the `hello_world.lua` file, and from there execute:
+To upload the file to the board we will be using the [esp cli tool][node-esp]. If you have not installed it yet you can follow the instructions on the tool's [repository][node-esp].
+
+From terminal, `cd` to the directory where you saved the `hello_world.lua` file, and from there execute:
 
 ```
 $ esp file write hello_world.lua
 ```
+
+The `esp file write` subcommand takes one argument, a path to a file that will be uploaded to the board.
 
 You can peek the contents of the file system with the following command:
 

@@ -9,7 +9,7 @@ We will ned an LED, two female to female cables, and a NodeMCU board.
 ### Wiring the LED
 Previously we learned how to control the onboard LEDs. In this tutorial we will use an external LED. The wiring is rather simple.
 
-![led-wiring](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-led-001.png)
+![led-wiring](https://raw.githubusercontent.com/goliatone/wee-things-workshop/master/images/nodemcu-led-wiring-001.png)
 
 ### Source Code
 The source code for this tutorial is rather simple. We declare a global `PIN` variable to hold our the pin to which we connected the led's anode. We then use the `gpio` module to set the mode of `PIN` as `OUTPUT` so we can power up the LED.

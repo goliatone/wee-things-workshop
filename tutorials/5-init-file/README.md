@@ -1,8 +1,10 @@
+
 ## Init File
 
-In this tutorial we will learn how to make our board to run a script on power up. During the boot process, NodeMCU looks for a file named `init.lua` excuting the file thus making it an entry point for your application.
+In this tutorial we will learn how to make our board to run a script on power up. During the boot process, NodeMCU looks for a file named `init.lua` executing the file thus making it an entry point for your application.
 
 ### Crashes and Bricks
+
 We will create a new file, and name it `init.lua`. This is a very special file, because every time when the board boots it will look for this file and it will automatically execute it.
 
 When an error happens Lua calls a panic function and then exits the host application. NodeMCU's behavior is to reboot when this happens.
@@ -15,6 +17,7 @@ Usually the way we recover from a panic-reboot cycle is by removing the init fil
 ### Creating a new file
 
 It's recommended to keep `init.lua` files really simple and add a guard using a timer. We will cover that up later on.
+
 While testing the best practice is to use a different file to hold our code and execute that manually. Then, once we are sure our code is in good shape we can proceed to change it's name to `init.lua`.
 
 Ideally we would devise a simple and generic `init.lua` that we can use in most use-cases. A simple solution is to place an idle timer that delays the execution of the next step, whatever that step might be. That way we get a window of time to issue a `file.remove("init.lua")`. If we move our real initialization logic to a different file, then we can wait a safe amount of time, and then execute this file.
@@ -43,16 +46,16 @@ tmr.alarm(BOOT_ALARM, BOOT_DELAY, 0, function()
 end)
 ```
 
-`tmr.alarm` executes a function in intervals of time. It takes 4 parameters. The first one is a numerical id so we can can cancel it with a call to `tmr.stop`. The second is the interval in milliseconds. The third one indicates wether the callback is executed one or until we stop the interval. The fourth is the callback that gets executed on each interval.
+`tmr.alarm` executes a function in intervals of time. It takes 4 parameters. The first one is a numerical id so we can can cancel it with a call to `tmr.stop`. The second is the interval in milliseconds. The third one indicates whether the callback is executed one or until we stop the interval. The fourth is the callback that gets executed on each interval.
 
-The following snippet executes the callback once after a dealy of two seconds.
+The following snippet executes the callback once after a delay of two seconds.
 ```lua
 tmr.alarm(0, 2000, 0, function()
     ...
 end)
 ```
 
-Inside the callback we are stoping `tmr.alarm` and loading our `boot.lua` script that will hold the logic to bootstrap the program.
+Inside the callback we are stopping `tmr.alarm` and loading our `boot.lua` script that will hold the logic to bootstrap the program.
 
 We load and execute the `boot.lua` script by calling it with the `dofile` directive:
 
